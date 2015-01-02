@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nsf.nsf_nue_project" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Intro_activ"
+            android:label="@string/title_activity_intro_activ" >
+        </activity>
+        <activity
+            android:name=".Scale_activ"
+            android:label="@string/title_activity_scale_activ" >
+        </activity>
+        <activity
+            android:name=".Device_activ"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_device_activ" >
+        </activity>
+        <activity
+            android:name=".App_activ"
+            android:label="@string/title_activity_app_activ" >
+        </activity>
+        <activity
+            android:name=".Gallery_activ"
+            android:label="@string/title_activity_gallery_activ" >
+        </activity>
+    </application>
+
+</manifest>

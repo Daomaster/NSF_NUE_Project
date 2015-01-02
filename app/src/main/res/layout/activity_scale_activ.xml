@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="Optical Property Example"
+        android:textAllCaps="false"
+        android:id="@+id/button"
+        android:padding="20dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_below="@+id/button5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:textAllCaps="false"
+        android:text="Scaling in Geometry"
+        android:textSize="20sp"
+        android:id="@+id/button5"
+        android:layout_marginTop="61dp"
+        android:layout_toStartOf="@+id/imageButton" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:textAllCaps="false"
+        android:text="Size Matter Example"
+        android:textSize="20sp"
+        android:id="@+id/button6"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:textAllCaps="false"
+        android:text="Scaling in Rigid Body Dynamic"
+        android:textSize="20sp"
+        android:id="@+id/button7"
+        android:layout_alignTop="@+id/button6"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
+
+    <Button
+        android:layout_width="450dp"
+        android:layout_height="80dp"
+        android:text="Quiz 2"
+        android:id="@+id/button8"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/button6"
+        android:layout_alignLeft="@+id/button6"
+        android:layout_alignStart="@+id/button6"
+        android:layout_marginLeft="177dp"
+        android:layout_marginStart="177dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_marginRight="41dp"
+        android:layout_marginEnd="41dp"
+        android:src="@android:drawable/ic_menu_share"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="Fundamental"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/button9"
+        android:padding="20dp"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="Chemical Bonding Example"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/button10"
+        android:padding="20dp"
+        android:layout_below="@+id/button9"
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_toStartOf="@+id/imageButton" />
+</RelativeLayout>
