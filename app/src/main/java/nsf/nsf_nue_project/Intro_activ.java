@@ -72,10 +72,7 @@ public class Intro_activ extends ActionBarActivity {
         btnfive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("page",5);
-                intent.putExtras(bundle);
+                Intent intent = new Intent(Intro_activ.this,Quiz_activ.class);
                 startActivity(intent);
             }
         });

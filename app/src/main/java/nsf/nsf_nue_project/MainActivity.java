@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 
 
@@ -19,6 +20,7 @@ public class MainActivity extends ActionBarActivity {
         Button scale_btn = (Button)findViewById(R.id.button2);
         Button device_btn = (Button)findViewById(R.id.button3);
         Button application_btn = (Button)findViewById(R.id.button4);
+
 
         intro_btn.setOnClickListener(new View.OnClickListener() {
             @Override
