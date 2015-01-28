@@ -3,21 +3,14 @@ package nsf.nsf_nue_project;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.ViewSwitcher;
+import android.view.MotionEvent;
 
 
 public class Gallery_activ extends ActionBarActivity {
@@ -28,6 +21,7 @@ public class Gallery_activ extends ActionBarActivity {
             R.drawable.page015,R.drawable.page016};
     private int index = 0;
     private ImageSwitcher imageSwitcher;
+    float initialX;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,4 +82,35 @@ public class Gallery_activ extends ActionBarActivity {
             }
         });
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                initialX = event.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                float finalX = event.getX();
+                if (initialX > finalX)
+                {
+
+                    index++;
+                    imageSwitcher.setImageResource(imageId[index]);
+                }
+                else
+                {
+                    if(index > 0)
+                    {
+
+                        index--;
+                        imageSwitcher.setImageResource(imageId[index]);
+                    }
+
+                }
+                break;
+        }
+        return false;
+    }
+
+
 }
