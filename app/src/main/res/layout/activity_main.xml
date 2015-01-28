@@ -4,57 +4,56 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+    android:theme="@android:style/Theme.Holo.Light">
 
 
     <Button
-        android:layout_width="230dp"
-        android:layout_height="65dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:text="Introduction"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:id="@+id/button1"
         android:textAllCaps="false"
+        android:clickable="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:theme="@android:style/Holo.Light.ButtonBar" />
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="230dp"
-        android:layout_height="65dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:text="Scaling Law"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:id="@+id/button2"
         android:textAllCaps="false"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/button1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="230dp"
-        android:layout_height="65dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:text="Device"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:textAllCaps="false"
         android:id="@+id/button3"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/button2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="230dp"
-        android:layout_height="65dp"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
         android:text="Application"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:textAllCaps="false"
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="40dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -63,10 +62,10 @@
         android:id="@+id/imageView"
         android:src="@drawable/front_page"
         android:adjustViewBounds="false"
-        android:layout_alignBottom="@+id/button4"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="85dp"
-        android:layout_marginEnd="85dp" />
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp" />
 
 </RelativeLayout>

@@ -53,34 +53,7 @@ public class Gallery_activ extends ActionBarActivity {
         });
         imageSwitcher.setImageResource(imageId[index]);
 
-        //Setting up the Buttons
-        Button up = (Button)findViewById(R.id.button11);
-        Button down = (Button)findViewById(R.id.button12);
-        up.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index > 0){
-                    index--;
-                    start--;
-                }else{
-                    index = imageId.length - 1;
-                }
-                imageSwitcher.setImageResource(imageId[index]);
-            }
-        });
 
-        down.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (index < imageId.length - 1){
-                    index++;
-                    start++;
-                }else{
-                    index = 0;
-                }
-                imageSwitcher.setImageResource(imageId[index]);
-            }
-        });
     }
 
     @Override
@@ -93,7 +66,6 @@ public class Gallery_activ extends ActionBarActivity {
                 float finalX = event.getX();
                 if (initialX > finalX)
                 {
-
                     index++;
                     imageSwitcher.setImageResource(imageId[index]);
                 }
@@ -101,7 +73,6 @@ public class Gallery_activ extends ActionBarActivity {
                 {
                     if(index > 0)
                     {
-
                         index--;
                         imageSwitcher.setImageResource(imageId[index]);
                     }
