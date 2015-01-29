@@ -49,8 +49,7 @@
         </activity>
         <activity
             android:name=".Quiz_activ"
-            android:label="Quiz"
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:label="Quiz">
         </activity>
     </application>
 
