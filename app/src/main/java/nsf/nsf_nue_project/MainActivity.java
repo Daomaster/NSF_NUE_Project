@@ -4,13 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import java.net.URI;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -23,6 +19,8 @@ public class MainActivity extends ActionBarActivity {
         Button device_btn = (Button)findViewById(R.id.button3);
         Button application_btn = (Button)findViewById(R.id.button4);
         ImageView facebook_img = (ImageView) findViewById(R.id.imageView2);
+        ImageView google_img = (ImageView) findViewById(R.id.imageView3);
+        ImageView website_img = (ImageView) findViewById(R.id.imageView4);
 
         intro_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +59,20 @@ public class MainActivity extends ActionBarActivity {
                 } catch(Exception e) {
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/appetizerandroid")));
                 }
+            }
+        });
+        google_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+                    startActivity(intent);
+            }
+        });
+        website_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.sjlab.com"));
+                startActivity(intent);
             }
         });
     }

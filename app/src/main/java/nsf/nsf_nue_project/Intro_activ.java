@@ -27,7 +27,7 @@ public class Intro_activ extends ActionBarActivity {
         Button btntwo = (Button)findViewById(R.id.button5);
         Button btnthree = (Button)findViewById(R.id.button6);
         Button btnfour = (Button)findViewById(R.id.button7);
-        Button btnfive = (Button)findViewById(R.id.button8);
+        Button quiz_btn = (Button)findViewById(R.id.button8);
 
         btnone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +69,7 @@ public class Intro_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnfive.setOnClickListener(new View.OnClickListener() {
+        quiz_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intro_activ.this,Quiz_activ.class);
