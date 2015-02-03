@@ -17,7 +17,7 @@ import android.view.MotionEvent;
 public class Gallery_activ extends ActionBarActivity {
 
     int start;
-    int chapter =1;
+    private int chapter =1;
     private int[] imageId = new int[] {R.drawable.page01, R.drawable.page02,R.drawable.page03,R.drawable.page04,
             R.drawable.page05,R.drawable.page06,R.drawable.page07,R.drawable.page08,R.drawable.page09,R.drawable.page010,R.drawable.page011,R.drawable.page012,R.drawable.page013,R.drawable.page014,
             R.drawable.page015,R.drawable.page016};
@@ -74,34 +74,21 @@ public class Gallery_activ extends ActionBarActivity {
     public boolean onTouchEvent(MotionEvent event) {
         //Build Analog
         final AlertDialog.Builder Chapterbuilder = new AlertDialog.Builder(this);
-        Chapterbuilder.setMessage("You finished Chapter" + chapter + "!" + "\n\nWould like to go to Quiz" + chapter + "？")
-                .setTitle("Congratulations")
-                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+        chapter = CheckChap(index);
+                Chapterbuilder.setMessage("You finished Chapter" + chapter + "!" + "\n\nWould like to go to Quiz" + chapter + "？");
+                            Chapterbuilder.setTitle("Congratulations")
+                            .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                })
+                .setNegativeButton("Quiz", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                         Intent intent = new Intent(Gallery_activ.this, Quiz_activ.class);
                         startActivity(intent);
-
-                    }
-                })
-                .setNegativeButton("Menu", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (chapter) {
-                            case 1 : Intent intent1 = new Intent(Gallery_activ.this, Intro_activ.class);
-                                startActivity(intent1);
-                                break;
-                            case 2 : Intent intent2 = new Intent(Gallery_activ.this, Scale_activ.class);
-                                startActivity(intent2);
-                                break;
-                            case 3 : Intent intent3 = new Intent(Gallery_activ.this, Device_activ.class);
-                                startActivity(intent3);
-                                break;
-                            case 4 : Intent intent4 = new Intent(Gallery_activ.this, App_activ.class);
-                                startActivity(intent4);
-                                break;
-                        }
 
                     }
                 });
@@ -111,7 +98,7 @@ public class Gallery_activ extends ActionBarActivity {
                 .setPositiveButton("Home", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent1 = new Intent(Gallery_activ.this, Intro_activ.class);
+                        Intent intent1 = new Intent(Gallery_activ.this, MainActivity.class);
                         startActivity(intent1);
                     }
                 })

@@ -8,17 +8,19 @@
         android:id="@+id/imageButton"
         android:layout_marginRight="41dp"
         android:layout_marginEnd="41dp"
-        android:src="@android:drawable/ic_menu_share"
+        android:src="@drawable/home"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="#FFFFFF" />
 
     <ImageSwitcher
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/imageSwitcher"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:nestedScrollingEnabled="false" />
 
 
 </RelativeLayout>
