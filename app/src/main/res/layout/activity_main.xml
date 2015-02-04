@@ -12,7 +12,7 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:text="Introduction"
-        android:textSize="25sp"
+        android:textSize="28sp"
         android:id="@+id/button1"
         android:textAllCaps="false"
         android:clickable="true"
@@ -20,15 +20,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#1e6cd2"
-        android:textColor="#ffffff"
-        android:layout_marginTop="20dp"
-        style="@android:style/TextAppearance.DeviceDefault.Widget.Button" />
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:text="Scaling Law"
-        android:textSize="25sp"
+        android:textSize="28sp"
         android:id="@+id/button2"
         android:textAllCaps="false"
         android:layout_marginTop="45dp"
@@ -36,14 +34,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#1e6cd2"
-        android:textColor="#ffffff"
-        style="@android:style/TextAppearance.DeviceDefault.Widget.Button" />
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:text="Device"
-        android:textSize="25sp"
+        android:textSize="28sp"
         android:textAllCaps="false"
         android:id="@+id/button3"
         android:layout_marginTop="45dp"
@@ -51,14 +48,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#1e6cd2"
-        android:textColor="#ffffff"
-        style="@android:style/TextAppearance.DeviceDefault.Widget.Button" />
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:text="Application"
-        android:textSize="25sp"
+        android:textSize="28sp"
         android:textAllCaps="false"
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
@@ -66,28 +62,26 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="45dp"
         android:background="#1e6cd2"
-        android:textColor="#ffffff"
-        style="@android:style/TextAppearance.DeviceDefault.Widget.Button" />
+        android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="800dp"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:id="@+id/imageView"
         android:src="@drawable/front_page"
         android:adjustViewBounds="false"
-        android:layout_alignTop="@+id/button1"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2" />
+        android:layout_toRightOf="@+id/button1"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:src="@drawable/facebook"
-        android:layout_alignTop="@+id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp" />
+        android:layout_alignBottom="@+id/button4"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
