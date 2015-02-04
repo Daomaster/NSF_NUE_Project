@@ -17,7 +17,9 @@
         android:clickable="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#1e6cd2"
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="300dp"
@@ -29,7 +31,9 @@
         android:layout_marginTop="45dp"
         android:layout_below="@+id/button1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#1e6cd2"
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="300dp"
@@ -41,7 +45,9 @@
         android:layout_marginTop="45dp"
         android:layout_below="@+id/button2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#1e6cd2"
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="300dp"
@@ -53,7 +59,9 @@
         android:layout_below="@+id/button3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:background="#1e6cd2"
+        android:textColor="#ffffff" />
 
     <ImageView
         android:layout_width="wrap_content"

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:theme="@android:style/Theme.Holo.Light"
-    >
+    android:background="#ffffff">
 
     <Button
         android:layout_width="350dp"
@@ -16,7 +16,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="52dp"
         android:layout_marginStart="52dp"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:background="#1e6cd2"
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="350dp"
@@ -28,7 +30,9 @@
         android:layout_alignEnd="@+id/imageButton"
         android:layout_marginRight="52dp"
         android:layout_marginTop="37dp"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:background="#1e6cd2"
+        android:textColor="#ffffff" />
 
     <Button
         android:layout_width="450dp"
@@ -38,7 +42,9 @@
         android:textSize="20sp"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/button" />
+        android:layout_below="@+id/button"
+        android:background="#FFC966"
+        android:textColor="#1e6cd2" />
 
     <ImageButton
         android:layout_width="wrap_content"
