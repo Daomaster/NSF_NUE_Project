@@ -19,7 +19,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#1e6cd2"
+        android:background="@drawable/newbutton"
         android:textColor="#ffffff" />
 
     <Button
