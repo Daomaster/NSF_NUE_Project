@@ -18,7 +18,7 @@
         android:layout_marginLeft="52dp"
         android:layout_marginStart="52dp"
         android:textSize="20sp"
-        android:background="#1e6cd2"
+        android:background="@drawable/newbutton"
         android:textColor="#ffffff" />
 
     <Button
@@ -33,7 +33,7 @@
         android:layout_marginRight="52dp"
         android:layout_marginTop="37dp"
         android:textSize="20sp"
-        android:background="#1e6cd2"
+        android:background="@drawable/newbutton"
         android:textColor="#ffffff" />
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_alignLeft="@+id/button"
         android:layout_alignStart="@+id/button"
         android:textSize="20sp"
-        android:background="#1e6cd2"
+        android:background="@drawable/newbutton"
         android:textColor="#ffffff" />
 
     <Button
@@ -61,7 +61,7 @@
         android:layout_alignStart="@+id/button5"
         android:layout_marginTop="40dp"
         android:textSize="20sp"
-        android:background="#1e6cd2"
+        android:background="@drawable/newbutton"
         android:textColor="#ffffff" />
 
     <Button
@@ -74,7 +74,7 @@
         android:layout_marginTop="40dp"
         android:layout_below="@+id/button6"
         android:layout_centerHorizontal="true"
-        android:background="#FFC966"
+        android:background="@drawable/quizbutton"
         android:textColor="#1e6cd2" />
 
     <ImageButton
