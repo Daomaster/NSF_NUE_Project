@@ -37,7 +37,7 @@ public class Gallery_activ extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sec_activ);
+        setContentView(R.layout.activity_gallery);
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         start = bundle.getInt("page");
@@ -58,7 +58,7 @@ public class Gallery_activ extends ActionBarActivity {
             @Override
             public View makeView() {
                 ImageView imageView = new ImageView(Gallery_activ.this);
-                imageView.setScaleType(ImageView.ScaleType.FIT_END);
+                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
                 return imageView;
             }
         });
@@ -78,11 +78,11 @@ public class Gallery_activ extends ActionBarActivity {
                 Chapterbuilder.setMessage("You finished Chapter" + chapter + "!" + "\n\nWould like to go to Quiz" + chapter + "？");
                             Chapterbuilder.setTitle("Congratulations")
                             .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
 
-                    }
-                })
+                                }
+                            })
                 .setNegativeButton("Quiz", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
