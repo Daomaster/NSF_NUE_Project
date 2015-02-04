@@ -20,7 +20,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#1e6cd2"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:layout_width="300dp"
@@ -65,23 +66,24 @@
         android:textColor="#ffffff" />
 
     <ImageView
-        android:layout_width="800dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:id="@+id/imageView"
         android:src="@drawable/front_page"
         android:adjustViewBounds="false"
-        android:layout_toRightOf="@+id/button1"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp" />
+        android:layout_alignTop="@+id/button1"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
         android:src="@drawable/facebook"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
 
     <ImageView
         android:layout_width="wrap_content"
