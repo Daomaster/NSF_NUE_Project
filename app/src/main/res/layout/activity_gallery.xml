@@ -2,6 +2,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+
+    <ImageSwitcher
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageSwitcher" />
+
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -11,10 +17,5 @@
         android:src="@drawable/home"
         android:background="#FFFFFF"
         android:layout_gravity="right|top"/>
-
-    <ImageSwitcher
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imageSwitcher" />
 
 </FrameLayout>
