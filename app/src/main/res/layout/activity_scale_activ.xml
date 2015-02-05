@@ -28,10 +28,12 @@
         android:text="Scaling in Geometry"
         android:textSize="20sp"
         android:id="@+id/button5"
-        android:layout_marginTop="61dp"
-        android:layout_toStartOf="@+id/imageButton"
         android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_below="@+id/imageButton"
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_toStartOf="@+id/imageButton"
+        android:layout_marginTop="37dp" />
 
     <Button
         android:layout_width="350dp"
@@ -86,7 +88,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:background="#FFFFFF"/>
+        android:background="#ffffff"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:layout_width="350dp"

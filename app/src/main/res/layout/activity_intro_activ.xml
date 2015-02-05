@@ -84,8 +84,9 @@
         android:layout_marginRight="41dp"
         android:layout_marginEnd="41dp"
         android:src="@drawable/home"
-        android:background="#FFFFFF"
+        android:background="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp" />
 </RelativeLayout>
