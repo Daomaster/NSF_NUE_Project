@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -23,8 +24,8 @@ public class Quiz_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz01);
-        Button submit = (Button) findViewById(R.id.button13);
-        Button returnbtn = (Button) findViewById(R.id.button14);
+        ImageView submit = (ImageView) findViewById(R.id.imageView5);
+        ImageView returnbtn = (ImageView) findViewById(R.id.imageView6);
         final RadioGroup question1 = (RadioGroup) findViewById(R.id.radioGroup);
         final RadioGroup question2 = (RadioGroup) findViewById(R.id.radioGroup2);
         final RadioGroup question3 = (RadioGroup) findViewById(R.id.radioGroup6);
