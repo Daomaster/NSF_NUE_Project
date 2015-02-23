@@ -64,10 +64,6 @@ public class Gallery_activ extends ActionBarActivity {
         });
         imageSwitcher.setImageResource(imageId[index]);
 
-
-
-
-
     }
 
     @Override

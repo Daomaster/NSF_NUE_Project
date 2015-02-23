@@ -1,9 +1,12 @@
 package nsf.nsf_nue_project;
 
+import android.animation.AnimatorSet;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -18,24 +21,26 @@ public class Quiz_activ extends ActionBarActivity {
     boolean q3 = false;
     boolean q4 = false;
     boolean q5 = false;
-    int score = 3;
-    int result = 0;
+
+    private int dynScore = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz01);
-        ImageView submit = (ImageView) findViewById(R.id.imageView5);
-        ImageView returnbtn = (ImageView) findViewById(R.id.imageView6);
+
         final RadioGroup question1 = (RadioGroup) findViewById(R.id.radioGroup);
         final RadioGroup question2 = (RadioGroup) findViewById(R.id.radioGroup2);
-        final RadioGroup question3 = (RadioGroup) findViewById(R.id.radioGroup6);
-        final RadioGroup question4 = (RadioGroup) findViewById(R.id.radioGroup3);
-        final RadioGroup question5 = (RadioGroup) findViewById(R.id.radioGroup4);
+        final RadioGroup question3 = (RadioGroup) findViewById(R.id.radioGroup3);
+        final RadioGroup question4 = (RadioGroup) findViewById(R.id.radioGroup4);
+        final RadioGroup question5 = (RadioGroup) findViewById(R.id.radioGroup5);
         final RadioButton right1 = (RadioButton) findViewById(R.id.radioButton);
         final RadioButton right2 = (RadioButton) findViewById(R.id.radioButton6);
-        final RadioButton right3 = (RadioButton) findViewById(R.id.radioButton9);
-        final RadioButton right4 = (RadioButton) findViewById(R.id.radioButton15);
-        final RadioButton right5 = (RadioButton) findViewById(R.id.radioButton18);
+        final RadioButton right3 = (RadioButton) findViewById(R.id.radioButton15);
+        final RadioButton right4 = (RadioButton) findViewById(R.id.radioButton19);
+        final RadioButton right5 = (RadioButton) findViewById(R.id.radioButton21);
+
+        Log.i("QUESTIONS","ENTRING");
 
         question1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -43,7 +48,8 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right1.getId() == checkedId) {
                     q1 = true;
-                    score++;
+                    sumDynScore();
+                    Log.i("1dynScr",dynScore+"");
                 }
             }
         });
@@ -54,7 +60,8 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right2.getId() == checkedId) {
                     q2 = true;
-                    score++;
+                    sumDynScore();
+                    Log.i("2dynScr",dynScore+"");
                 }
             }
         });
@@ -65,7 +72,8 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right3.getId() == checkedId) {
                     q3 = true;
-                    score++;
+                    sumDynScore();
+                    Log.i("3dynScr",dynScore+"");
                 }
             }
         });
@@ -76,7 +84,8 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right4.getId() == checkedId) {
                     q4 = true;
-                    score++;
+                    sumDynScore();
+                    Log.i("4dynScr",dynScore+"");
                 }
             }
         });
@@ -87,16 +96,18 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right5.getId() == checkedId) {
                     q5 = true;
-                    score++;
+                    sumDynScore();
+                    Log.i("5dynScr",dynScore+"");
                 }
             }
         });
 
-        result = score;
+
 
         //Creat the dialog
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Your Score is "+result+"/5")
+        Log.i("DYNAMIC SCORE",getDynScore()+"");
+        builder.setMessage("Your Score is "+getDynScore()+"/5")
                 .setTitle("Quiz Score")
                 .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                     @Override
@@ -112,10 +123,12 @@ public class Quiz_activ extends ActionBarActivity {
                         question3.clearCheck();
                         question4.clearCheck();
                         question5.clearCheck();
-
+                        dynScore=0;
                     }
                 });
         final AlertDialog dialog = builder.create();
+        ImageView submit = (ImageView) findViewById(R.id.send_btn);
+        ImageView returnbtn = (ImageView) findViewById(R.id.menu_btn);
 
         returnbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,19 +140,32 @@ public class Quiz_activ extends ActionBarActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               dialog.show();
+                dialog.show();
             }
         });
-
-
-
-
-
-
 
     }
 
 
+    public int getDynScore() {
+        Log.i("ENTERING","GET METHOD");
+        if(dynScore==0)
+            return 0;
+        else if(dynScore==1)
+            return 1;
+        else if(dynScore==2)
+            return 2;
+        else if(dynScore==3)
+            return 3;
+        else if(dynScore==4)
+            return 4;
+        else
+            return 5;
+    }
+
+    public void sumDynScore() {
+        this.dynScore++;
+    }
     }
 
 

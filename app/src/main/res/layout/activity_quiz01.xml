@@ -38,6 +38,7 @@
             android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:text="@string/option_a"
+            android:textColor="@color/hint_foreground_material_light"
             android:id="@+id/radioButton" />
 
         <RadioButton
@@ -84,6 +85,7 @@
             android:layout_height="wrap_content"
             android:text="@string/option_b"
             android:id="@+id/radioButton6"
+            android:textColor="@color/hint_foreground_material_light"
             android:layout_marginTop="10dp" />
 
         <RadioButton
@@ -98,40 +100,6 @@
             android:layout_height="wrap_content"
             android:text="@string/option_d"
             android:id="@+id/radioButton8"
-            android:layout_marginTop="10dp" />
-    </RadioGroup>
-
-    <RadioGroup
-        android:layout_width="300dp"
-        android:layout_height="180dp"
-        android:id="@+id/radioGroup6"
-        android:layout_alignTop="@+id/radioGroup2">
-
-        <RadioButton
-            android:layout_width="185dp"
-            android:layout_height="wrap_content"
-            android:text="@string/option_a"
-            android:id="@+id/radioButton9" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/option_b"
-            android:id="@+id/radioButton10"
-            android:layout_marginTop="10dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/option_c"
-            android:id="@+id/radioButton11"
-            android:layout_marginTop="10dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/option_d"
-            android:id="@+id/radioButton12"
             android:layout_marginTop="10dp" />
     </RadioGroup>
 
@@ -172,6 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/option_c"
+            android:textColor="@color/hint_foreground_material_light"
             android:id="@+id/radioButton15"
             android:layout_marginTop="10dp" />
 
@@ -218,6 +187,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/option_c"
+            android:textColor="@color/hint_foreground_material_light"
             android:id="@+id/radioButton19"
             android:layout_marginTop="10dp" />
 
@@ -251,6 +221,7 @@
             android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:text="@string/option_a"
+            android:textColor="@color/hint_foreground_material_light"
             android:id="@+id/radioButton21" />
 
         <RadioButton
@@ -278,7 +249,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView6"
+        android:id="@+id/menu_btn"
         android:src="@drawable/menu_btn"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/radioGroup5"
@@ -290,12 +261,34 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView5"
+        android:id="@+id/send_btn"
         android:src="@drawable/send_btn"
-        android:layout_alignTop="@+id/imageView6"
-        android:layout_toLeftOf="@+id/imageView6"
-        android:layout_toStartOf="@+id/imageView6"
+        android:layout_alignTop="@+id/menu_btn"
+        android:layout_toLeftOf="@+id/menu_btn"
+        android:layout_toStartOf="@+id/menu_btn"
         android:layout_marginRight="31dp"
         android:layout_marginEnd="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="submit"
+        android:id="@+id/submitText"
+        android:layout_below="@+id/send_btn"
+        android:layout_alignRight="@+id/send_btn"
+        android:layout_alignEnd="@+id/send_btn"
+        android:layout_marginRight="-3dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="return"
+        android:id="@+id/returnText"
+        android:layout_below="@+id/menu_btn"
+        android:layout_alignLeft="@+id/menu_btn"
+        android:layout_alignStart="@+id/menu_btn"
+        android:layout_marginLeft="-2.5dp" />
 
 </RelativeLayout>

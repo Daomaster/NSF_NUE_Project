@@ -16,20 +16,20 @@ public class Device_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device_activ);
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        Button btnone = (Button)findViewById(R.id.button);
-        Button btntwo = (Button)findViewById(R.id.button5);
-        Button btnthree = (Button)findViewById(R.id.button8);
+        Button btnSem = (Button)findViewById(R.id.sem_btn);
+        Button btnAfm = (Button)findViewById(R.id.afm_btn);
+        Button btnQuiz3 = (Button)findViewById(R.id.quiz3_btn);
 
 
-        btnone.setOnClickListener(new View.OnClickListener() {
+        btnSem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Device_activ.this,Gallery_activ.class);
@@ -39,7 +39,7 @@ public class Device_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btntwo.setOnClickListener(new View.OnClickListener() {
+        btnAfm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Device_activ.this,Gallery_activ.class);
@@ -49,7 +49,7 @@ public class Device_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnthree.setOnClickListener(new View.OnClickListener() {
+        btnQuiz3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Device_activ.this,Quiz_activ.class);

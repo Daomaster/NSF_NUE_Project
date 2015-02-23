@@ -16,21 +16,21 @@ public class App_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_activ);
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        Button btnone = (Button)findViewById(R.id.button);
-        Button btntwo = (Button)findViewById(R.id.button5);
-        Button btnthree = (Button)findViewById(R.id.button6);
-        Button btnfour = (Button)findViewById(R.id.button7);
-        Button btnfive = (Button)findViewById(R.id.button8);
+        Button btnAsk = (Button)findViewById(R.id.ask_btn);
+        Button btnEnrg = (Button)findViewById(R.id.enrg_gen_btn);
+        Button btnSelCln = (Button)findViewById(R.id.self_cln_btn);
+        Button btnDrugDel = (Button)findViewById(R.id.drug_del_btn);
+        Button btnQuiz = (Button)findViewById(R.id.quiz4_btn);
 
-        btnone.setOnClickListener(new View.OnClickListener() {
+        btnAsk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
@@ -40,7 +40,7 @@ public class App_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btntwo.setOnClickListener(new View.OnClickListener() {
+        btnEnrg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
@@ -50,7 +50,7 @@ public class App_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnthree.setOnClickListener(new View.OnClickListener() {
+        btnSelCln.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
@@ -60,7 +60,7 @@ public class App_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnfour.setOnClickListener(new View.OnClickListener() {
+        btnDrugDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
@@ -70,7 +70,7 @@ public class App_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnfive.setOnClickListener(new View.OnClickListener() {
+        btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Quiz_activ.class);

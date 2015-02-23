@@ -16,24 +16,24 @@ public class Scale_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale_activ);
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
+        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        Button btnone = (Button) findViewById(R.id.button9);
-        Button btntwo = (Button) findViewById(R.id.button5);
-        Button btnthree = (Button) findViewById(R.id.button);
-        Button btnfour = (Button) findViewById(R.id.button10);
-        Button btnfive = (Button) findViewById(R.id.button6);
-        Button btnsix = (Button) findViewById(R.id.button7);
-        Button btnseven = (Button) findViewById(R.id.button8);
+        Button btnFund = (Button) findViewById(R.id.fundamental_btn);
+        Button btnScalingGeo = (Button) findViewById(R.id.scalin_geo_btn);
+        Button btnOptical = (Button) findViewById(R.id.optcal_btn);
+        Button btnChemical = (Button) findViewById(R.id.chemical_btn);
+        Button btnSizeM = (Button) findViewById(R.id.size_matter_btn);
+        Button btnScalingRBD = (Button) findViewById(R.id.scaling_rbd_btn);
+        Button btnQuiz2= (Button) findViewById(R.id.quiz2_btn);
 
 
-        btnone.setOnClickListener(new View.OnClickListener() {
+        btnFund.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
@@ -43,7 +43,7 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btntwo.setOnClickListener(new View.OnClickListener() {
+        btnScalingGeo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
@@ -53,7 +53,7 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnthree.setOnClickListener(new View.OnClickListener() {
+        btnOptical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
@@ -63,7 +63,7 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnfour.setOnClickListener(new View.OnClickListener() {
+        btnChemical.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
@@ -73,7 +73,7 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnfive.setOnClickListener(new View.OnClickListener() {
+        btnSizeM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
@@ -83,7 +83,7 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnsix.setOnClickListener(new View.OnClickListener() {
+        btnScalingRBD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
@@ -93,7 +93,7 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        btnseven.setOnClickListener(new View.OnClickListener() {
+        btnQuiz2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this,Quiz_activ.class);
