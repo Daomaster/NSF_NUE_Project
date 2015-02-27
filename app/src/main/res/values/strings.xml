@@ -17,5 +17,7 @@
     <string name="option_c">Option C</string>
     <string name="option_d">Option D</string>
     <string name="title_activity_quiz_activ">Quiz_activ</string>
+    <string name="action_menu">Menu</string>
+    <string name="action_submit">Submit</string>
 
 </resources>

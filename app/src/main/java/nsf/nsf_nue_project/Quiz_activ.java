@@ -1,16 +1,13 @@
 package nsf.nsf_nue_project;
 
-import android.animation.AnimatorSet;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -29,18 +26,35 @@ public class Quiz_activ extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz01);
 
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_quiz_activ, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        //Creat the dialog
         final RadioGroup question1 = (RadioGroup) findViewById(R.id.radioGroup);
         final RadioGroup question2 = (RadioGroup) findViewById(R.id.radioGroup2);
         final RadioGroup question3 = (RadioGroup) findViewById(R.id.radioGroup3);
         final RadioGroup question4 = (RadioGroup) findViewById(R.id.radioGroup4);
         final RadioGroup question5 = (RadioGroup) findViewById(R.id.radioGroup5);
+        final RadioGroup question6 = (RadioGroup) findViewById(R.id.radioGroup6);
         final RadioButton right1 = (RadioButton) findViewById(R.id.radioButton);
         final RadioButton right2 = (RadioButton) findViewById(R.id.radioButton6);
         final RadioButton right3 = (RadioButton) findViewById(R.id.radioButton15);
         final RadioButton right4 = (RadioButton) findViewById(R.id.radioButton19);
-        final RadioButton right5 = (RadioButton) findViewById(R.id.radioButton21);
-
-        Log.i("QUESTIONS","ENTRING");
+        final RadioButton right5 = (RadioButton) findViewById(R.id.radioButton10);
+        final RadioButton right6 = (RadioButton) findViewById(R.id.radioButton22);
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         question1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
@@ -48,7 +62,6 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right1.getId() == checkedId) {
                     q1 = true;
-                    sumDynScore();
                     Log.i("1dynScr",dynScore+"");
                 }
             }
@@ -60,8 +73,7 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right2.getId() == checkedId) {
                     q2 = true;
-                    sumDynScore();
-                    Log.i("2dynScr",dynScore+"");
+                    Log.i("2dynScr", dynScore + "");
                 }
             }
         });
@@ -72,8 +84,7 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right3.getId() == checkedId) {
                     q3 = true;
-                    sumDynScore();
-                    Log.i("3dynScr",dynScore+"");
+                    Log.i("3dynScr", dynScore + "");
                 }
             }
         });
@@ -84,7 +95,6 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right4.getId() == checkedId) {
                     q4 = true;
-                    sumDynScore();
                     Log.i("4dynScr",dynScore+"");
                 }
             }
@@ -96,18 +106,23 @@ public class Quiz_activ extends ActionBarActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (right5.getId() == checkedId) {
                     q5 = true;
-                    sumDynScore();
                     Log.i("5dynScr",dynScore+"");
                 }
             }
         });
 
+        question6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
-
-        //Creat the dialog
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        Log.i("DYNAMIC SCORE",getDynScore()+"");
-        builder.setMessage("Your Score is "+getDynScore()+"/5")
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (right6.getId() == checkedId) {
+                    q5 = true;
+                    Log.i("5dynScr",dynScore+"");
+                }
+            }
+        });
+        Log.i("DYNAMIC SCORE",3+"");
+        builder.setMessage("Your Score is "+3+"/6")
                 .setTitle("Quiz Score")
                 .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
                     @Override
@@ -123,50 +138,25 @@ public class Quiz_activ extends ActionBarActivity {
                         question3.clearCheck();
                         question4.clearCheck();
                         question5.clearCheck();
-                        dynScore=0;
+                        question6.clearCheck();
                     }
                 });
+
         final AlertDialog dialog = builder.create();
-        ImageView submit = (ImageView) findViewById(R.id.send_btn);
-        ImageView returnbtn = (ImageView) findViewById(R.id.menu_btn);
-
-        returnbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        switch (item.getItemId()) {
+            case R.id.action_menu:
                 finish();
-            }
-        });
-
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                return true;
+            case R.id.action_submit:
                 dialog.show();
-            }
-        });
-
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
-    public int getDynScore() {
-        Log.i("ENTERING","GET METHOD");
-        if(dynScore==0)
-            return 0;
-        else if(dynScore==1)
-            return 1;
-        else if(dynScore==2)
-            return 2;
-        else if(dynScore==3)
-            return 3;
-        else if(dynScore==4)
-            return 4;
-        else
-            return 5;
-    }
-
-    public void sumDynScore() {
-        this.dynScore++;
-    }
-    }
+}
 
 
 
