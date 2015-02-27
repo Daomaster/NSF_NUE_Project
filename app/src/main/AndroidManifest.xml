@@ -22,25 +22,29 @@
             android:name=".Intro_activ"
             android:label="@string/title_activity_intro_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name=".Scale_activ"
             android:label="@string/title_activity_scale_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light">
         </activity>
         <activity
             android:name=".Device_activ"
             android:label="@string/title_activity_device_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light">
         </activity>
         <activity
             android:name=".App_activ"
             android:label="@string/title_activity_app_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light" >
         </activity>
         <activity
             android:name=".Gallery_activ"

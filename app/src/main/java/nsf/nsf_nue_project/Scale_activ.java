@@ -3,7 +3,9 @@ package nsf.nsf_nue_project;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +18,6 @@ public class Scale_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scale_activ);
-        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         Button btnFund = (Button) findViewById(R.id.fundamental_btn);
         Button btnScalingGeo = (Button) findViewById(R.id.scalin_geo_btn);
@@ -102,5 +97,25 @@ public class Scale_activ extends ActionBarActivity {
         });
 
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_act_bar, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_btn:
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
