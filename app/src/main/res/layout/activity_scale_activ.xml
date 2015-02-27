@@ -70,7 +70,7 @@
         android:id="@+id/quiz2_btn"
         android:textSize="20sp"
         android:layout_marginTop="35dp"
-        android:layout_marginLeft="176dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginStart="176dp"
         android:layout_below="@+id/size_matter_btn"
         android:layout_alignLeft="@+id/size_matter_btn"
