@@ -18,9 +18,9 @@ public class MainActivity extends ActionBarActivity {
         Button scale_btn = (Button)findViewById(R.id.scalin_law_btn);
         Button device_btn = (Button)findViewById(R.id.device_btn);
         Button application_btn = (Button)findViewById(R.id.application_btn);
-        ImageView facebook_img = (ImageView) findViewById(R.id.facebook_btn);
-        ImageView google_img = (ImageView) findViewById(R.id.gplus_btn);
-        ImageView website_img = (ImageView) findViewById(R.id.website_btn);
+       // ImageView facebook_img = (ImageView) findViewById(R.id.facebook_btn);
+       // ImageView google_img = (ImageView) findViewById(R.id.gplus_btn);
+       // ImageView website_img = (ImageView) findViewById(R.id.website_btn);
 
         intro_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +50,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+       /*
         facebook_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +76,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+        */
     }
 
 }

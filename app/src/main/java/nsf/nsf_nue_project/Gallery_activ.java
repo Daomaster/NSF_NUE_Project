@@ -5,6 +5,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
@@ -34,6 +37,8 @@ public class Gallery_activ extends ActionBarActivity {
     }
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +47,6 @@ public class Gallery_activ extends ActionBarActivity {
         Bundle bundle = intent.getExtras();
         start = bundle.getInt("page");
         index = start - 1;
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         // Setting up Image Switcher
         imageSwitcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
@@ -143,7 +141,27 @@ public class Gallery_activ extends ActionBarActivity {
         }
         return false;
     }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_act_bar, menu);
 
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_btn:
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }
+
+
+
