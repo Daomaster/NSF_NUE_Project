@@ -5,6 +5,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
@@ -22,6 +26,10 @@ public class Gallery_activ extends ActionBarActivity {
             R.drawable.page05,R.drawable.page06,R.drawable.page07,R.drawable.page08,R.drawable.page09,R.drawable.page010,R.drawable.page011,R.drawable.page012,R.drawable.page013,R.drawable.page014,
             R.drawable.page015,R.drawable.page016};
     private int index = 0;
+    private String[] titles = {"1.1 What is Nanotechnology?", "1.2 Macrosize & Microsize", "1.3 Why Nanoscale?", "1.4 History",
+            "2.1 Fundamental", "2.2 Scaling in Geometry", "2.3 Optical Properties Example", "2.4 Chemical Bonding Example",
+            "2.5 Size Matter Example", "2.6 Scaling in Rigid-Body Dynamics", "3.1 SEM ", "3.2 AFM ", "4.1 Ask Nature ", "4.2 Energy Storage and Storage",
+            "4.3 Self-cleaning Fabric", "4.4 Drug Delivery"};
     private ImageSwitcher imageSwitcher;
     float initialX;
 
@@ -42,13 +50,6 @@ public class Gallery_activ extends ActionBarActivity {
         Bundle bundle = intent.getExtras();
         start = bundle.getInt("page");
         index = start - 1;
-        ImageButton imageButton1 = (ImageButton) findViewById(R.id.imageButton);
-        imageButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         // Setting up Image Switcher
         imageSwitcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
@@ -63,7 +64,7 @@ public class Gallery_activ extends ActionBarActivity {
             }
         });
         imageSwitcher.setImageResource(imageId[index]);
-
+        setTitle(titles[index]);
     }
 
     @Override
@@ -128,6 +129,7 @@ public class Gallery_activ extends ActionBarActivity {
                     {
                     index++;
                     imageSwitcher.setImageResource(imageId[index]);
+                        setTitle(titles[index]);
                     }
                 }
                 else
@@ -136,6 +138,7 @@ public class Gallery_activ extends ActionBarActivity {
                     {
                         index--;
                         imageSwitcher.setImageResource(imageId[index]);
+                        setTitle(titles[index]);
                     }
 
                 }
@@ -145,5 +148,24 @@ public class Gallery_activ extends ActionBarActivity {
     }
 
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_act_bar, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_btn:
+                Intent intent = new Intent(this,MainActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }

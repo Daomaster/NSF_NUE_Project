@@ -8,14 +8,4 @@
         android:layout_height="fill_parent"
         android:id="@+id/imageSwitcher" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:layout_marginRight="41dp"
-        android:layout_marginEnd="41dp"
-        android:src="@drawable/home"
-        android:background="#FFFFFF"
-        android:layout_gravity="right|top"/>
-
 </FrameLayout>
