@@ -5,105 +5,63 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
     android:theme="@android:style/Theme.Holo.Light"
-    android:background="#ffffff">
+    android:background="@drawable/background">
 
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Introduction"
-        android:textSize="28sp"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:text="Chapter1: \nIntroduction"
+        android:textSize="35sp"
         android:id="@+id/intro_btn"
         android:textAllCaps="false"
         android:clickable="true"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
+        android:layout_marginTop="97dp"
+        android:typeface="normal" />
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Scaling Law"
-        android:textSize="28sp"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:text="Chapter2: \nScaling Law"
+        android:textSize="35sp"
         android:id="@+id/scalin_law_btn"
         android:textAllCaps="false"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/intro_btn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/intro_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Device"
-        android:textSize="28sp"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:text="Chapter3: \nDevice"
+        android:textSize="35sp"
         android:textAllCaps="false"
         android:id="@+id/device_btn"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/scalin_law_btn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/application_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:text="Application"
-        android:textSize="28sp"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:text="Chapter3: \nApplication"
+        android:textSize="35sp"
         android:textAllCaps="false"
         android:id="@+id/application_btn"
-        android:layout_below="@+id/device_btn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="45dp"
         android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
-
-    <ImageView
-        android:layout_width="800dp"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:id="@+id/imageView"
-        android:src="@drawable/front_page"
-        android:adjustViewBounds="false"
-        android:layout_toRightOf="@+id/intro_btn"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/facebook_btn"
-        android:src="@drawable/facebook"
-        android:layout_alignBottom="@+id/application_btn"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/gplus_btn"
-        android:src="@drawable/googleplus"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="124dp"
-        android:layout_alignTop="@+id/facebook_btn"
-        android:layout_toRightOf="@+id/facebook_btn"
-        android:layout_toEndOf="@+id/facebook_btn" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:id="@+id/website_btn"
-        android:src="@drawable/website"
-        android:layout_marginLeft="40dp"
-        android:layout_alignTop="@+id/gplus_btn"
-        android:layout_toRightOf="@+id/gplus_btn"
-        android:layout_toEndOf="@+id/gplus_btn"
-        android:layout_marginStart="123dp" />
+        android:textColor="#ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/scalin_law_btn"
+        android:layout_alignStart="@+id/scalin_law_btn"
+        android:layout_marginBottom="28dp" />
 
 </RelativeLayout>
