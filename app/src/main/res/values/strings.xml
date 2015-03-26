@@ -19,5 +19,27 @@
     <string name="title_activity_quiz_activ">Quiz_activ</string>
     <string name="action_menu">Menu</string>
     <string name="action_submit">Submit</string>
+    <string name="title_activity_quiz3_activ">Quiz3</string>
+
+    <!--QUESTION 1 - QUIZ 3-->
+    <string-array name="question1_q3">
+        <item >1 - Which microscopy technique is suitable for imaging ultra-small size (&#60; 10
+                   nm) nanoparticles?</item>
+        <item >A) Electron microscopy</item>
+        <item >B) Light Microscopy</item>
+        <item >C) X-Ray Microscopy</item>
+        <item >D) Fluorescence microscopy</item>
+        <item >E) All of the above Devices</item>
+    </string-array>
+
+    <!--QUESTION 2 - QUIZ 3-->
+    <string-array name="question2_q3">
+        <item >2 - Electron microscopy technique is generally used for characterizing</item>
+        <item >A) Nanomaterial surface topography (surface features)</item>
+        <item >B) Nanomaterial morphology (size and shape)</item>
+        <item >C) Structure (crystallography)</item>
+        <item >D) None of the above</item>
+        <item >E) All of A, B and C</item>
+    </string-array>
 
 </resources>

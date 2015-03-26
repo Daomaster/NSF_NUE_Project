@@ -46,7 +46,7 @@ public class Device_activ extends ActionBarActivity {
         btnQuiz3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Device_activ.this,Quiz_activ.class);
+                Intent intent = new Intent(Device_activ.this,Quiz3_activ.class);
                 startActivity(intent);
             }
         });
