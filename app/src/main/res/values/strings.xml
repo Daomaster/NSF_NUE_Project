@@ -12,12 +12,43 @@
     <string name="title_activity_app_activ">Application</string>
     <string name="title_activity_gallery_activ">Gallery_activ</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="option_a">Option A</string>
-    <string name="option_b">Option B</string>
-    <string name="option_c">Option C</string>
-    <string name="option_d">Option D</string>
     <string name="title_activity_quiz_activ">Quiz_activ</string>
     <string name="action_menu">Menu</string>
     <string name="action_submit">Submit</string>
+
+    <!--QUESTION 1 - QUIZ 1-->
+    <string-array name="question1">
+        <item >1 -The diameter of a DNA molecule is 2 __?</item>
+        <item >A)  Angstroms</item>
+        <item >B)  Micron</item>
+        <item >C)  Nanometers</item>
+        <item >D) Millimeters</item>
+    </string-array>
+
+    <!--QUESTION 2 - QUIZ 1-->
+    <string-array name="question2">
+        <item >2 - The prefix “nano” comes from a __</item>
+        <item >A)  French word meaning billion.</item>
+        <item >B)  Greek word meaning dwarf. </item>
+        <item >C)  Spanish word meaning particle.</item>
+        <item >D)  Latin word meaning invisible.</item>
+    </string-array>
+
+    <!--QUESTION 3 - QUIZ 1-->
+    <string-array name="question3">
+        <item >3 - Which element has been most actively studied for building blocks for
+                   nanotechnology  products in the form of tubes, sheets and balls.</item>
+        <item >A)  Hydrogen</item>
+        <item >B)  Carbon</item>
+        <item >C)  Tungsten</item>
+        <item >D)  Aluminum</item>
+    </string-array>
+
+    <!--QUESTION 4 - QUIZ 1-->
+    <string-array name="question4">
+        <item >4 - Egyptians invented nanotechnology.</item>
+        <item >True</item>
+        <item >False</item>
+    </string-array>
 
 </resources>

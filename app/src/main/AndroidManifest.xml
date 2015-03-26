@@ -58,7 +58,7 @@
             android:screenOrientation="landscape" >
         </activity>
         <activity
-            android:name=".Quiz_activ"
+            android:name=".Quiz1_activ"
             android:theme="@style/AppTheme"
             android:label="Quiz"
             android:launchMode="singleTask"
