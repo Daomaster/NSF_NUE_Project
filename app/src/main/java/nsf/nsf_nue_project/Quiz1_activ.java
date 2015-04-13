@@ -58,19 +58,18 @@ public class Quiz1_activ extends ActionBarActivity {
 
         switch (item.getItemId()) {
             case R.id.action_menu:
+                question--;
                 if(question<=0) {
                     finish();
                 } else {
-                    question--;
                     changeQuestion();
                 }
                 return true;
             case R.id.action_submit:
-                changeQuestion();
-
-                if(question!=3)
+                if(question!=4)
                     question++;
 
+                changeQuestion();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -79,15 +78,15 @@ public class Quiz1_activ extends ActionBarActivity {
 
     private void changeQuestion() {
 
-        if(question==1) {
+        if(question==2) {
             String questionArray2[] = getResources().getStringArray(R.array.question2);
 
             displayQuestions(questionArray2);
-        } else if (question==2) {
+        } else if (question==3) {
             String questionArray3[] = getResources().getStringArray(R.array.question3);
 
             displayQuestions(questionArray3);
-        } else if(question==3){
+        } else if(question==4){
             String questionArray4[] = getResources().getStringArray(R.array.question4);
 
             questionTxt.setText(questionArray4[0]);

@@ -53,7 +53,7 @@
     <Button
         android:layout_width="400dp"
         android:layout_height="150dp"
-        android:text="Chapter3: \nApplication"
+        android:text="Chapter4: \nApplication"
         android:textSize="35sp"
         android:textAllCaps="false"
         android:id="@+id/application_btn"
