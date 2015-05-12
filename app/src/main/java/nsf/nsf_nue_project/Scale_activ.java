@@ -91,7 +91,7 @@ public class Scale_activ extends ActionBarActivity {
         btnQuiz2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Scale_activ.this,Quiz_activ.class);
+                Intent intent = new Intent(Scale_activ.this, Quiz2_q1_activ.class);
                 startActivity(intent);
             }
         });

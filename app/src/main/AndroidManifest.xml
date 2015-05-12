@@ -74,6 +74,27 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
+            android:name=".Quiz2_q1_activ"
+            android:label="@string/title_activity_quiz3_activ"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".Quiz2_q2_activ"
+            android:label="@string/title_activity_quiz2_q2_activ"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".Quiz2_q3_activ"
+            android:label="@string/title_activity_quiz3_activ"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
             android:name=".Score"
             android:label="Score"
             android:launchMode="singleTask"

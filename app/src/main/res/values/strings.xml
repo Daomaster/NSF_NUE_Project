@@ -42,8 +42,39 @@
         <item >E) All of A, B and C</item>
     </string-array>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!--QUESTION 1 - QUIZ 2-->
+    <string-array name="question1_q2">
+        <item >1 - Which one of these forces dominate at the deep nanoscale level? (10
+               nanometers or less)</item>
+        <item >A) Inertia</item>
+        <item >B) Van der Waals</item>
+        <item >C) Structure (crystallography)</item>
+        <item >D) Gravity</item>
+        <item >E) Electromagnetism</item>
+    </string-array>
+
+    <!--QUESTION 3 - QUIZ 2-->
+    <string-array name="question3_q2">
+        <item >3 - Food consumption is proportional to body weight and heat loss is proportional to
+                surface area. If the height of an animal is reduced by 1/10, in order to keep up
+                the same body temperature, does  it need  more food per body weight or less? </item>
+        <item > More</item>
+        <item > Less</item>
+    </string-array>
+
+    <!--QUESTION 4 - QUIZ 2-->
+    <string-array name="question4_q2">
+        <item >4 - Among the following, which can be better utilized for movement when we reduce the
+                size below millimeter scale?</item>
+        <item >A) Buoyant force</item>
+        <item >B) Gravitational force</item>
+        <item >C) Inertial force</item>
+        <item >D) Capillary force</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_score">Score</string>
+    <string name="title_activity_quiz2_q2_activ">Quiz2_q2_activ</string>
 
 </resources>
