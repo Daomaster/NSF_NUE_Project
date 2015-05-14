@@ -15,6 +15,10 @@ import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 import android.view.MotionEvent;
 
+import nsf.nsf_nue_project.quiz1.Quiz1_q1_activ;
+import nsf.nsf_nue_project.quiz2.Quiz2_q1_activ;
+import nsf.nsf_nue_project.quiz3.Quiz3_q1_activ;
+
 
 public class Gallery_activ extends ActionBarActivity {
 
@@ -82,8 +86,19 @@ public class Gallery_activ extends ActionBarActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
+                    if(chapter==1) {
                         Intent intent = new Intent(Gallery_activ.this, Quiz1_q1_activ.class);
                         startActivity(intent);
+                    } else if(chapter==2){
+                        Intent intent = new Intent(Gallery_activ.this, Quiz2_q1_activ.class);
+                        startActivity(intent);
+                    } else if(chapter==3){
+                        Intent intent = new Intent(Gallery_activ.this, Quiz3_q1_activ.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(Gallery_activ.this, Quiz3_q1_activ.class);
+                        startActivity(intent);
+                    }
 
                     }
                 });
@@ -165,5 +180,4 @@ public class Gallery_activ extends ActionBarActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

@@ -1,14 +1,15 @@
-package nsf.nsf_nue_project;
+package nsf.nsf_nue_project.quiz2;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import nsf.nsf_nue_project.R;
+import nsf.nsf_nue_project.Score;
 
 public class Quiz2_q5_activ extends ActionBarActivity {
 

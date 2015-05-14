@@ -1,16 +1,18 @@
-package nsf.nsf_nue_project;
+package nsf.nsf_nue_project.quiz3;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import nsf.nsf_nue_project.R;
+import nsf.nsf_nue_project.Score;
 
-public class Quiz2_q3_activ extends ActionBarActivity {
+
+public class Quiz3_q2_activ extends ActionBarActivity {
 
     TextView questionTxt;
     RadioButton opA;
@@ -35,14 +37,14 @@ public class Quiz2_q3_activ extends ActionBarActivity {
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
 
-        String questionArray[] = getResources().getStringArray(R.array.question3_q2);
+        String questionArray[] = getResources().getStringArray(R.array.question2_q3);
 
         questionTxt.setText(questionArray[0]);
         opA.setText(questionArray[1]);
         opB.setText(questionArray[2]);
-        opC.setVisibility(RadioButton.GONE);
-        opD.setVisibility(RadioButton.GONE);
-        opE.setVisibility(RadioButton.GONE);
+        opC.setText(questionArray[3]);
+        opD.setText(questionArray[4]);
+        opE.setText(questionArray[5]);
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
@@ -50,23 +52,22 @@ public class Quiz2_q3_activ extends ActionBarActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent temp = new Intent(Quiz2_q3_activ.this, Quiz2_q4_activ.class);
-
-                if(opA.isChecked()) {
+                Intent temp = new Intent(Quiz3_q2_activ.this, Score.class);
+                if(opE.isChecked()) {
                     score++;
-                    temp.putExtra("score", score);
-                    Log.i("SCORE3", score + "");
+                    temp.putExtra("score", score + "/2");
                 }
                 else {
-                    temp.putExtra("score", 0 + score);
+                    temp.putExtra("score", score + "/2");
                 }
                 startActivity(temp);
             }
         });
+
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz2_q3_activ.this, Quiz2_q2_activ.class);
+                Intent intent = new Intent(Quiz3_q2_activ.this, Quiz3_q1_activ.class);
                 startActivity(intent);
             }
         });

@@ -1,23 +1,17 @@
-package nsf.nsf_nue_project;
+package nsf.nsf_nue_project.quiz2;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import nsf.nsf_nue_project.R;
 
-public class Quiz1_q1_activ extends ActionBarActivity {
+public class Quiz2_q4_activ extends ActionBarActivity {
 
     TextView questionTxt;
     RadioButton opA;
@@ -27,12 +21,12 @@ public class Quiz1_q1_activ extends ActionBarActivity {
     RadioButton opE;
     ImageView nextBtn;
     ImageView backBtn;
+    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz3_activ);
-
         questionTxt = (TextView)findViewById(R.id.question_text);
         opA = (RadioButton)findViewById(R.id.option_a);
         opB = (RadioButton)findViewById(R.id.option_b);
@@ -42,34 +36,40 @@ public class Quiz1_q1_activ extends ActionBarActivity {
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
 
-        String questionArray1[] = getResources().getStringArray(R.array.question1_q1);
+        String questionArray[] = getResources().getStringArray(R.array.question4_q2);
 
-        questionTxt.setText(questionArray1[0]);
-        opA.setText(questionArray1[1]);
-        opB.setText(questionArray1[2]);
-        opC.setText(questionArray1[3]);
-        opD.setText(questionArray1[4]);
+        questionTxt.setText(questionArray[0]);
+        opA.setText(questionArray[1]);
+        opB.setText(questionArray[2]);
+        opC.setText(questionArray[3]);
+        opD.setText(questionArray[4]);
         opE.setVisibility(RadioButton.GONE);
+
+        Intent intent = getIntent();
+        score = intent.getIntExtra("score", 0);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz1_q1_activ.this, Quiz1_q2_activ.class);
+                Intent temp = new Intent(Quiz2_q4_activ.this, Quiz2_q5_activ.class);
 
-                if(opC.isChecked()) {
-                    intent.putExtra("score", 1);
-                    Log.i("SCORE1",1+"");
+                if(opD.isChecked()) {
+                    score++;
+                    temp.putExtra("score", score);
+                    Log.i("SCORE4", score + "");
                 }
                 else {
-                    intent.putExtra("score", 0);
+                    temp.putExtra("score", 0 + score);
                 }
-                startActivity(intent);
+                startActivity(temp);
             }
         });
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(Quiz2_q4_activ.this, Quiz2_q3_activ.class);
+                startActivity(intent);
             }
         });
-    }}
+    }
+}

@@ -1,15 +1,18 @@
-package nsf.nsf_nue_project;
+package nsf.nsf_nue_project.quiz1;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class Quiz1_q3_activ extends ActionBarActivity {
+import nsf.nsf_nue_project.R;
+
+
+public class Quiz1_q1_activ extends ActionBarActivity {
 
     TextView questionTxt;
     RadioButton opA;
@@ -19,12 +22,12 @@ public class Quiz1_q3_activ extends ActionBarActivity {
     RadioButton opE;
     ImageView nextBtn;
     ImageView backBtn;
-    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz3_activ);
+
         questionTxt = (TextView)findViewById(R.id.question_text);
         opA = (RadioButton)findViewById(R.id.option_a);
         opB = (RadioButton)findViewById(R.id.option_b);
@@ -34,7 +37,7 @@ public class Quiz1_q3_activ extends ActionBarActivity {
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
 
-        String questionArray1[] = getResources().getStringArray(R.array.question3_q1);
+        String questionArray1[] = getResources().getStringArray(R.array.question1_q1);
 
         questionTxt.setText(questionArray1[0]);
         opA.setText(questionArray1[1]);
@@ -43,22 +46,17 @@ public class Quiz1_q3_activ extends ActionBarActivity {
         opD.setText(questionArray1[4]);
         opE.setVisibility(RadioButton.GONE);
 
-
-        Intent intent = getIntent();
-        score = intent.getIntExtra("score", 0);
-
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz1_q3_activ.this, Quiz1_q4_activ.class);
+                Intent intent = new Intent(Quiz1_q1_activ.this, Quiz1_q2_activ.class);
 
-                if(opB.isChecked()) {
-                    score++;
-                    intent.putExtra("score", score);
-                    Log.i("SCORE3",score+"");
+                if(opC.isChecked()) {
+                    intent.putExtra("score", 1);
+                    Log.i("SCORE1",1+"");
                 }
                 else {
-                    intent.putExtra("score", score);
+                    intent.putExtra("score", 0);
                 }
                 startActivity(intent);
             }
@@ -66,9 +64,7 @@ public class Quiz1_q3_activ extends ActionBarActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz1_q3_activ.this, Quiz1_q2_activ.class);
-                startActivity(intent);
+                finish();
             }
         });
-    }
-}
+    }}

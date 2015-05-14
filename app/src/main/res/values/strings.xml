@@ -12,10 +12,9 @@
     <string name="title_activity_app_activ">Application</string>
     <string name="title_activity_gallery_activ">Gallery_activ</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="title_activity_quiz_activ">Quiz_activ</string>
     <string name="action_menu">Menu</string>
     <string name="action_submit">Submit</string>
-    <string name="title_activity_quiz3_activ">Quiz3</string>
+    <string name="title_activity_quiz_activ">Quiz</string>
 
     <!--QUESTION 1 - QUIZ 3-->
     <string-array name="question1_q3">

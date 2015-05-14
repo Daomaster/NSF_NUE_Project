@@ -1,4 +1,4 @@
-package nsf.nsf_nue_project;
+package nsf.nsf_nue_project.quiz2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import nsf.nsf_nue_project.R;
 
 
 public class Quiz2_q1_activ extends ActionBarActivity {

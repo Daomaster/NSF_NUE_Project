@@ -1,8 +1,7 @@
-package nsf.nsf_nue_project;
+package nsf.nsf_nue_project.quiz2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
@@ -10,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import nsf.nsf_nue_project.R;
 
-public class Quiz1_q4_activ extends ActionBarActivity {
+
+public class Quiz2_q3_activ extends ActionBarActivity {
 
     TextView questionTxt;
     RadioButton opA;
@@ -36,7 +37,7 @@ public class Quiz1_q4_activ extends ActionBarActivity {
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
 
-        String questionArray[] = getResources().getStringArray(R.array.question4_q1);
+        String questionArray[] = getResources().getStringArray(R.array.question3_q2);
 
         questionTxt.setText(questionArray[0]);
         opA.setText(questionArray[1]);
@@ -51,23 +52,23 @@ public class Quiz1_q4_activ extends ActionBarActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent temp = new Intent(Quiz1_q4_activ.this, Score.class);
-                if(opB.isChecked()) {
+                Intent temp = new Intent(Quiz2_q3_activ.this, Quiz2_q4_activ.class);
+
+                if(opA.isChecked()) {
                     score++;
-                    temp.putExtra("score", score + "/4");
-                    Log.i("SCORE4", score + "");
+                    temp.putExtra("score", score);
+                    Log.i("SCORE3", score + "");
                 }
                 else {
-                    temp.putExtra("score", score + "/4");
+                    temp.putExtra("score", 0 + score);
                 }
                 startActivity(temp);
             }
         });
-
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz1_q4_activ.this, Quiz1_q3_activ.class);
+                Intent intent = new Intent(Quiz2_q3_activ.this, Quiz2_q2_activ.class);
                 startActivity(intent);
             }
         });

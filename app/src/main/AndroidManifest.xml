@@ -53,81 +53,81 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
-            android:name=".Quiz1_q1_activ"
+            android:name=".quiz1.Quiz1_q1_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz1_q2_activ"
+            android:name=".quiz1.Quiz1_q2_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz1_q3_activ"
+            android:name=".quiz1.Quiz1_q3_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz1_q4_activ"
+            android:name=".quiz1.Quiz1_q4_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz3_q1_activ"
-            android:label="@string/title_activity_quiz3_activ"
+            android:name=".quiz3.Quiz3_q1_activ"
+            android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz3_q2_activ"
-            android:label="@string/title_activity_quiz3_activ"
+            android:name=".quiz3.Quiz3_q2_activ"
+            android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz2_q1_activ"
-            android:label="@string/title_activity_quiz3_activ"
+            android:name=".quiz2.Quiz2_q1_activ"
+            android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz2_q2_activ"
+            android:name=".quiz2.Quiz2_q2_activ"
             android:label="@string/title_activity_quiz2_q2_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz2_q3_activ"
-            android:label="@string/title_activity_quiz3_activ"
+            android:name=".quiz2.Quiz2_q3_activ"
+            android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz2_q4_activ"
-            android:label="@string/title_activity_quiz3_activ"
+            android:name=".quiz2.Quiz2_q4_activ"
+            android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
-            android:name=".Quiz2_q5_activ"
-            android:label="@string/title_activity_quiz3_activ"
+            android:name=".quiz2.Quiz2_q5_activ"
+            android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".Score"

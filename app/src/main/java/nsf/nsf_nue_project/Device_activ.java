@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import nsf.nsf_nue_project.quiz3.Quiz3_q1_activ;
+
 
 public class Device_activ extends ActionBarActivity {
 
