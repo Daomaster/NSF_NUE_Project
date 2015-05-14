@@ -66,7 +66,7 @@ public class    Intro_activ extends ActionBarActivity {
         quiz_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intro_activ.this,Quiz1_activ.class);
+                Intent intent = new Intent(Intro_activ.this,Quiz1_q1_activ.class);
                 startActivity(intent);
             }
         });

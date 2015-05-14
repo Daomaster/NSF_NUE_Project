@@ -66,7 +66,7 @@ public class App_activ extends ActionBarActivity {
         btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(App_activ.this,Quiz1_activ.class);
+                Intent intent = new Intent(App_activ.this,Quiz1_q1_activ.class);
                 startActivity(intent);
             }
         });

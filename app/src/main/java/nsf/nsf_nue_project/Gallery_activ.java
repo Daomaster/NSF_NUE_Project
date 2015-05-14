@@ -82,7 +82,7 @@ public class Gallery_activ extends ActionBarActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        Intent intent = new Intent(Gallery_activ.this, Quiz1_activ.class);
+                        Intent intent = new Intent(Gallery_activ.this, Quiz1_q1_activ.class);
                         startActivity(intent);
 
                     }

@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context="nsf.nsf_nue_project.Quiz1_activ">
+    xmlns:tools="http://schemas.android.com/tools" tools:context="nsf.nsf_nue_project.Quiz1_q1_activ">
 
     <item
         android:id="@+id/action_menu"

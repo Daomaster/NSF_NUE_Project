@@ -75,7 +75,7 @@
     <string name="title_activity_quiz2_q5_activ">Quiz2_q5_activ</string>
 
     <!--QUESTION 1 - QUIZ 1-->
-    <string-array name="question1">
+    <string-array name="question1_q1">
         <item >1 -The diameter of a DNA molecule is 2 __?</item>
         <item >A)  Angstroms</item>
         <item >B)  Micron</item>
@@ -84,7 +84,7 @@
     </string-array>
 
     <!--QUESTION 2 - QUIZ 1-->
-    <string-array name="question2">
+    <string-array name="question2_q1">
         <item >2 - The prefix “nano” comes from a __</item>
         <item >A)  French word meaning billion.</item>
         <item >B)  Greek word meaning dwarf. </item>
@@ -93,7 +93,7 @@
     </string-array>
 
     <!--QUESTION 3 - QUIZ 1-->
-    <string-array name="question3">
+    <string-array name="question3_q1">
         <item >3 - Which element has been most actively studied for building blocks for
                    nanotechnology  products in the form of tubes, sheets and balls.</item>
         <item >A)  Hydrogen</item>
@@ -103,7 +103,7 @@
     </string-array>
 
     <!--QUESTION 4 - QUIZ 1-->
-    <string-array name="question4">
+    <string-array name="question4_q1">
         <item >4 - Egyptians invented nanotechnology.</item>
         <item >True</item>
         <item >False</item>
