@@ -1,10 +1,13 @@
 package nsf.nsf_nue_project.quiz2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -37,7 +40,6 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         //getting the the score accumulated
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
-
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
