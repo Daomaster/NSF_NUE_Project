@@ -16,9 +16,9 @@ public class Score extends ActionBarActivity {
         setContentView(R.layout.activity_score);
 
         Intent intent = getIntent();
-        int score = intent.getIntExtra("score", 0);
+        String score = intent.getStringExtra("score");
 
         TextView scoreTV = (TextView) findViewById(R.id.score_textview);
-        scoreTV.setText(score+"/2");
+        scoreTV.setText(score);
     }
 }

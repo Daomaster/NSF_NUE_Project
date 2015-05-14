@@ -95,6 +95,20 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
+            android:name=".Quiz2_q4_activ"
+            android:label="@string/title_activity_quiz3_activ"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".Quiz2_q5_activ"
+            android:label="@string/title_activity_quiz3_activ"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
             android:name=".Score"
             android:label="Score"
             android:launchMode="singleTask"

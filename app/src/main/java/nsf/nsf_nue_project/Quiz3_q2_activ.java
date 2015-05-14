@@ -51,10 +51,11 @@ public class Quiz3_q2_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent temp = new Intent(Quiz3_q2_activ.this, Score.class);
                 if(opE.isChecked()) {
-                    temp.putExtra("score", 1 + score);
+                    score++;
+                    temp.putExtra("score", score + "/2");
                 }
                 else {
-                    temp.putExtra("score", 0 + score);
+                    temp.putExtra("score", score + "/2");
                 }
                 startActivity(temp);
             }

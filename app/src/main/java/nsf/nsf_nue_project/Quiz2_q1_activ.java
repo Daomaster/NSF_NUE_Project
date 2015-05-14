@@ -3,6 +3,7 @@ package nsf.nsf_nue_project;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -50,6 +51,7 @@ public class Quiz2_q1_activ extends ActionBarActivity {
 
                 if(opB.isChecked()) {
                     intent.putExtra("score", 1);
+                    Log.i("SCORE1",1+"");
                 }
                 else {
                     intent.putExtra("score", 0);

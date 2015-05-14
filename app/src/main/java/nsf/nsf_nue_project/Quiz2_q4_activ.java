@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-
-public class Quiz2_q3_activ extends ActionBarActivity {
+public class Quiz2_q4_activ extends ActionBarActivity {
 
     TextView questionTxt;
     RadioButton opA;
@@ -35,13 +34,13 @@ public class Quiz2_q3_activ extends ActionBarActivity {
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
 
-        String questionArray[] = getResources().getStringArray(R.array.question3_q2);
+        String questionArray[] = getResources().getStringArray(R.array.question4_q2);
 
         questionTxt.setText(questionArray[0]);
         opA.setText(questionArray[1]);
         opB.setText(questionArray[2]);
-        opC.setVisibility(RadioButton.GONE);
-        opD.setVisibility(RadioButton.GONE);
+        opC.setText(questionArray[3]);
+        opD.setText(questionArray[4]);
         opE.setVisibility(RadioButton.GONE);
 
         Intent intent = getIntent();
@@ -50,12 +49,12 @@ public class Quiz2_q3_activ extends ActionBarActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent temp = new Intent(Quiz2_q3_activ.this, Quiz2_q4_activ.class);
+                Intent temp = new Intent(Quiz2_q4_activ.this, Quiz2_q5_activ.class);
 
-                if(opA.isChecked()) {
+                if(opD.isChecked()) {
                     score++;
                     temp.putExtra("score", score);
-                    Log.i("SCORE3", score + "");
+                    Log.i("SCORE4", score + "");
                 }
                 else {
                     temp.putExtra("score", 0 + score);
@@ -66,7 +65,7 @@ public class Quiz2_q3_activ extends ActionBarActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz2_q3_activ.this, Quiz2_q2_activ.class);
+                Intent intent = new Intent(Quiz2_q4_activ.this, Quiz2_q3_activ.class);
                 startActivity(intent);
             }
         });
