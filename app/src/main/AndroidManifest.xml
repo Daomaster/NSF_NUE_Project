@@ -67,6 +67,20 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
+            android:name=".Quiz1_q3_activ"
+            android:label="Quiz"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".Quiz1_q4_activ"
+            android:label="Quiz"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
             android:name=".Quiz3_q1_activ"
             android:label="@string/title_activity_quiz3_activ"
             android:launchMode="singleTask"

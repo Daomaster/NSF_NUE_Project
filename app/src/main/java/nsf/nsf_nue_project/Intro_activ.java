@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class    Intro_activ extends ActionBarActivity {
+public class Intro_activ extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

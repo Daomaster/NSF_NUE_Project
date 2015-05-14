@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-
-public class Quiz1_q2_activ extends ActionBarActivity {
+public class Quiz1_q3_activ extends ActionBarActivity {
 
     TextView questionTxt;
     RadioButton opA;
@@ -35,7 +34,7 @@ public class Quiz1_q2_activ extends ActionBarActivity {
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
 
-        String questionArray1[] = getResources().getStringArray(R.array.question2_q1);
+        String questionArray1[] = getResources().getStringArray(R.array.question3_q1);
 
         questionTxt.setText(questionArray1[0]);
         opA.setText(questionArray1[1]);
@@ -51,12 +50,12 @@ public class Quiz1_q2_activ extends ActionBarActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz1_q2_activ.this, Quiz1_q3_activ.class);
+                Intent intent = new Intent(Quiz1_q3_activ.this, Quiz1_q4_activ.class);
 
                 if(opB.isChecked()) {
                     score++;
                     intent.putExtra("score", score);
-                    Log.i("SCORE2", score+"");
+                    Log.i("SCORE3",score+"");
                 }
                 else {
                     intent.putExtra("score", score);
@@ -67,7 +66,7 @@ public class Quiz1_q2_activ extends ActionBarActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz1_q2_activ.this, Quiz1_q1_activ.class);
+                Intent intent = new Intent(Quiz1_q3_activ.this, Quiz1_q2_activ.class);
                 startActivity(intent);
             }
         });

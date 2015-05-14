@@ -56,7 +56,7 @@ public class Quiz1_q1_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Quiz1_q1_activ.this, Quiz1_q2_activ.class);
 
-                if(opB.isChecked()) {
+                if(opC.isChecked()) {
                     intent.putExtra("score", 1);
                     Log.i("SCORE1",1+"");
                 }
