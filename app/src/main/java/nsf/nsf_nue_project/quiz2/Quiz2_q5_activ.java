@@ -1,6 +1,8 @@
 package nsf.nsf_nue_project.quiz2;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ public class Quiz2_q5_activ extends ActionBarActivity {
     double valueOpA = 0;
     double valueOpB = 0;
     double valueOpC = 0;
+    AlertDialog.Builder builder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         opC = (EditText) findViewById(R.id.editText3);
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
+        builder = new AlertDialog.Builder(this);
+
 
         //getting the the score accumulated
         Intent intent = getIntent();
@@ -58,15 +63,29 @@ public class Quiz2_q5_activ extends ActionBarActivity {
                 }
 
                 //verificating the question and sending the string that will be printed on the Score Activity
-                if(valueOpA == 2 && valueOpB == 1 && valueOpC == 3){
+                if(verficateValue(valueOpA, opA) == false || verficateValue(valueOpB, opB) == false ||
+                        verficateValue(valueOpC, opC) == false){
+
+                    builder.setMessage("Please, insert numbers between 1 and 3.")
+                            .setTitle("Invalid Number")
+                            .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+
+                    builder.show();
+                } else if(valueOpA == 2 && valueOpB == 1 && valueOpC == 3){
                     score++;
                     temp.putExtra("score", score + "/5");
-                    Log.i("SCORE5", score+"");
+                    Log.i("SCORE5", score + "");
+                    startActivity(temp);
+
                 } else {
                     temp.putExtra("score", score + "/5");
+                    startActivity(temp);
                 }
 
-                startActivity(temp);
             }
         });
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -76,5 +95,13 @@ public class Quiz2_q5_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    boolean verficateValue(double value, EditText op){
+        if(value < 1 || value >3){
+            op.setText("");
+            return false;
+        }
+        return true;
     }
 }

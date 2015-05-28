@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="nsf.nsf_nue_project.Score">
+    tools:context="nsf.nsf_nue_project.Score"
+    android:background="@drawable/scorebackground">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,10 +13,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Score"
         android:id="@+id/score_tittle"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:textSize="150sp"
-        android:textColor="#ff82a9ff" />
+        android:textColor="#fffffbf7"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,9 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="1/2"
         android:id="@+id/score_textview"
-        android:textSize="100sp"
-        android:textColor="#ff495bff"
-        android:layout_below="@+id/score_tittle"
+        android:textSize="115sp"
+        android:textColor="#fff2f3ff"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="97dp" />
+        android:layout_marginBottom="68dp" />
 </RelativeLayout>
