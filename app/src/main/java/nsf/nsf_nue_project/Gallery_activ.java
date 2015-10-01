@@ -3,8 +3,12 @@ package nsf.nsf_nue_project;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PixelFormat;
+import android.media.session.MediaController;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,6 +16,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.VideoView;
 import android.widget.ViewSwitcher;
 import android.view.MotionEvent;
 
@@ -23,10 +28,10 @@ import nsf.nsf_nue_project.quiz3.Quiz3_q1_activ;
 public class Gallery_activ extends ActionBarActivity {
 
     int start;
-    private int chapter =1;
-    private int[] imageId = new int[] {R.drawable.page01, R.drawable.page02,R.drawable.page03,R.drawable.page04,
-            R.drawable.page05,R.drawable.page06,R.drawable.page07,R.drawable.page08,R.drawable.page09,R.drawable.page010,R.drawable.page011,R.drawable.page012,R.drawable.page013,R.drawable.page014,
-            R.drawable.page015,R.drawable.page016};
+    private int chapter = 1;
+    private int[] imageId = new int[]{R.drawable.page01, R.drawable.page02, R.drawable.page03, R.drawable.page04,
+            R.drawable.page05, R.drawable.page06, R.drawable.page07, R.drawable.page08, R.drawable.page09, R.drawable.page010, R.drawable.page011, R.drawable.page012, R.drawable.page013, R.drawable.page014,
+            R.drawable.page015, R.drawable.page016};
     private int index = 0;
     private String[] titles = {"1.1 What is Nanotechnology?", "1.2 Macrosize & Microsize", "1.3 Why Nanoscale?", "1.4 History",
             "2.1 Fundamental", "2.2 Scaling in Geometry", "2.3 Optical Properties Example", "2.4 Chemical Bonding Example",
@@ -34,12 +39,13 @@ public class Gallery_activ extends ActionBarActivity {
             "4.3 Self-cleaning Fabric", "4.4 Drug Delivery"};
     private ImageSwitcher imageSwitcher;
     float initialX;
+    VideoView videoView;
 
-    int CheckChap(int index){
-        if (0 < index && index <= 3)return 1;
-        if (4 < index && index <= 9)return 2;
-        if (9 < index && index <= 11)return 3;
-        if (11 < index && index <= 15)return 4;
+    int CheckChap(int index) {
+        if (0 < index && index <= 3) return 1;
+        if (4 < index && index <= 9) return 2;
+        if (9 < index && index <= 11) return 3;
+        if (11 < index && index <= 15) return 4;
         else return 5;
     }
 
@@ -54,8 +60,8 @@ public class Gallery_activ extends ActionBarActivity {
         index = start - 1;
 
         // Setting up Image Switcher
-        imageSwitcher = (ImageSwitcher)findViewById(R.id.imageSwitcher);
-        imageSwitcher.setInAnimation(AnimationUtils.loadAnimation(this,android.R.anim.fade_in));
+        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
+        imageSwitcher.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
         imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
         imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
@@ -66,6 +72,15 @@ public class Gallery_activ extends ActionBarActivity {
             }
         });
         imageSwitcher.setImageResource(imageId[index]);
+        //showing video just for the  first page on chapter 1
+        //setting video
+        videoView = (VideoView) findViewById(R.id.videoView);
+        Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                + R.raw.video);
+        videoView.setVideoURI(video);
+        videoView.start();
+
+        Log.i("INDEX", String.valueOf(index));
         setTitle(titles[index]);
     }
 
@@ -74,31 +89,31 @@ public class Gallery_activ extends ActionBarActivity {
         //Build Analog
         final AlertDialog.Builder Chapterbuilder = new AlertDialog.Builder(this);
         chapter = CheckChap(index);
-                Chapterbuilder.setMessage("You finished Chapter" + chapter + "!" + "\n\nWould like to go to Quiz" + chapter + "？");
-                            Chapterbuilder.setTitle("Congratulations")
-                            .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
+        Chapterbuilder.setMessage("You finished Chapter" + chapter + "!" + "\n\nWould like to go to Quiz" + chapter + "？");
+        Chapterbuilder.setTitle("Congratulations")
+                .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                                }
-                            })
+                    }
+                })
                 .setNegativeButton("Quiz", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                    if(chapter==1) {
-                        Intent intent = new Intent(Gallery_activ.this, Quiz1_q1_activ.class);
-                        startActivity(intent);
-                    } else if(chapter==2){
-                        Intent intent = new Intent(Gallery_activ.this, Quiz2_q1_activ.class);
-                        startActivity(intent);
-                    } else if(chapter==3){
-                        Intent intent = new Intent(Gallery_activ.this, Quiz3_q1_activ.class);
-                        startActivity(intent);
-                    } else {
-                        Intent intent = new Intent(Gallery_activ.this, Quiz3_q1_activ.class);
-                        startActivity(intent);
-                    }
+                        if (chapter == 1) {
+                            Intent intent = new Intent(Gallery_activ.this, Quiz1_q1_activ.class);
+                            startActivity(intent);
+                        } else if (chapter == 2) {
+                            Intent intent = new Intent(Gallery_activ.this, Quiz2_q1_activ.class);
+                            startActivity(intent);
+                        } else if (chapter == 3) {
+                            Intent intent = new Intent(Gallery_activ.this, Quiz3_q1_activ.class);
+                            startActivity(intent);
+                        } else {
+                            Intent intent = new Intent(Gallery_activ.this, Quiz3_q1_activ.class);
+                            startActivity(intent);
+                        }
 
                     }
                 });
@@ -125,35 +140,27 @@ public class Gallery_activ extends ActionBarActivity {
                 break;
             case MotionEvent.ACTION_UP:
                 float finalX = event.getX();
-                if (initialX > finalX)
-                {
-                    if(index == 3 || index == 9 || index== 11)
-                    {
+                Log.i("INDEX", String.valueOf(index));
+                if (initialX > finalX) {
+                    if (index == 3 || index == 9 || index == 11) {
                         chapter = CheckChap(index);
                         final AlertDialog dialog = Chapterbuilder.create();
                         dialog.show();
                     }
-                    if (index == 15)
-                    {
+                    if (index == 15) {
                         final AlertDialog dialog = Endbuilder.create();
                         dialog.show();
-                    }
-                    else
-                    {
-                    index++;
-                    imageSwitcher.setImageResource(imageId[index]);
-                        setTitle(titles[index]);
-                    }
-                }
-                else
-                {
-                    if(index > 0)
-                    {
-                        index--;
+                    } else {
+                        index++;
                         imageSwitcher.setImageResource(imageId[index]);
                         setTitle(titles[index]);
+                        videoView.setVisibility(VideoView.GONE);
                     }
-
+                } else if (index > 0) {
+                    index--;
+                    imageSwitcher.setImageResource(imageId[index]);
+                    setTitle(titles[index]);
+                    videoView.setVisibility(VideoView.GONE);
                 }
                 break;
         }
@@ -173,7 +180,7 @@ public class Gallery_activ extends ActionBarActivity {
         // Handle presses on the action bar items
         switch (item.getItemId()) {
             case R.id.action_btn:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 return true;
             default:
