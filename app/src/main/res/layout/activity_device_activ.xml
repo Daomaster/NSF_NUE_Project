@@ -7,7 +7,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="SEM"
+        android:text="3.1 SEM"
         android:id="@+id/sem_btn"
         android:layout_marginTop="37dp"
         android:padding="20dp"
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="AFM"
+        android:text="3.2 AFM"
         android:id="@+id/afm_btn"
         android:layout_marginRight="52dp"
         android:textSize="20dp"
