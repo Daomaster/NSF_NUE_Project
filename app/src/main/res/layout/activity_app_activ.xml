@@ -7,7 +7,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Ask Nature"
+        android:text="4.1 Ask Nature"
         android:id="@+id/ask_btn"
         android:textAllCaps="false"
         android:layout_marginTop="37dp"
@@ -23,7 +23,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Energy Generation &amp; Storage"
+        android:text="4.2 Energy Storage and Storage"
         android:textAllCaps="false"
         android:id="@+id/enrg_gen_btn"
         android:layout_marginRight="52dp"
@@ -38,7 +38,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Self-Cleaning Fabric &amp; Cosmetics "
+        android:text="4.3 Self-cleaning Fabric"
         android:textAllCaps="false"
         android:id="@+id/self_cln_btn"
         android:layout_marginTop="40dp"
@@ -52,7 +52,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Drug Delivery"
+        android:text="4.4 Drug Delivery"
         android:textAllCaps="false"
         android:id="@+id/drug_del_btn"
         android:textSize="20sp"
