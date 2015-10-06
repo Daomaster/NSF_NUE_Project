@@ -6,7 +6,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="What is Nanotechnology"
+        android:text="1.1 What is Nanotechnology?"
         android:textAllCaps="false"
         android:id="@+id/nanotech_btn"
         android:layout_marginTop="37dp"
@@ -22,7 +22,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Macrosize &amp; Microsize"
+        android:text="1.2 Macrosize &amp; Microsize"
         android:textAllCaps="false"
         android:id="@+id/macro_micro_btn"
         android:layout_marginRight="52dp"
@@ -37,7 +37,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Why Nanoscale"
+        android:text="1.3 Why Nanoscale?"
         android:textAllCaps="false"
         android:id="@+id/nanoscale_btn"
         android:layout_marginTop="40dp"
@@ -51,7 +51,7 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="History"
+        android:text="1.4 History"
         android:textAllCaps="false"
         android:id="@+id/history_btn"
         android:layout_below="@+id/macro_micro_btn"
