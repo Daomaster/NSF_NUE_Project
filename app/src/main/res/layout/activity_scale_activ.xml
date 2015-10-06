@@ -5,99 +5,69 @@
     android:background="#ffffff">
 
     <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:text="Optical Property Example"
-        android:textAllCaps="false"
-        android:id="@+id/optcal_btn"
-        android:padding="20dp"
-        android:textSize="20sp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/scalin_geo_btn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp" />
-
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:textAllCaps="false"
-        android:text="Scaling in Geometry"
-        android:textSize="20sp"
-        android:id="@+id/scalin_geo_btn"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/optcal_btn"
-        android:layout_alignStart="@+id/optcal_btn"
-        android:layout_marginTop="37dp" />
-
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:textAllCaps="false"
-        android:text="Size Matter Example"
-        android:textSize="20sp"
-        android:id="@+id/size_matter_btn"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/optcal_btn"
-        android:layout_alignLeft="@+id/optcal_btn"
-        android:layout_alignStart="@+id/optcal_btn"
-        android:layout_marginTop="30dp" />
-
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:textAllCaps="false"
-        android:text="Scaling in Rigid Body Dynamic"
-        android:textSize="20sp"
-        android:id="@+id/scaling_rbd_btn"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/chemical_btn"
-        android:layout_alignLeft="@+id/chemical_btn"
-        android:layout_alignStart="@+id/chemical_btn"
-        android:layout_marginTop="30dp" />
-
-    <Button
         android:layout_width="450dp"
         android:layout_height="80dp"
         android:text="Quiz 2"
         android:id="@+id/quiz2_btn"
         android:textSize="20sp"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginStart="176dp"
-        android:layout_below="@+id/size_matter_btn"
-        android:layout_alignLeft="@+id/size_matter_btn"
-        android:layout_alignStart="@+id/size_matter_btn"
         android:background="@drawable/quizbutton"
-        android:textColor="#1e6cd2" />
+        android:textColor="#1e6cd2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp" />
 
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Fundamental"
+        android:text="2.1 Fundamental"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:id="@+id/fundamental_btn"
         android:padding="20dp"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_above="@+id/optcal_btn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="52dp"
-        android:layout_marginEnd="52dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:text="Chemical Bonding Example"
+        android:text="2.2 Scaling in Geometry"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/scalin_geo_btn"
+        android:padding="20dp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_marginRight="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_alignTop="@+id/fundamental_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="2.3 Optical Property Example"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/optcal_btn"
+        android:padding="20dp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/fundamental_btn"
+        android:layout_alignLeft="@+id/fundamental_btn"
+        android:layout_alignStart="@+id/fundamental_btn"
+        android:layout_marginTop="25dp" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="2.4 Chemical Bonding Example"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:id="@+id/chemical_btn"
@@ -105,6 +75,36 @@
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
         android:layout_alignTop="@+id/optcal_btn"
-        android:layout_alignLeft="@+id/fundamental_btn"
-        android:layout_alignStart="@+id/fundamental_btn" />
+        android:layout_alignLeft="@+id/scalin_geo_btn"
+        android:layout_alignStart="@+id/scalin_geo_btn" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="2.5 Size Matter Example"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/size_matter_btn"
+        android:padding="20dp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/optcal_btn"
+        android:layout_alignLeft="@+id/optcal_btn"
+        android:layout_alignStart="@+id/optcal_btn"
+        android:layout_marginTop="25dp" />
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="2.6 Rigid-Body Dynamics"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/scaling_rbd_btn"
+        android:padding="20dp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignBottom="@+id/size_matter_btn"
+        android:layout_alignLeft="@+id/chemical_btn"
+        android:layout_alignStart="@+id/chemical_btn" />
+
 </RelativeLayout>
