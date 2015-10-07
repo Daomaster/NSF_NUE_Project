@@ -6,10 +6,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_chapter_list">Sections</string>
     <string name="title_chapter_detail">Chapter Detail</string>
-    <string name="title_activity_intro_activ">Introduction of Neuroscience</string>
-    <string name="title_activity_scale_activ">Scaling Law</string>
-    <string name="title_activity_device_activ">Device</string>
-    <string name="title_activity_app_activ">Application</string>
+    <string name="title_activity_intro_activ">Chapter 1: Introduction of Neuroscience</string>
+    <string name="title_activity_scale_activ">Chapter 2: Scaling Law</string>
+    <string name="title_activity_device_activ">Chapter 3: Device</string>
+    <string name="title_activity_app_activ">Chapter 4: Application</string>
     <string name="title_activity_gallery_activ">Gallery_activ</string>
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="action_menu">Menu</string>
