@@ -1,17 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/page04">
 
 
     <ImageSwitcher
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageSwitcher" />
+        android:id="@+id/imageSwitcher" >
+
+    </ImageSwitcher>
 
     <VideoView
         android:layout_width="382dp"
         android:layout_height="match_parent"
         android:id="@+id/videoView"
-        android:layout_gravity="right|center_vertical" />
+        android:layout_gravity="right|center_vertical"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="186dp"
+        android:layout_height="139dp"
+        android:id="@+id/link_egypt"
+        android:background="@drawable/invisible"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="110dp" />
+
+    <ImageView
+        android:layout_width="155dp"
+        android:layout_height="116dp"
+        android:id="@+id/link_first_tem"
+        android:background="@drawable/invisible"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="118dp" />
+
+    <ImageView
+        android:layout_width="169dp"
+        android:layout_height="126dp"
+        android:id="@+id/link_richard"
+        android:background="@drawable/invisible"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="328dp" />
+
+    <ImageView
+        android:layout_width="181dp"
+        android:layout_height="135dp"
+        android:id="@+id/link_eric"
+        android:background="@drawable/invisible"
+        android:layout_marginTop="115dp"
+        android:layout_marginLeft="460dp" />
+
+    <ImageView
+        android:layout_width="153dp"
+        android:layout_height="114dp"
+        android:id="@+id/link_buckyball"
+        android:background="@drawable/invisible"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="518dp" />
+
+    <ImageView
+        android:layout_width="153dp"
+        android:layout_height="114dp"
+        android:id="@+id/link_graphene"
+        android:background="@drawable/invisible"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="618dp" />
+
+    <ImageView
+        android:layout_width="198dp"
+        android:layout_height="149dp"
+        android:id="@+id/link_solar_cell"
+        android:layout_gravity="right|top"
+        android:background="@drawable/invisible"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp" />
+
+    <ImageView
+        android:layout_width="169dp"
+        android:layout_height="125dp"
+        android:id="@+id/link_hair_dye"
+        android:background="@drawable/invisible"
+        android:layout_marginLeft="25dp"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="105dp" />
+
+    <ImageView
+        android:layout_width="171dp"
+        android:layout_height="126dp"
+        android:id="@+id/link_first_sem"
+        android:background="@drawable/invisible"
+        android:layout_gravity="left|bottom"
+        android:layout_marginBottom="125dp"
+        android:layout_marginLeft="170dp" />
+
+    <ImageView
+        android:layout_width="158dp"
+        android:layout_height="117dp"
+        android:id="@+id/link_term_nano"
+        android:background="@drawable/invisible"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="-125dp" />
+
+    <ImageView
+        android:layout_width="158dp"
+        android:layout_height="117dp"
+        android:id="@+id/link_first_stm"
+        android:background="@drawable/invisible"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="15dp" />
+
+    <ImageView
+        android:layout_width="166dp"
+        android:layout_height="124dp"
+        android:id="@+id/link_first_afm"
+        android:background="@drawable/invisible"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="125dp"
+        android:layout_marginRight="-140dp" />
+
+    <ImageView
+        android:layout_width="191dp"
+        android:layout_height="142dp"
+        android:id="@+id/link_wear_eletro"
+        android:background="@drawable/invisible"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="155dp"
+        android:layout_marginRight="10dp" />
+
+    <ImageView
+        android:layout_width="153dp"
+        android:layout_height="114dp"
+        android:id="@+id/link_cnt"
+        android:background="@drawable/invisible"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="140dp"
+        android:layout_marginRight="200dp" />
 
 </FrameLayout>

@@ -8,6 +8,8 @@ import android.media.session.MediaController;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.VideoView;
 import android.widget.ViewSwitcher;
 import android.view.MotionEvent;
@@ -72,16 +75,164 @@ public class Gallery_activ extends ActionBarActivity {
             }
         });
         imageSwitcher.setImageResource(imageId[index]);
-        //showing video just for the  first page on chapter 1
-        //setting video
-        videoView = (VideoView) findViewById(R.id.videoView);
-        Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                + R.raw.video);
-        videoView.setVideoURI(video);
-        videoView.start();
 
-        Log.i("INDEX", String.valueOf(index));
         setTitle(titles[index]);
+        setVideo(index);
+
+        ImageView link_egypt = (ImageView)findViewById(R.id.link_egypt);
+        link_egypt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/History_of_glass"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView firstTem = (ImageView)findViewById(R.id.link_first_tem);
+        firstTem.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Transmission_electron_microscopy#Initial_development"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkRichard = (ImageView)findViewById(R.id.link_richard);
+        linkRichard.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Richard_Feynman"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkEric = (ImageView)findViewById(R.id.link_eric);
+        linkEric.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://metamodern.com/about-the-author/"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkBuckyball = (ImageView)findViewById(R.id.link_buckyball);
+        linkBuckyball.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Fullerene"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkGraphene = (ImageView)findViewById(R.id.link_graphene);
+        linkGraphene.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Graphene"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkSolarCell = (ImageView)findViewById(R.id.link_solar_cell);
+        linkSolarCell.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://science.howstuffworks.com/environmental/energy/solar-cell.htm"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkHairDye = (ImageView)findViewById(R.id.link_hair_dye);
+        linkHairDye.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://ancientstandard.com/2007/09/16/the-ancient-greeks-romans-used-nanotechnology-%E2%80%A6to-dye-their-hair-ca-500-bc-%E2%80%93-100-ad/"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkFirstSem = (ImageView)findViewById(R.id.link_first_sem);
+        linkFirstSem.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Scanning_electron_microscope#History"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkTermNano = (ImageView)findViewById(R.id.link_term_nano);
+        linkTermNano.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://dictionary.reference.com/browse/nanotechnology"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkFirstStm = (ImageView)findViewById(R.id.link_first_stm);
+        linkFirstStm.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/File:First_STM.jpg"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkFirstAfm = (ImageView)findViewById(R.id.link_first_afm);
+        linkFirstAfm.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http://hansmalab.physics.ucsb.edu/afmback.html"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkWearEletro = (ImageView)findViewById(R.id.link_wear_eletro);
+        linkWearEletro.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Wearable_technology"));
+                startActivity(intent);
+            }
+        });
+
+        ImageView linkCnt = (ImageView)findViewById(R.id.link_cnt);
+        linkCnt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("https://en.wikipedia.org/wiki/Carbon_nanotube"));
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -140,7 +291,6 @@ public class Gallery_activ extends ActionBarActivity {
                 break;
             case MotionEvent.ACTION_UP:
                 float finalX = event.getX();
-                Log.i("INDEX", String.valueOf(index));
                 if (initialX > finalX) {
                     if (index == 3 || index == 9 || index == 11) {
                         chapter = CheckChap(index);
@@ -154,17 +304,31 @@ public class Gallery_activ extends ActionBarActivity {
                         index++;
                         imageSwitcher.setImageResource(imageId[index]);
                         setTitle(titles[index]);
-                        videoView.setVisibility(VideoView.GONE);
                     }
                 } else if (index > 0) {
                     index--;
                     imageSwitcher.setImageResource(imageId[index]);
                     setTitle(titles[index]);
-                    videoView.setVisibility(VideoView.GONE);
                 }
+
+                setVideo(index);
                 break;
         }
         return false;
+    }
+
+    private void setVideo(int page) {
+        videoView = (VideoView) findViewById(R.id.videoView);
+
+        if(page == 0) {
+            videoView.setVisibility(VideoView.VISIBLE);
+            Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                    + R.raw.video);
+            videoView.setVideoURI(video);
+            videoView.start();
+        } else {
+            videoView.setVisibility(VideoView.GONE);
+        }
     }
 
 
