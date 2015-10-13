@@ -66,7 +66,7 @@ public class Gallery_activ extends ActionBarActivity {
         setImageSwitcher();
 
         setTitle(titles[index]);
-        setVideo(index);
+        setVideo(titles[index]);
         setLinks(titles[index]);
     }
 
@@ -122,7 +122,7 @@ public class Gallery_activ extends ActionBarActivity {
                     setLinks(titles[index]);
                 }
 
-                setVideo(index);
+                setVideo(titles[index]);
                 break;
         }
         return false;
@@ -216,10 +216,10 @@ public class Gallery_activ extends ActionBarActivity {
         imageSwitcher.setImageResource(imageId[index]);
     }
 
-    private void setVideo(int page) {
+    private void setVideo(String chapter) {
         videoView = (VideoView) findViewById(R.id.videoView);
 
-        if(page == 0) {
+        if(chapter.equalsIgnoreCase("1.1 What is Nanotechnology?")) {
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
                     + R.raw.video);

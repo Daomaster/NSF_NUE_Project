@@ -10,58 +10,80 @@
 
     <Button
         android:layout_width="400dp"
-        android:layout_height="150dp"
+        android:layout_height="85dp"
         android:text="Chapter1: \nIntroduction"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:id="@+id/intro_btn"
         android:textAllCaps="false"
         android:clickable="true"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
+        android:typeface="normal"
+        android:layout_marginTop="78dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="97dp"
-        android:typeface="normal" />
+        android:layout_marginStart="618dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0dp" />
 
     <Button
         android:layout_width="400dp"
-        android:layout_height="150dp"
+        android:layout_height="85dp"
         android:text="Chapter2: \nScaling Law"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:id="@+id/scalin_law_btn"
         android:textAllCaps="false"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_alignTop="@+id/intro_btn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/intro_btn"
+        android:layout_alignLeft="@+id/intro_btn"
+        android:layout_alignStart="@+id/intro_btn"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true" />
 
     <Button
         android:layout_width="400dp"
-        android:layout_height="150dp"
+        android:layout_height="85dp"
         android:text="Chapter3: \nDevice"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:textAllCaps="false"
         android:id="@+id/device_btn"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_alignTop="@+id/application_btn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignLeft="@+id/scalin_law_btn"
+        android:layout_alignStart="@+id/scalin_law_btn"
+        android:layout_below="@+id/scalin_law_btn"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true" />
 
     <Button
         android:layout_width="400dp"
-        android:layout_height="150dp"
+        android:layout_height="85dp"
         android:text="Chapter4: \nApplication"
-        android:textSize="35sp"
+        android:textSize="25sp"
         android:textAllCaps="false"
         android:id="@+id/application_btn"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/scalin_law_btn"
-        android:layout_alignStart="@+id/scalin_law_btn"
-        android:layout_marginBottom="28dp" />
+        android:layout_below="@+id/device_btn"
+        android:layout_alignLeft="@+id/device_btn"
+        android:layout_alignStart="@+id/device_btn"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/front_page"
+        android:layout_toLeftOf="@+id/scalin_law_btn"
+        android:layout_toStartOf="@+id/scalin_law_btn"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginTop="65dp" />
 
 </RelativeLayout>
