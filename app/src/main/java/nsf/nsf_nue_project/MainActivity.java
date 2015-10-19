@@ -22,7 +22,9 @@ public class MainActivity extends ActionBarActivity {
 
         if (config.smallestScreenWidthDp >= 600) {
             setContentView(R.layout.activity_main);
+            Log.i("smallestScreenWidthDp","big");
         } else {
+            Log.i("smallestScreenWidthDp","small");
             setContentView(R.layout.activity_main_small);
 
             LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -54,14 +56,14 @@ public class MainActivity extends ActionBarActivity {
 
             Button deviceBtn = (Button) findViewById(R.id.device_btn_phone);
             setMargins(deviceBtn, 0, btnMargin, 0, 0);
-            setWidthAndHeight(appBtn, btnWidth, btnHeight);
+            setWidthAndHeight(deviceBtn, btnWidth, btnHeight);
 
             Button scallingBtn = (Button) findViewById(R.id.scallin_law_btn_phone);
             setMargins(scallingBtn, 0, btnMargin, 0, 0);
-            setWidthAndHeight(appBtn, btnWidth, btnHeight);
+            setWidthAndHeight(scallingBtn, btnWidth, btnHeight);
 
             Button introBtn = (Button) findViewById(R.id.intro_btn_phone);
-            setWidthAndHeight(appBtn, btnWidth, btnHeight);
+            setWidthAndHeight(introBtn, btnWidth, btnHeight);
             setMargins(introBtn, 0, btnMargin, 0, 0);
         }
 
