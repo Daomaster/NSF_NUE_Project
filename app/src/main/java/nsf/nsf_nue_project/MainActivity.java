@@ -1,5 +1,6 @@
 package nsf.nsf_nue_project;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
@@ -14,7 +15,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 public class MainActivity extends ActionBarActivity {
-
+    private Button appBtn;
+    private Button deviceBtn;
+    private Button scallingBtn;
+    private Button introBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,67 +38,58 @@ public class MainActivity extends ActionBarActivity {
             int screenWidth = size.x;
             int screenHeight = size.y;
 
-            //FrontImage
-            int fronImageWidth = (int) (screenWidth * 0.7);
-            int fronImageHeight = (int) (screenHeight * 0.7);
-            int frontImageMarginL = (int) (screenHeight * 0.05);
-            int frontImageMarginB = (int) (screenHeight * 0.05);
-
-            ImageView frontImage = (ImageView) findViewById(R.id.frontImage);
-            frontImage.setMaxHeight(fronImageHeight);
-            frontImage.setMaxWidth(fronImageWidth);
-            setMargins(frontImage, frontImageMarginL, 0, 0, frontImageMarginB);
-
-            //Buttons
-            int btnMargin = (int) (screenHeight * 0.04);
-            int btnHeight = (int) (screenHeight * 0.15);
-            int btnWidth = (int) (screenHeight * 0.53);
-
-            Button appBtn = (Button) findViewById(R.id.application_btn_phone);
-            setMargins(appBtn, 0, btnMargin, btnMargin, btnMargin);
-            setWidthAndHeight(appBtn, btnWidth, btnHeight);
-
-            Button deviceBtn = (Button) findViewById(R.id.device_btn_phone);
-            setMargins(deviceBtn, 0, btnMargin, 0, 0);
-            setWidthAndHeight(deviceBtn, btnWidth, btnHeight);
-
-            Button scallingBtn = (Button) findViewById(R.id.scallin_law_btn_phone);
-            setMargins(scallingBtn, 0, btnMargin, 0, 0);
-            setWidthAndHeight(scallingBtn, btnWidth, btnHeight);
-
-            Button introBtn = (Button) findViewById(R.id.intro_btn_phone);
-            setWidthAndHeight(introBtn, btnWidth, btnHeight);
-            setMargins(introBtn, 0, btnMargin, 0, 0);
+            setFrontImage(screenWidth, screenHeight);
+            setButtons(screenHeight);
         }
 
-//        intro_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,Intro_activ.class);
-//                startActivity(intent);
-//            }
-//        });
-//        scale_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,Scale_activ.class);
-//                startActivity(intent);
-//            }
-//        });
-//        device_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,Device_activ.class);
-//                startActivity(intent);
-//            }
-//        });
-//        application_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this,App_activ.class);
-//                startActivity(intent);
-//            }
-//        });
+        setButtonAction(introBtn, Intro_activ.class);
+        setButtonAction(scallingBtn, Scale_activ.class);
+        setButtonAction(deviceBtn, Device_activ.class);
+        setButtonAction(appBtn, App_activ.class);
+    }
+
+    private void setButtonAction(Button btn, final Class<?> target) {
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, target);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setButtons(int screenHeight) {
+        int btnMargin = (int) (screenHeight * 0.04);
+        int btnHeight = (int) (screenHeight * 0.15);
+        int btnWidth = (int) (screenHeight * 0.53);
+
+        appBtn = (Button) findViewById(R.id.application_btn_phone);
+        setMargins(appBtn, 0, btnMargin, btnMargin, btnMargin);
+        setWidthAndHeight(appBtn, btnWidth, btnHeight);
+
+        deviceBtn = (Button) findViewById(R.id.device_btn_phone);
+        setMargins(deviceBtn, 0, btnMargin, 0, 0);
+        setWidthAndHeight(deviceBtn, btnWidth, btnHeight);
+
+        scallingBtn = (Button) findViewById(R.id.scallin_law_btn_phone);
+        setMargins(scallingBtn, 0, btnMargin, 0, 0);
+        setWidthAndHeight(scallingBtn, btnWidth, btnHeight);
+
+        introBtn = (Button) findViewById(R.id.intro_btn_phone);
+        setWidthAndHeight(introBtn, btnWidth, btnHeight);
+        setMargins(introBtn, 0, btnMargin, 0, 0);
+    }
+
+    private void setFrontImage(int screenWidth, int screenHeight) {
+        int fronImageWidth = (int) (screenWidth * 0.7);
+        int fronImageHeight = (int) (screenHeight * 0.7);
+        int frontImageMarginL = (int) (screenHeight * 0.05);
+        int frontImageMarginB = (int) (screenHeight * 0.05);
+
+        ImageView frontImage = (ImageView) findViewById(R.id.frontImage);
+        frontImage.setMaxHeight(fronImageHeight);
+        frontImage.setMaxWidth(fronImageWidth);
+        setMargins(frontImage, frontImageMarginL, 0, 0, frontImageMarginB);
     }
 
     private void setWidthAndHeight(View view, int width, int height) {
