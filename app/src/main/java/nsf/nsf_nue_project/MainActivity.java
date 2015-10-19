@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 public class MainActivity extends ActionBarActivity {
     private Button appBtn;
@@ -26,9 +25,13 @@ public class MainActivity extends ActionBarActivity {
 
         if (config.smallestScreenWidthDp >= 600) {
             setContentView(R.layout.activity_main);
-            Log.i("smallestScreenWidthDp","big");
+
+            appBtn = (Button) findViewById(R.id.application_btn);
+            deviceBtn = (Button) findViewById(R.id.device_btn);
+            scallingBtn = (Button) findViewById(R.id.scalin_law_btn);
+            introBtn = (Button) findViewById(R.id.intro_btn);
+
         } else {
-            Log.i("smallestScreenWidthDp","small");
             setContentView(R.layout.activity_main_small);
 
             LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
