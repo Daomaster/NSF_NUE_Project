@@ -33,7 +33,6 @@ public class Intro_activ extends ActionBarActivity {
 
         if (config.smallestScreenWidthDp >= 600) {
             setContentView(R.layout.activity_intro_activ);
-            Log.i("smallestScreenWidthDp", "big");
 
             btnNano = (Button)findViewById(R.id.nanotech_btn);
             btnMarcoMicro = (Button)findViewById(R.id.macro_micro_btn);
@@ -42,7 +41,6 @@ public class Intro_activ extends ActionBarActivity {
             quizBtn = (Button)findViewById(R.id.quiz1_btn);
 
         } else {
-            Log.i("smallestScreenWidthDp","small");
             setContentView(R.layout.activity_intro_activ_small);
 
             LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -55,59 +53,64 @@ public class Intro_activ extends ActionBarActivity {
             setButtons(screenHeight, screenWidth);
         }
 
-//        btnNano.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putInt("page",1);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
-//        btnMarcoMicro.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putInt("page",2);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
-//        btnNanoScale.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putInt("page",3);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
-//        btnHistory.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putInt("page",4);
-//                intent.putExtras(bundle);
-//                startActivity(intent);
-//            }
-//        });
-//        quiz_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intro_activ.this,Quiz1_q1_activ.class);
-//                startActivity(intent);
-//            }
-//        });
+        setButtonActions();
     }
+
+    private void setButtonActions() {
+        btnNano.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("page",1);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        btnMarcoMicro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("page",2);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        btnNanoScale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("page",3);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intro_activ.this,Gallery_activ.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("page",4);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        quizBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intro_activ.this,Quiz1_q1_activ.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void setButtons(int screenHeight, int screenWidth) {
         int btnMargin = (int) (screenHeight * 0.075);
         int btnHeight = (int) (screenHeight * 0.16);
         int btnWidth = (int) (screenWidth * 0.35);
-        int btnTxtSize = (int) (screenHeight * 0.025);
+        int btnTxtSize = (int) (screenHeight * 0.019);
 
         btnNano = (Button) findViewById(R.id.nanotech_btn_phone);
         setMargins(btnNano, btnMargin, btnMargin, 0, 0);
