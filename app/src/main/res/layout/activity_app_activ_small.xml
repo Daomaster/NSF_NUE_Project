@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:theme="@android:style/Theme.Holo.Light"
+    android:background="#ffffff">
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="4.1 Ask Nature"
+        android:id="@+id/ask_btn_phone"
+        android:textAllCaps="false"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Quiz 4"
+        android:textAllCaps="false"
+        android:id="@+id/quiz4_btn_phone"
+        android:textSize="10sp"
+        android:background="@drawable/quizbutton"
+        android:textColor="#1e6cd2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="4.3 Self-cleaning Fabric"
+        android:id="@+id/self_cln_btn_phone"
+        android:textAllCaps="false"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/ask_btn_phone"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="4.2 Energy Storage and Storage"
+        android:id="@+id/enrg_gen_btn_phone"
+        android:textAllCaps="false"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="4.4 Drug Delivery"
+        android:id="@+id/drug_del_btn_phone"
+        android:textAllCaps="false"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/enrg_gen_btn_phone"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
