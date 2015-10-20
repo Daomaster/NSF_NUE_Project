@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:theme="@android:style/Theme.Holo.Light"
+    android:background="#ffffff">
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="3.1 SEM"
+        android:id="@+id/sem_btn_phone"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="3.2 AFM"
+        android:id="@+id/afm_btn_phone"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="Quiz 3"
+        android:id="@+id/quiz3_btn_phone"
+        android:textSize="10sp"
+        android:background="@drawable/quizbutton"
+        android:textColor="#1e6cd2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp" />
+
+</RelativeLayout>

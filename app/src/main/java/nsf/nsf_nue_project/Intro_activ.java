@@ -20,11 +20,11 @@ import nsf.nsf_nue_project.quiz1.Quiz1_q1_activ;
 
 public class Intro_activ extends ActionBarActivity {
 
-        Button btnNano;
-        Button btnMarcoMicro;
-        Button btnNanoScale;
-        Button btnHistory;
-        Button quizBtn;
+    private Button btnNano;
+    private Button btnMarcoMicro;
+    private Button btnNanoScale;
+    private Button btnHistory;
+    private Button quizBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +109,7 @@ public class Intro_activ extends ActionBarActivity {
     private void setButtons(int screenHeight, int screenWidth) {
         int btnMargin = (int) (screenHeight * 0.075);
         int btnHeight = (int) (screenHeight * 0.16);
-        int btnWidth = (int) (screenWidth * 0.35);
+        int btnWidth = (int) (screenWidth * 0.42);
         int btnTxtSize = (int) (screenHeight * 0.019);
 
         btnNano = (Button) findViewById(R.id.nanotech_btn_phone);
@@ -138,7 +138,7 @@ public class Intro_activ extends ActionBarActivity {
         quizBtn.setTextSize(btnTxtSize);
     }
 
-    public static void setMargins (View view, int left, int top, int right, int bottom) {
+    public void setMargins (View view, int left, int top, int right, int bottom) {
         if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
             p.setMargins(left, top, right, bottom);

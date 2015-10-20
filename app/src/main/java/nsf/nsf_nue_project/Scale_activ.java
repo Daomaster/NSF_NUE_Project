@@ -19,13 +19,13 @@ import nsf.nsf_nue_project.quiz2.Quiz2_q1_activ;
 
 
 public class Scale_activ extends ActionBarActivity {
-    Button btnFund;
-    Button btnScalingGeo;
-    Button btnOptical;
-    Button btnChemical;
-    Button btnSizeM;
-    Button btnScalingRBD;
-    Button btnQuiz2;
+    private Button btnFund;
+    private Button btnScalingGeo;
+    private Button btnOptical;
+    private Button btnChemical;
+    private Button btnSizeM;
+    private Button btnScalingRBD;
+    private Button btnQuiz2;
 
 
     @Override
@@ -58,6 +58,12 @@ public class Scale_activ extends ActionBarActivity {
         }
 
 
+        setButtonActions();
+
+
+    }
+
+    private void setButtonActions() {
         btnFund.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,13 +131,12 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
-
     }
+
     private void setButtons(int screenHeight, int screenWidth) {
-        int btnMargin = (int) (screenHeight * 0.035);
+        int btnMargin = (int) (screenHeight * 0.031);
         int btnHeight = (int) (screenHeight * 0.16);
-        int btnWidth = (int) (screenWidth * 0.35);
+        int btnWidth = (int) (screenWidth * 0.42);
         int btnTxtSize = (int) (screenHeight * 0.019);
 
 
@@ -172,7 +177,7 @@ public class Scale_activ extends ActionBarActivity {
 
     }
 
-    public static void setMargins (View view, int left, int top, int right, int bottom) {
+    public void setMargins (View view, int left, int top, int right, int bottom) {
         if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
             p.setMargins(left, top, right, bottom);
