@@ -27,14 +27,18 @@ public class Gallery_activ extends ActionBarActivity {
 
     private int start;
     private int chapter = 1;
-    private int[] imageId = new int[]{R.drawable.page01, R.drawable.page02, R.drawable.page03, R.drawable.page04,
-            R.drawable.page05, R.drawable.page06, R.drawable.page07, R.drawable.page08, R.drawable.page09, R.drawable.page010, R.drawable.page011, R.drawable.page012, R.drawable.page013, R.drawable.page014,
-            R.drawable.page015, R.drawable.page016};
+    private int[] imageId = new int[]{R.drawable.page01, R.drawable.videobackground,
+            R.drawable.page03, R.drawable.page04, R.drawable.page05, R.drawable.page06,
+            R.drawable.page07, R.drawable.page08, R.drawable.videobackground, R.drawable.page010,
+            R.drawable.videobackground, R.drawable.page012, R.drawable.page013, R.drawable.page014,
+            R.drawable.page015, R.drawable.page016, R.drawable.page017};
     private int index = 0;
-    private String[] titles = {"1.1 What is Nanotechnology?", "1.2 Macrosize & Microsize", "1.3 Why Nanoscale?", "1.4 History",
-            "2.1 Fundamental", "2.2 Scaling in Geometry", "2.3 Optical Properties Example", "2.4 Chemical Bonding Example",
-            "2.5 Size Matter Example", "2.6 Scaling in Rigid-Body Dynamics", "3.1 SEM ", "3.2 AFM ", "4.1 Ask Nature ", "4.2 Energy Storage and Storage",
-            "4.3 Self-cleaning Fabric", "4.4 Drug Delivery"};
+    private String[] titles = {"1.1 What is Nanotechnology?", "1.2 Macrosize & Microsize",
+            "1.3 Why Nanoscale?", "1.4 History", "2.1 Fundamental", "2.2 Scaling in Geometry",
+            "2.3 Optical Properties Example", "2.4 Chemical Bonding Example",
+            "2.5 Size Matter Example", "2.6 Scaling in Rigid-Body Dynamics",
+            "2.7  The Alka Seltzer Experiments", "3.1 SEM ", "3.2 AFM ", "4.1 Ask Nature ",
+            "4.2 Energy Storage and Storage", "4.3 Self-cleaning Fabric", "4.4 Drug Delivery"};
     private static final int SWIPE_MIN_DISTANCE = 120;
     private float initialX;
     private ImageSwitcher imageSwitcher;
@@ -58,6 +62,7 @@ public class Gallery_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         start = bundle.getInt("page");
@@ -101,12 +106,12 @@ public class Gallery_activ extends ActionBarActivity {
             case MotionEvent.ACTION_UP:
                 float finalX = event.getX();
                 if (initialX > finalX && (initialX-finalX) > SWIPE_MIN_DISTANCE) { //swiping right to left
-                    if (index == 3 || index == 9 || index == 11) {
+                    if (index == 3 || index == 10 || index == 12) {
                         chapter = CheckChap(index);
                         final AlertDialog dialog = Chapterbuilder.create();
                         dialog.show();
                     }
-                    if (index == 15) {
+                    if (index == 16) {
                         final AlertDialog dialog = Endbuilder.create();
                         dialog.show();
                     } else {
@@ -214,17 +219,36 @@ public class Gallery_activ extends ActionBarActivity {
             }
         });
         imageSwitcher.setImageResource(imageId[index]);
+
     }
 
     private void setVideo(String chapter) {
         videoView = (VideoView) findViewById(R.id.videoView);
 
-        if(chapter.equalsIgnoreCase("1.1 What is Nanotechnology?")) {
+        if(chapter.equalsIgnoreCase("1.2 Macrosize & Microsize")) {
+
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.video);
+                    + R.raw.page02_video);
             videoView.setVideoURI(video);
             videoView.start();
+
+        } else if(chapter.equalsIgnoreCase("2.5 Size Matter Example")) {
+
+            videoView.setVisibility(VideoView.VISIBLE);
+            Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                    + R.raw.page09_video);
+            videoView.setVideoURI(video);
+            videoView.start();
+
+        } else if(chapter.equalsIgnoreCase("2.7  The Alka Seltzer Experiments")) {
+
+            videoView.setVisibility(VideoView.VISIBLE);
+            Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                    + R.raw.page11_video);
+            videoView.setVideoURI(video);
+            videoView.start();
+
         } else {
             videoView.setVisibility(VideoView.GONE);
         }

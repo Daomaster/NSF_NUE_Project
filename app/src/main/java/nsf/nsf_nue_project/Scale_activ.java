@@ -26,6 +26,7 @@ public class Scale_activ extends ActionBarActivity {
     private Button btnSizeM;
     private Button btnScalingRBD;
     private Button btnQuiz2;
+    private Button alkaBtn;
 
 
     @Override
@@ -43,6 +44,7 @@ public class Scale_activ extends ActionBarActivity {
             btnSizeM = (Button) findViewById(R.id.size_matter_btn);
             btnScalingRBD = (Button) findViewById(R.id.scaling_rbd_btn);
             btnQuiz2= (Button) findViewById(R.id.quiz2_btn);
+            alkaBtn = (Button) findViewById(R.id.alka_btn_phone);
 
         } else {
             setContentView(R.layout.activity_scale_activ_small);
@@ -124,6 +126,16 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+        alkaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("page", 11);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
         btnQuiz2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,43 +147,49 @@ public class Scale_activ extends ActionBarActivity {
 
     private void setButtons(int screenHeight, int screenWidth) {
         int btnMargin = (int) (screenHeight * 0.031);
-        int btnHeight = (int) (screenHeight * 0.16);
+        int marginBtwnBtns = (int) (screenHeight * 0.01);
+        int btnHeight = (int) (screenHeight * 0.15);
         int btnWidth = (int) (screenWidth * 0.42);
         int btnTxtSize = (int) (screenHeight * 0.019);
 
 
         btnFund = (Button) findViewById(R.id.fundamental_btn_phone);
-        setMargins(btnFund, btnMargin, btnMargin, 0, 0);
+        setMargins(btnFund, btnMargin, 0, 0, marginBtwnBtns);
         setWidthAndHeight(btnFund , btnWidth, btnHeight);
         btnFund .setTextSize(btnTxtSize);
 
         btnScalingGeo = (Button) findViewById(R.id.scalin_geo_btn_phone);
-        setMargins(btnScalingGeo, 0, btnMargin, btnMargin, 0);
+        setMargins(btnScalingGeo, 0, 0, btnMargin, marginBtwnBtns);
         setWidthAndHeight(btnScalingGeo, btnWidth, btnHeight);
         btnScalingGeo .setTextSize(btnTxtSize);
 
         btnOptical = (Button) findViewById(R.id.optcal_btn_phone);
-        setMargins(btnOptical, btnMargin, btnMargin, 0, 0);
+        setMargins(btnOptical, btnMargin, 0, 0, marginBtwnBtns);
         setWidthAndHeight(btnOptical, btnWidth, btnHeight);
         btnOptical.setTextSize(btnTxtSize);
 
         btnChemical = (Button) findViewById(R.id.chemical_btn_phone);
-        setMargins(btnChemical, 0, btnMargin, btnMargin, 0);
+        setMargins(btnChemical, 0, 0, btnMargin, marginBtwnBtns);
         setWidthAndHeight(btnChemical, btnWidth, btnHeight);
         btnChemical.setTextSize(btnTxtSize);
 
         btnSizeM = (Button) findViewById(R.id.size_matter_btn_phone);
-        setMargins(btnSizeM, btnMargin, btnMargin, 0, 0);
+        setMargins(btnSizeM, btnMargin, 0, 0, 0);
         setWidthAndHeight(btnSizeM, btnWidth, btnHeight);
         btnSizeM.setTextSize(btnTxtSize);
 
         btnScalingRBD = (Button) findViewById(R.id.scaling_rbd_btn_phone);
-        setMargins(btnScalingRBD, 0, btnMargin, btnMargin, 0);
+        setMargins(btnScalingRBD, 0, 0, btnMargin, 0);
         setWidthAndHeight(btnScalingRBD, btnWidth, btnHeight);
         btnScalingRBD.setTextSize(btnTxtSize);
 
-        btnQuiz2= (Button) findViewById(R.id.quiz2_btn_phone);
-        setMargins(btnQuiz2, 0, 0, 0, btnMargin);
+        alkaBtn = (Button) findViewById(R.id.alka_btn_phone);
+        setMargins(alkaBtn, 0, 0, 0, marginBtwnBtns);
+        setWidthAndHeight(alkaBtn, btnWidth, btnHeight);
+        alkaBtn.setTextSize(btnTxtSize);
+
+        btnQuiz2 = (Button) findViewById(R.id.quiz2_btn_phone);
+        setMargins(btnQuiz2, 0, 0, 0, 0);
         setWidthAndHeight(btnQuiz2, btnWidth, btnHeight);
         btnQuiz2.setTextSize(btnTxtSize);
 

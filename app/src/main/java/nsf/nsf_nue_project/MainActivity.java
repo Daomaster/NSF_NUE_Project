@@ -23,15 +23,15 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.activity_main);
-
-            appBtn = (Button) findViewById(R.id.application_btn);
-            deviceBtn = (Button) findViewById(R.id.device_btn);
-            scallingBtn = (Button) findViewById(R.id.scalin_law_btn);
-            introBtn = (Button) findViewById(R.id.intro_btn);
-
-        } else {
+//        if (config.smallestScreenWidthDp >= 600) {
+//            setContentView(R.layout.activity_main);
+//
+//            appBtn = (Button) findViewById(R.id.application_btn);
+//            deviceBtn = (Button) findViewById(R.id.device_btn);
+//            scallingBtn = (Button) findViewById(R.id.scalin_law_btn);
+//            introBtn = (Button) findViewById(R.id.intro_btn);
+//
+//        } else {
             setContentView(R.layout.activity_main_small);
 
             LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
 
             setFrontImage(screenWidth, screenHeight);
             setButtons(screenHeight);
-        }
+//        }
 
         setButtonAction(introBtn, Intro_activ.class);
         setButtonAction(scallingBtn, Scale_activ.class);
