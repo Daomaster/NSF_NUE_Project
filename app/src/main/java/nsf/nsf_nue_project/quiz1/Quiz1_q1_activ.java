@@ -1,11 +1,17 @@
 package nsf.nsf_nue_project.quiz1;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -26,6 +32,7 @@ public class Quiz1_q1_activ extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Configuration config = getResources().getConfiguration();
         setContentView(R.layout.activity_quiz3_activ);
 
         questionTxt = (TextView)findViewById(R.id.question_text);
@@ -45,6 +52,34 @@ public class Quiz1_q1_activ extends ActionBarActivity {
         opC.setText(questionArray1[3]);
         opD.setText(questionArray1[4]);
         opE.setVisibility(RadioButton.GONE);
+
+        if (config.smallestScreenWidthDp <= 600) {
+            Display display = getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            int screenHeight = size.y;
+            int btnTxtSize = (int) (screenHeight * 0.04);
+            int questionMargin = (int) (screenHeight * 0.15);
+            int answerMargin = (int) (questionMargin*1.3);
+
+            questionTxt.setTextSize(btnTxtSize);
+            setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin);
+
+            opA.setTextSize(btnTxtSize);
+            setMargins(opA, answerMargin, 0, 0, 0);
+
+            opB.setTextSize(btnTxtSize);
+            setMargins(opB, answerMargin, 0, 0, 0);
+
+            opC.setTextSize(btnTxtSize);
+            setMargins(opC, answerMargin, 0, 0, 0);
+
+            opD.setTextSize(btnTxtSize);
+            setMargins(opD, answerMargin, 0, 0, 0);
+
+            opE.setVisibility(RadioButton.GONE);
+
+        }
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,4 +102,13 @@ public class Quiz1_q1_activ extends ActionBarActivity {
                 finish();
             }
         });
-    }}
+    }
+
+    public void setMargins (View view, int left, int top, int right, int bottom) {
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            p.setMargins(left, top, right, bottom);
+            view.requestLayout();
+        }
+    }
+}
