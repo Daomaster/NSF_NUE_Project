@@ -1,15 +1,22 @@
 package nsf.nsf_nue_project;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 
 public class Score extends ActionBarActivity {
+    TextView scoreTV;
+    TextView scoreTittle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +26,34 @@ public class Score extends ActionBarActivity {
         Intent intent = getIntent();
         String score = intent.getStringExtra("score");
 
-        TextView scoreTV = (TextView) findViewById(R.id.score_textview);
+        scoreTV = (TextView) findViewById(R.id.score_textview);
         scoreTV.setText(score);
+
+        scoreTittle = (TextView) findViewById(R.id.scoreTittle);
+
+        Configuration config = getResources().getConfiguration();
+        if (config.smallestScreenWidthDp <= 600) {
+            Display display = getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            int screenHeight = size.y;
+            int txtSize = (int) (screenHeight * 0.11);
+            int txtMargin = (int) (screenHeight * 0.08);
+
+            scoreTV.setTextSize(txtSize);
+            setMargins(scoreTV, 0, txtMargin, 0, 0);
+
+            scoreTittle.setTextSize(txtSize);
+            setMargins(scoreTittle, 0, 0, 0, txtMargin);
+        }
+    }
+
+    public void setMargins (View view, int left, int top, int right, int bottom) {
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            p.setMargins(left, top, right, bottom);
+            view.requestLayout();
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

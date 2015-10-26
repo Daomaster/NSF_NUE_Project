@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Score"
-        android:id="@+id/score_tittle"
-        android:textSize="150sp"
+        android:id="@+id/scoreTittle"
+        android:textSize="30sp"
         android:textColor="#fffffbf7"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
@@ -25,9 +25,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="1/2"
         android:id="@+id/score_textview"
-        android:textSize="115sp"
+        android:textSize="30sp"
         android:textColor="#fff2f3ff"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp" />
+        android:layout_marginBottom="0dp" />
 </RelativeLayout>

@@ -58,9 +58,9 @@ public class Quiz1_q1_activ extends ActionBarActivity {
             Point size = new Point();
             display.getSize(size);
             int screenHeight = size.y;
-            int btnTxtSize = (int) (screenHeight * 0.04);
+            int btnTxtSize = (int) (screenHeight * 0.03);
             int questionMargin = (int) (screenHeight * 0.15);
-            int answerMargin = (int) (questionMargin*1.3);
+            int answerMargin = (int) (questionMargin/3);
 
             questionTxt.setTextSize(btnTxtSize);
             setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin);
@@ -78,7 +78,6 @@ public class Quiz1_q1_activ extends ActionBarActivity {
             setMargins(opD, answerMargin, 0, 0, 0);
 
             opE.setVisibility(RadioButton.GONE);
-
         }
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
