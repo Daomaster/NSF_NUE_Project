@@ -31,9 +31,9 @@ public class Quiz1_q2_activ extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz3_activ);
+        setContentView(R.layout.activity_quiz_activ);
         Configuration config = getResources().getConfiguration();
-        questionTxt = (TextView)findViewById(R.id.question_text);
+        questionTxt = (TextView)findViewById(R.id.questionText);
         opA = (RadioButton)findViewById(R.id.option_a);
         opB = (RadioButton)findViewById(R.id.option_b);
         opC = (RadioButton)findViewById(R.id.option_c);

@@ -4,14 +4,19 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import nsf.nsf_nue_project.R;
 import nsf.nsf_nue_project.Score;
@@ -21,6 +26,11 @@ public class Quiz2_q5_activ extends ActionBarActivity {
     int score;
     ImageView nextBtn;
     ImageView backBtn;
+    TextView questionText;
+    TextView colATitle;
+    TextView colBTitle;
+    TextView colAOptions;
+    TextView colBOptions;
     EditText opA;
     EditText opB;
     EditText opC;
@@ -33,18 +43,61 @@ public class Quiz2_q5_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz2_q5_activ);
-        //getting the fields from the xml file
         opA = (EditText) findViewById(R.id.editText);
         opB = (EditText) findViewById(R.id.editText2);
         opC = (EditText) findViewById(R.id.editText3);
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
+        questionText = (TextView) findViewById(R.id.questionText);
+        colATitle = (TextView) findViewById(R.id.colATitle);
+        colBTitle = (TextView) findViewById(R.id.colBTitle);
+        colAOptions = (TextView) findViewById(R.id.colAOptions);
+        colBOptions = (TextView) findViewById(R.id.colBOptions);
         builder = new AlertDialog.Builder(this);
 
 
-        //getting the the score accumulated
+        //getting the the accumulated score
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
+
+        Configuration config = getResources().getConfiguration();
+        if (config.smallestScreenWidthDp <= 600) {
+            Display display = getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            int screenHeight = size.y;
+            int btnTxtSize = (int) (screenHeight * 0.028);
+            int txtMargin = (int) (screenHeight * 0.15);
+            int editTxtMargin = (int) (screenHeight * 0.04);
+
+            questionText.setTextSize(btnTxtSize);
+            setMargins(questionText, 0, 0, 0, 0);
+
+            colATitle.setTextSize(btnTxtSize);
+            setMargins(colATitle, txtMargin*2, 0, 0, 0);
+
+            colBTitle.setTextSize(btnTxtSize);
+            setMargins(colBTitle, 0, 0, txtMargin*2, 0);
+
+            colAOptions.setTextSize(btnTxtSize);
+            setMargins(colAOptions, txtMargin, txtMargin/2, 0, 0);
+
+            colBOptions.setTextSize(btnTxtSize);
+            setMargins(colBOptions, 0, txtMargin/2, 0, 0);
+
+            colBOptions.setTextSize(btnTxtSize);
+            setMargins(colBOptions, 0, 0, 0, 0);
+
+            opA.setTextSize(btnTxtSize);
+            setMargins(opA, 0, 0, 0, editTxtMargin);
+
+            opB.setTextSize(btnTxtSize);
+            setMargins(opB, 0, 0, 0, editTxtMargin);
+
+            opC.setTextSize(btnTxtSize);
+            setMargins(opC, 0, 0, 0, 0);
+        }
+
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,4 +157,13 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         }
         return true;
     }
+    
+    public void setMargins (View view, int left, int top, int right, int bottom) {
+        if (view.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            p.setMargins(left, top, right, bottom);
+            view.requestLayout();
+        }
+    }
+
 }

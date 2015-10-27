@@ -9,9 +9,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -33,9 +31,9 @@ public class Quiz1_q1_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Configuration config = getResources().getConfiguration();
-        setContentView(R.layout.activity_quiz3_activ);
+        setContentView(R.layout.activity_quiz_activ);
 
-        questionTxt = (TextView)findViewById(R.id.question_text);
+        questionTxt = (TextView)findViewById(R.id.questionText);
         opA = (RadioButton)findViewById(R.id.option_a);
         opB = (RadioButton)findViewById(R.id.option_b);
         opC = (RadioButton)findViewById(R.id.option_c);
