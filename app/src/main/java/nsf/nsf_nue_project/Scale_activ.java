@@ -1,11 +1,9 @@
 package nsf.nsf_nue_project;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import nsf.nsf_nue_project.quiz2.Quiz2_q1_activ;
 
@@ -26,43 +23,23 @@ public class Scale_activ extends ActionBarActivity {
     private Button btnSizeM;
     private Button btnScalingRBD;
     private Button btnQuiz2;
-    private Button alkaBtn;
+    private Button btnAlka;
+    private Button btnNanoC;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Configuration config = getResources().getConfiguration();
+        setContentView(R.layout.activity_scale_activ);
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.activity_scale_activ);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenWidth = size.x;
+        int screenHeight = size.y;
 
-            btnFund = (Button) findViewById(R.id.fundamental_btn);
-            btnScalingGeo = (Button) findViewById(R.id.scalin_geo_btn);
-            btnOptical = (Button) findViewById(R.id.optcal_btn);
-            btnChemical = (Button) findViewById(R.id.chemical_btn);
-            btnSizeM = (Button) findViewById(R.id.size_matter_btn);
-            btnScalingRBD = (Button) findViewById(R.id.scaling_rbd_btn);
-            btnQuiz2= (Button) findViewById(R.id.quiz2_btn);
-            alkaBtn = (Button) findViewById(R.id.alka_btn_phone);
-
-        } else {
-            setContentView(R.layout.activity_scale_activ_small);
-
-            LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenWidth = size.x;
-            int screenHeight = size.y;
-
-            setButtons(screenHeight, screenWidth);
-        }
-
-
+        setButtons(screenHeight, screenWidth);
         setButtonActions();
-
-
     }
 
     private void setButtonActions() {
@@ -126,12 +103,22 @@ public class Scale_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-        alkaBtn.setOnClickListener(new View.OnClickListener() {
+        btnAlka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
                 Bundle bundle = new Bundle();
                 bundle.putInt("page", 11);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        btnNanoC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Scale_activ.this, Gallery_activ.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("page", 12);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -153,42 +140,47 @@ public class Scale_activ extends ActionBarActivity {
         int btnTxtSize = (int) (screenHeight * 0.019);
 
 
-        btnFund = (Button) findViewById(R.id.fundamental_btn_phone);
+        btnFund = (Button) findViewById(R.id.fundamental_btn);
         setMargins(btnFund, btnMargin, 0, 0, marginBtwnBtns);
-        setWidthAndHeight(btnFund , btnWidth, btnHeight);
+        setWidthAndHeight(btnFund, btnWidth, btnHeight);
         btnFund .setTextSize(btnTxtSize);
 
-        btnScalingGeo = (Button) findViewById(R.id.scalin_geo_btn_phone);
+        btnScalingGeo = (Button) findViewById(R.id.scalin_geo_btn);
         setMargins(btnScalingGeo, 0, 0, btnMargin, marginBtwnBtns);
         setWidthAndHeight(btnScalingGeo, btnWidth, btnHeight);
         btnScalingGeo .setTextSize(btnTxtSize);
 
-        btnOptical = (Button) findViewById(R.id.optcal_btn_phone);
+        btnOptical = (Button) findViewById(R.id.optcal_btn);
         setMargins(btnOptical, btnMargin, 0, 0, marginBtwnBtns);
         setWidthAndHeight(btnOptical, btnWidth, btnHeight);
         btnOptical.setTextSize(btnTxtSize);
 
-        btnChemical = (Button) findViewById(R.id.chemical_btn_phone);
+        btnChemical = (Button) findViewById(R.id.chemical_btn);
         setMargins(btnChemical, 0, 0, btnMargin, marginBtwnBtns);
         setWidthAndHeight(btnChemical, btnWidth, btnHeight);
         btnChemical.setTextSize(btnTxtSize);
 
-        btnSizeM = (Button) findViewById(R.id.size_matter_btn_phone);
-        setMargins(btnSizeM, btnMargin, 0, 0, 0);
+        btnSizeM = (Button) findViewById(R.id.size_matter_btn);
+        setMargins(btnSizeM, btnMargin, 0, 0, marginBtwnBtns);
         setWidthAndHeight(btnSizeM, btnWidth, btnHeight);
         btnSizeM.setTextSize(btnTxtSize);
 
-        btnScalingRBD = (Button) findViewById(R.id.scaling_rbd_btn_phone);
-        setMargins(btnScalingRBD, 0, 0, btnMargin, 0);
+        btnScalingRBD = (Button) findViewById(R.id.scaling_rbd_btn);
+        setMargins(btnScalingRBD, 0, 0, btnMargin, marginBtwnBtns);
         setWidthAndHeight(btnScalingRBD, btnWidth, btnHeight);
         btnScalingRBD.setTextSize(btnTxtSize);
 
-        alkaBtn = (Button) findViewById(R.id.alka_btn_phone);
-        setMargins(alkaBtn, 0, 0, 0, marginBtwnBtns);
-        setWidthAndHeight(alkaBtn, btnWidth, btnHeight);
-        alkaBtn.setTextSize(btnTxtSize);
+        btnAlka = (Button) findViewById(R.id.alka_btn);
+        setMargins(btnAlka, btnMargin, 0, 0, 0);
+        setWidthAndHeight(btnAlka, btnWidth, btnHeight);
+        btnAlka.setTextSize(btnTxtSize);
 
-        btnQuiz2 = (Button) findViewById(R.id.quiz2_btn_phone);
+        btnNanoC = (Button) findViewById(R.id.nano_c_btn);
+        setMargins(btnNanoC, 0, 0, btnMargin, 0);
+        setWidthAndHeight(btnNanoC, btnWidth, btnHeight);
+        btnNanoC.setTextSize(btnTxtSize);
+
+        btnQuiz2 = (Button) findViewById(R.id.quiz2_btn);
         setMargins(btnQuiz2, 0, 0, 0, 0);
         setWidthAndHeight(btnQuiz2, btnWidth, btnHeight);
         btnQuiz2.setTextSize(btnTxtSize);

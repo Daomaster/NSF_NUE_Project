@@ -29,16 +29,17 @@ public class Gallery_activ extends ActionBarActivity {
     private int chapter = 1;
     private int[] imageId = new int[]{R.drawable.page01, R.drawable.videobackground,
             R.drawable.page03, R.drawable.page04, R.drawable.page05, R.drawable.page06,
-            R.drawable.page07, R.drawable.page08, R.drawable.videobackground, R.drawable.page010,
-            R.drawable.videobackground, R.drawable.page012, R.drawable.page013, R.drawable.page014,
-            R.drawable.page015, R.drawable.page016, R.drawable.page017};
+            R.drawable.page07, R.drawable.videobackground, R.drawable.videobackground, R.drawable.page010,
+            R.drawable.videobackground, R.drawable.videobackground, R.drawable.page013, R.drawable.page014, R.drawable.page015,
+            R.drawable.page016, R.drawable.page017, R.drawable.page018};
     private int index = 0;
     private String[] titles = {"1.1 What is Nanotechnology?", "1.2 Macrosize & Microsize",
             "1.3 Why Nanoscale?", "1.4 History", "2.1 Fundamental", "2.2 Scaling in Geometry",
             "2.3 Optical Properties Example", "2.4 Chemical Bonding Example",
             "2.5 Size Matter Example", "2.6 Scaling in Rigid-Body Dynamics",
-            "2.7  The Alka Seltzer Experiments", "3.1 SEM ", "3.2 AFM ", "4.1 Ask Nature ",
-            "4.2 Energy Storage and Storage", "4.3 Self-cleaning Fabric", "4.4 Drug Delivery"};
+            "2.7  The Alka Seltzer Experiments", "2.8  Nano-Crystals","3.1 SEM ", "3.2 AFM ",
+            "4.1 Ask Nature ", "4.2 Energy Storage and Storage", "4.3 Self-cleaning Fabric",
+            "4.4 Drug Delivery"};
     private static final int SWIPE_MIN_DISTANCE = 120;
     private float initialX;
     private ImageSwitcher imageSwitcher;
@@ -106,12 +107,12 @@ public class Gallery_activ extends ActionBarActivity {
             case MotionEvent.ACTION_UP:
                 float finalX = event.getX();
                 if (initialX > finalX && (initialX-finalX) > SWIPE_MIN_DISTANCE) { //swiping right to left
-                    if (index == 3 || index == 10 || index == 12) {
+                    if (index == 3 || index == 11 || index == 13) {
                         chapter = CheckChap(index);
                         final AlertDialog dialog = Chapterbuilder.create();
                         dialog.show();
                     }
-                    if (index == 16) {
+                    if (index == 17) {
                         final AlertDialog dialog = Endbuilder.create();
                         dialog.show();
                     } else {
@@ -135,9 +136,9 @@ public class Gallery_activ extends ActionBarActivity {
 
     int CheckChap(int index) {
         if (0 < index && index <= 3) return 1;
-        if (4 < index && index <= 9) return 2;
-        if (9 < index && index <= 11) return 3;
-        if (11 < index && index <= 15) return 4;
+        if (4 < index && index <= 11) return 2;
+        if (12 < index && index <= 13) return 3;
+        if (14 < index && index <= 17) return 4;
         else return 5;
     }
 
@@ -229,7 +230,15 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page02_video);
+                    + R.raw.page02_video_1280_720);
+            videoView.setVideoURI(video);
+            videoView.start();
+
+        } else if(chapter.equalsIgnoreCase("1.3 Why Nanoscale?")) {
+
+            videoView.setVisibility(VideoView.VISIBLE);
+            Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                    + R.raw.page08_1280_720);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -237,7 +246,7 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page09_video);
+                    + R.raw.page09_video_1280_720);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -245,7 +254,15 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page11_video);
+                    + R.raw.page11_video_1280_720);
+            videoView.setVideoURI(video);
+            videoView.start();
+
+        } else if(chapter.equalsIgnoreCase("2.8  Nano-Crystals")) {
+
+            videoView.setVisibility(VideoView.VISIBLE);
+            Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
+                    + R.raw.page12_video_1280_720);
             videoView.setVideoURI(video);
             videoView.start();
 

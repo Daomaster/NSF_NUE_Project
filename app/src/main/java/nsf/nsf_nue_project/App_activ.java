@@ -43,7 +43,6 @@ public class App_activ extends ActionBarActivity {
         } else {
             setContentView(R.layout.activity_app_activ_small);
 
-            LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             Display display = getWindowManager().getDefaultDisplay();
             Point size = new Point();
             display.getSize(size);
@@ -110,7 +109,7 @@ public class App_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("page",14);
+                bundle.putInt("page",15);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -120,7 +119,7 @@ public class App_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("page",15);
+                bundle.putInt("page",16);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -130,7 +129,7 @@ public class App_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("page",16);
+                bundle.putInt("page",17);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -140,7 +139,7 @@ public class App_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(App_activ.this,Gallery_activ.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("page",17);
+                bundle.putInt("page",18);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

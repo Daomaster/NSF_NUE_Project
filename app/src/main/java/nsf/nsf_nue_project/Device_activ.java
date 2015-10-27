@@ -79,7 +79,7 @@ public class Device_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Device_activ.this,Gallery_activ.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("page",12);
+                bundle.putInt("page",13);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -89,7 +89,7 @@ public class Device_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Device_activ.this,Gallery_activ.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("page",13);
+                bundle.putInt("page",14);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
