@@ -1,11 +1,9 @@
 package nsf.nsf_nue_project;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,29 +19,17 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Configuration config = getResources().getConfiguration();
+        setContentView(R.layout.activity_main);
 
-//        if (config.smallestScreenWidthDp >= 600) {
-//            setContentView(R.layout.activity_main);
-//
-//            appBtn = (Button) findViewById(R.id.application_btn);
-//            deviceBtn = (Button) findViewById(R.id.device_btn);
-//            scallingBtn = (Button) findViewById(R.id.scalin_law_btn);
-//            introBtn = (Button) findViewById(R.id.intro_btn);
-//
-//        } else {
-            setContentView(R.layout.activity_main_small);
+        LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenWidth = size.x;
+        int screenHeight = size.y;
 
-            LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenWidth = size.x;
-            int screenHeight = size.y;
-
-            setFrontImage(screenWidth, screenHeight);
-            setButtons(screenHeight);
-//        }
+        setFrontImage(screenWidth, screenHeight);
+        setButtons(screenHeight);
 
         setButtonAction(introBtn, Intro_activ.class);
         setButtonAction(scallingBtn, Scale_activ.class);
@@ -66,19 +52,19 @@ public class MainActivity extends ActionBarActivity {
         int btnHeight = (int) (screenHeight * 0.15);
         int btnWidth = (int) (screenHeight * 0.53);
 
-        appBtn = (Button) findViewById(R.id.application_btn_phone);
+        appBtn = (Button) findViewById(R.id.application_btn);
         setMargins(appBtn, 0, btnMargin, btnMargin, btnMargin);
         setWidthAndHeight(appBtn, btnWidth, btnHeight);
 
-        deviceBtn = (Button) findViewById(R.id.device_btn_phone);
+        deviceBtn = (Button) findViewById(R.id.device_btn);
         setMargins(deviceBtn, 0, btnMargin, 0, 0);
         setWidthAndHeight(deviceBtn, btnWidth, btnHeight);
 
-        scallingBtn = (Button) findViewById(R.id.scallin_law_btn_phone);
+        scallingBtn = (Button) findViewById(R.id.scallin_law_btn);
         setMargins(scallingBtn, 0, btnMargin, 0, 0);
         setWidthAndHeight(scallingBtn, btnWidth, btnHeight);
 
-        introBtn = (Button) findViewById(R.id.intro_btn_phone);
+        introBtn = (Button) findViewById(R.id.intro_btn);
         setWidthAndHeight(introBtn, btnWidth, btnHeight);
         setMargins(introBtn, 0, btnMargin, 0, 0);
     }

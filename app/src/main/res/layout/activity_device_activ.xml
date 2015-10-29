@@ -5,45 +5,40 @@
     android:background="#ffffff">
 
     <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="3.1 SEM"
         android:id="@+id/sem_btn"
-        android:layout_marginTop="37dp"
         android:padding="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="52dp"
-        android:layout_marginStart="52dp"
-        android:textSize="13sp"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:text="3.2 AFM"
-        android:id="@+id/afm_btn"
-        android:layout_marginRight="52dp"
-        android:textSize="13sp"
+        android:textSize="10sp"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_above="@+id/quiz3_btn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="57dp"
-        android:layout_marginTop="37dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="450dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="3.2 AFM"
+        android:id="@+id/afm_btn"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="Quiz 3"
         android:id="@+id/quiz3_btn"
-        android:textSize="13sp"
-        android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/sem_btn"
+        android:textSize="10sp"
         android:background="@drawable/quizbutton"
-        android:textColor="#1e6cd2" />
+        android:textColor="#1e6cd2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp" />
 
 </RelativeLayout>

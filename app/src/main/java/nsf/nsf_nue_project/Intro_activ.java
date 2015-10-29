@@ -1,11 +1,9 @@
 package nsf.nsf_nue_project;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Point;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 import nsf.nsf_nue_project.quiz1.Quiz1_q1_activ;
 
@@ -29,29 +26,16 @@ public class Intro_activ extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Configuration config = getResources().getConfiguration();
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.activity_intro_activ);
+        setContentView(R.layout.activity_intro_activ);
 
-            btnNano = (Button)findViewById(R.id.nanotech_btn);
-            btnMarcoMicro = (Button)findViewById(R.id.macro_micro_btn);
-            btnNanoScale = (Button)findViewById(R.id.nanoscale_btn);
-            btnHistory = (Button)findViewById(R.id.history_btn);
-            quizBtn = (Button)findViewById(R.id.quiz1_btn);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenWidth = size.x;
+        int screenHeight = size.y;
 
-        } else {
-            setContentView(R.layout.activity_intro_activ_small);
-
-            LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenWidth = size.x;
-            int screenHeight = size.y;
-
-            setButtons(screenHeight, screenWidth);
-        }
+        setButtons(screenHeight, screenWidth);
 
         setButtonActions();
     }
@@ -112,27 +96,27 @@ public class Intro_activ extends ActionBarActivity {
         int btnWidth = (int) (screenWidth * 0.42);
         int btnTxtSize = (int) (screenHeight * 0.019);
 
-        btnNano = (Button) findViewById(R.id.nanotech_btn_phone);
+        btnNano = (Button) findViewById(R.id.nanotech_btn);
         setMargins(btnNano, btnMargin, btnMargin, 0, 0);
         setWidthAndHeight(btnNano, btnWidth, btnHeight);
         btnNano.setTextSize(btnTxtSize);
 
-        btnMarcoMicro = (Button) findViewById(R.id.macro_micro_btn_phone);
+        btnMarcoMicro = (Button) findViewById(R.id.macro_micro_btn);
         setMargins(btnMarcoMicro, 0, btnMargin, btnMargin, 0);
         setWidthAndHeight(btnMarcoMicro, btnWidth, btnHeight);
         btnMarcoMicro.setTextSize(btnTxtSize);
 
-        btnNanoScale = (Button) findViewById(R.id.nanoscale_btn_phone);
+        btnNanoScale = (Button) findViewById(R.id.nanoscale_btn);
         setMargins(btnNanoScale, btnMargin, btnMargin, 0, 0);
         setWidthAndHeight(btnNanoScale, btnWidth, btnHeight);
         btnNanoScale.setTextSize(btnTxtSize);
 
-        btnHistory = (Button) findViewById(R.id.history_btn_phone);
+        btnHistory = (Button) findViewById(R.id.history_btn);
         setMargins(btnHistory, 0, btnMargin, btnMargin, 0);
         setWidthAndHeight(btnHistory, btnWidth, btnHeight);
         btnHistory.setTextSize(btnTxtSize);
 
-        quizBtn = (Button) findViewById(R.id.quiz1_btn_phone);
+        quizBtn = (Button) findViewById(R.id.quiz1_btn);
         setMargins(quizBtn, 0, 0, 0, btnMargin);
         setWidthAndHeight(quizBtn, btnWidth, btnHeight);
         quizBtn.setTextSize(btnTxtSize);

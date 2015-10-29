@@ -28,8 +28,8 @@ public class Gallery_activ extends ActionBarActivity {
     private int start;
     private int chapter = 1;
     private int[] imageId = new int[]{R.drawable.page01, R.drawable.videobackground,
-            R.drawable.page03, R.drawable.page04, R.drawable.page05, R.drawable.page06,
-            R.drawable.page07, R.drawable.videobackground, R.drawable.videobackground, R.drawable.page010,
+            R.drawable.videobackground, R.drawable.page04, R.drawable.page05, R.drawable.page06,
+            R.drawable.page07, R.drawable.page08, R.drawable.videobackground, R.drawable.page010,
             R.drawable.videobackground, R.drawable.videobackground, R.drawable.page013, R.drawable.page014, R.drawable.page015,
             R.drawable.page016, R.drawable.page017, R.drawable.page018};
     private int index = 0;

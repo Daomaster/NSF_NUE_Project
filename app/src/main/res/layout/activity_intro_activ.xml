@@ -4,75 +4,71 @@
     android:background="#ffffff">
 
     <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="1.1 What is Nanotechnology?"
         android:textAllCaps="false"
         android:id="@+id/nanotech_btn"
-        android:layout_marginTop="37dp"
         android:padding="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="52dp"
-        android:layout_marginStart="52dp"
-        android:textSize="13sp"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:text="1.2 Macrosize &amp; Microsize"
-        android:textAllCaps="false"
-        android:id="@+id/macro_micro_btn"
-        android:layout_marginRight="52dp"
-        android:textSize="13sp"
+        android:textSize="10sp"
         android:background="@drawable/newbutton"
         android:textColor="#ffffff"
-        android:layout_alignTop="@+id/nanotech_btn"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="77dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:text="1.3 Why Nanoscale?"
-        android:textAllCaps="false"
-        android:id="@+id/nanoscale_btn"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/nanotech_btn"
-        android:layout_alignLeft="@+id/nanotech_btn"
-        android:layout_alignStart="@+id/nanotech_btn"
-        android:textSize="13sp"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:text="1.4 History"
-        android:textAllCaps="false"
-        android:id="@+id/history_btn"
-        android:layout_below="@+id/macro_micro_btn"
-        android:layout_alignLeft="@+id/macro_micro_btn"
-        android:layout_alignStart="@+id/macro_micro_btn"
-        android:layout_marginTop="40dp"
-        android:textSize="13sp"
-        android:background="@drawable/newbutton"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:layout_width="450dp"
-        android:layout_height="80dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:text="Quiz 1"
         android:textAllCaps="false"
         android:id="@+id/quiz1_btn"
-        android:textSize="13sp"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/nanoscale_btn"
-        android:layout_centerHorizontal="true"
+        android:textSize="10sp"
         android:background="@drawable/quizbutton"
-        android:textColor="#1e6cd2" />
+        android:textColor="#1e6cd2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="1.2 Macrosize &amp; Microsize"
+        android:textAllCaps="false"
+        android:id="@+id/macro_micro_btn"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="1.3 Why Nanoscale?"
+        android:textAllCaps="false"
+        android:id="@+id/nanoscale_btn"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/nanotech_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="1.4 History"
+        android:textAllCaps="false"
+        android:id="@+id/history_btn"
+        android:padding="20dp"
+        android:textSize="10sp"
+        android:background="@drawable/newbutton"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/macro_micro_btn"
+        android:layout_alignLeft="@+id/macro_micro_btn"
+        android:layout_alignStart="@+id/macro_micro_btn" />
 
 </RelativeLayout>

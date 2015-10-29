@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import nsf.nsf_nue_project.quiz1.Quiz1_q1_activ;
 import nsf.nsf_nue_project.quiz3.Quiz3_q1_activ;
 
 
@@ -25,27 +24,16 @@ public class Device_activ extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Configuration config = getResources().getConfiguration();
+        setContentView(R.layout.activity_device_activ);
 
-        if (config.smallestScreenWidthDp >= 600) {
-            setContentView(R.layout.activity_device_activ);
+        LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenWidth = size.x;
+        int screenHeight = size.y;
 
-            btnSem = (Button)findViewById(R.id.sem_btn);
-            btnAfm = (Button)findViewById(R.id.afm_btn);
-            btnQuiz3 = (Button)findViewById(R.id.quiz3_btn);
-
-        } else {
-            setContentView(R.layout.activity_device_activ_small);
-
-            LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenWidth = size.x;
-            int screenHeight = size.y;
-
-            setButtons(screenHeight, screenWidth);
-        }
+        setButtons(screenHeight, screenWidth);
 
         setButtonActions();
 
@@ -57,17 +45,17 @@ public class Device_activ extends ActionBarActivity {
         int btnWidth = (int) (screenWidth * 0.42);
         int btnTxtSize = (int) (screenHeight * 0.019);
 
-        btnSem = (Button)findViewById(R.id.sem_btn_phone);
+        btnSem = (Button)findViewById(R.id.sem_btn);
         setMargins(btnSem, btnMargin, btnMargin, 0, 0);
         setWidthAndHeight(btnSem, btnWidth, btnHeight);
         btnSem.setTextSize(btnTxtSize);
 
-        btnAfm = (Button)findViewById(R.id.afm_btn_phone);
+        btnAfm = (Button)findViewById(R.id.afm_btn);
         setMargins(btnAfm, 0, btnMargin, btnMargin, 0);
         setWidthAndHeight(btnAfm, btnWidth, btnHeight);
         btnAfm.setTextSize(btnTxtSize);
 
-        btnQuiz3 = (Button)findViewById(R.id.quiz3_btn_phone);
+        btnQuiz3 = (Button)findViewById(R.id.quiz3_btn);
         setMargins(btnQuiz3, 0, 0, 0, btnMargin);
         setWidthAndHeight(btnQuiz3, btnWidth, btnHeight);
         btnQuiz3.setTextSize(btnTxtSize);
