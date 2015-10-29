@@ -41,35 +41,32 @@ public class Quiz2_q2_activ extends ActionBarActivity {
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
 
-        Configuration config = getResources().getConfiguration();
-        if (config.smallestScreenWidthDp <= 600) {
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenHeight = size.y;
-            int btnTxtSize = (int) (screenHeight * 0.03);
-            int questionMargin = (int) (screenHeight * 0.15);
-            int answerMargin = (int) (questionMargin*1.3);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenHeight = size.y;
+        int btnTxtSize = (int) (screenHeight * 0.03);
+        int questionMargin = (int) (screenHeight * 0.15);
+        int answerMargin = (int) (questionMargin*1.3);
 
-            question2Q2Text.setTextSize(btnTxtSize);
-            setMargins(question2Q2Text, questionMargin, questionMargin, 0, questionMargin/3);
+        question2Q2Text.setTextSize(btnTxtSize);
+        setMargins(question2Q2Text, questionMargin, questionMargin, 0, questionMargin/3);
 
-            opA.setButtonDrawable(R.drawable.quiz2question2opaphone);
-            opA.setTextSize(btnTxtSize);
-            setMargins(opA, answerMargin, 0, 0, 0);
+        opA.setButtonDrawable(R.drawable.quiz2question2opaphone);
+        opA.setTextSize(btnTxtSize);
+        setMargins(opA, answerMargin, 0, 0, 0);
 
-            opB.setButtonDrawable(R.drawable.quiz2question2opbphone);
-            opB.setTextSize(btnTxtSize);
-            setMargins(opB, answerMargin/3, 0, 0, 0);
+        opB.setButtonDrawable(R.drawable.quiz2question2opbphone);
+        opB.setTextSize(btnTxtSize);
+        setMargins(opB, answerMargin/3, 0, 0, 0);
 
-            opC.setButtonDrawable(R.drawable.quiz2question2opcphone);
-            opC.setTextSize(btnTxtSize);
-            setMargins(opC, answerMargin/3, 0, 0, 0);
+        opC.setButtonDrawable(R.drawable.quiz2question2opcphone);
+        opC.setTextSize(btnTxtSize);
+        setMargins(opC, answerMargin/3, 0, 0, 0);
 
-            opD.setButtonDrawable(R.drawable.quiz2question2opdphone);
-            opD.setTextSize(btnTxtSize);
-            setMargins(opD, answerMargin/3, 0, 0, 0);
-        }
+        opD.setButtonDrawable(R.drawable.quiz2question2opdphone);
+        opD.setTextSize(btnTxtSize);
+        setMargins(opD, answerMargin/3, 0, 0, 0);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

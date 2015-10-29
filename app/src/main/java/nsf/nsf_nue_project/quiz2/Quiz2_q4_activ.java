@@ -52,32 +52,28 @@ public class Quiz2_q4_activ extends ActionBarActivity {
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
 
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenHeight = size.y;
+        int btnTxtSize = (int) (screenHeight * 0.03);
+        int questionMargin = (int) (screenHeight * 0.15);
+        int answerMargin = (int) (questionMargin/3);
 
-        Configuration config = getResources().getConfiguration();
-        if (config.smallestScreenWidthDp <= 600) {
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenHeight = size.y;
-            int btnTxtSize = (int) (screenHeight * 0.03);
-            int questionMargin = (int) (screenHeight * 0.15);
-            int answerMargin = (int) (questionMargin/3);
+        questionTxt.setTextSize(btnTxtSize);
+        setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin / 2);
 
-            questionTxt.setTextSize(btnTxtSize);
-            setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin / 2);
+        opA.setTextSize(btnTxtSize);
+        setMargins(opA, answerMargin, 0, 0, 0);
 
-            opA.setTextSize(btnTxtSize);
-            setMargins(opA, answerMargin, 0, 0, 0);
+        opB.setTextSize(btnTxtSize);
+        setMargins(opB, answerMargin, 0, 0, 0);
 
-            opB.setTextSize(btnTxtSize);
-            setMargins(opB, answerMargin, 0, 0, 0);
+        opC.setTextSize(btnTxtSize);
+        setMargins(opC, answerMargin, 0, 0, 0);
 
-            opC.setTextSize(btnTxtSize);
-            setMargins(opC, answerMargin, 0, 0, 0);
-
-            opD.setTextSize(btnTxtSize);
-            setMargins(opD, answerMargin, 0, 0, 0);
-        }
+        opD.setTextSize(btnTxtSize);
+        setMargins(opD, answerMargin, 0, 0, 0);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

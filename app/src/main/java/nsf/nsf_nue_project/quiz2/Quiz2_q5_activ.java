@@ -60,43 +60,40 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
 
-        Configuration config = getResources().getConfiguration();
-        if (config.smallestScreenWidthDp <= 600) {
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenHeight = size.y;
-            int btnTxtSize = (int) (screenHeight * 0.028);
-            int txtMargin = (int) (screenHeight * 0.15);
-            int editTxtMargin = (int) (screenHeight * 0.04);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenHeight = size.y;
+        int btnTxtSize = (int) (screenHeight * 0.028);
+        int txtMargin = (int) (screenHeight * 0.15);
+        int editTxtMargin = (int) (screenHeight * 0.04);
 
-            questionText.setTextSize(btnTxtSize);
-            setMargins(questionText, 0, 0, 0, 0);
+        questionText.setTextSize(btnTxtSize);
+        setMargins(questionText, 0, 0, 0, 0);
 
-            colATitle.setTextSize(btnTxtSize);
-            setMargins(colATitle, txtMargin*2, 0, 0, 0);
+        colATitle.setTextSize(btnTxtSize);
+        setMargins(colATitle, txtMargin*2, 0, 0, 0);
 
-            colBTitle.setTextSize(btnTxtSize);
-            setMargins(colBTitle, 0, 0, txtMargin*2, 0);
+        colBTitle.setTextSize(btnTxtSize);
+        setMargins(colBTitle, 0, 0, txtMargin*2, 0);
 
-            colAOptions.setTextSize(btnTxtSize);
-            setMargins(colAOptions, txtMargin, txtMargin/2, 0, 0);
+        colAOptions.setTextSize(btnTxtSize);
+        setMargins(colAOptions, txtMargin, txtMargin/2, 0, 0);
 
-            colBOptions.setTextSize(btnTxtSize);
-            setMargins(colBOptions, 0, txtMargin/2, 0, 0);
+        colBOptions.setTextSize(btnTxtSize);
+        setMargins(colBOptions, 0, txtMargin/2, 0, 0);
 
-            colBOptions.setTextSize(btnTxtSize);
-            setMargins(colBOptions, 0, 0, 0, 0);
+        colBOptions.setTextSize(btnTxtSize);
+        setMargins(colBOptions, 0, 0, 0, 0);
 
-            opA.setTextSize(btnTxtSize);
-            setMargins(opA, 0, 0, 0, editTxtMargin);
+        opA.setTextSize(btnTxtSize);
+        setMargins(opA, 0, 0, 0, editTxtMargin);
 
-            opB.setTextSize(btnTxtSize);
-            setMargins(opB, 0, 0, 0, editTxtMargin);
+        opB.setTextSize(btnTxtSize);
+        setMargins(opB, 0, 0, 0, editTxtMargin);
 
-            opC.setTextSize(btnTxtSize);
-            setMargins(opC, 0, 0, 0, 0);
-        }
+        opC.setTextSize(btnTxtSize);
+        setMargins(opC, 0, 0, 0, 0);
 
 
         nextBtn.setOnClickListener(new View.OnClickListener() {

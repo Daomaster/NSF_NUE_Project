@@ -31,21 +31,18 @@ public class Score extends ActionBarActivity {
 
         scoreTittle = (TextView) findViewById(R.id.scoreTittle);
 
-        Configuration config = getResources().getConfiguration();
-        if (config.smallestScreenWidthDp <= 600) {
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int screenHeight = size.y;
-            int txtSize = (int) (screenHeight * 0.11);
-            int txtMargin = (int) (screenHeight * 0.08);
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int screenHeight = size.y;
+        int txtSize = (int) (screenHeight * 0.11);
+        int txtMargin = (int) (screenHeight * 0.08);
 
-            scoreTV.setTextSize(txtSize);
-            setMargins(scoreTV, 0, txtMargin, 0, 0);
+        scoreTV.setTextSize(txtSize);
+        setMargins(scoreTV, 0, txtMargin, 0, 0);
 
-            scoreTittle.setTextSize(txtSize);
-            setMargins(scoreTittle, 0, 0, 0, txtMargin);
-        }
+        scoreTittle.setTextSize(txtSize);
+        setMargins(scoreTittle, 0, 0, 0, txtMargin);
     }
 
     public void setMargins (View view, int left, int top, int right, int bottom) {
