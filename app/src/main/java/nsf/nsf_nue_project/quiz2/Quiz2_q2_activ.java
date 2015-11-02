@@ -49,24 +49,29 @@ public class Quiz2_q2_activ extends ActionBarActivity {
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin*1.3);
 
-        question2Q2Text.setTextSize(btnTxtSize);
-        setMargins(question2Q2Text, questionMargin, questionMargin, 0, questionMargin/3);
+        Configuration config = getResources().getConfiguration();
+        if (config.smallestScreenWidthDp <= 600) {
+            Log.i("test", "asdasd");
+            question2Q2Text.setTextSize(btnTxtSize);
+            setMargins(question2Q2Text, questionMargin, questionMargin, 0, questionMargin / 3);
 
-        opA.setButtonDrawable(R.drawable.quiz2question2opaphone);
-        opA.setTextSize(btnTxtSize);
-        setMargins(opA, answerMargin, 0, 0, 0);
+            opA.setButtonDrawable(R.drawable.quiz2question2opaphone);
+            opA.setTextSize(btnTxtSize);
+            setMargins(opA, answerMargin, 0, 0, 0);
 
-        opB.setButtonDrawable(R.drawable.quiz2question2opbphone);
-        opB.setTextSize(btnTxtSize);
-        setMargins(opB, answerMargin/3, 0, 0, 0);
+            opB.setButtonDrawable(R.drawable.quiz2question2opbphone);
+            opB.setTextSize(btnTxtSize);
+            setMargins(opB, answerMargin / 3, 0, 0, 0);
 
-        opC.setButtonDrawable(R.drawable.quiz2question2opcphone);
-        opC.setTextSize(btnTxtSize);
-        setMargins(opC, answerMargin/3, 0, 0, 0);
+            opC.setButtonDrawable(R.drawable.quiz2question2opcphone);
+            opC.setTextSize(btnTxtSize);
+            setMargins(opC, answerMargin / 3, 0, 0, 0);
 
-        opD.setButtonDrawable(R.drawable.quiz2question2opdphone);
-        opD.setTextSize(btnTxtSize);
-        setMargins(opD, answerMargin/3, 0, 0, 0);
+            opD.setButtonDrawable(R.drawable.quiz2question2opdphone);
+            opD.setTextSize(btnTxtSize);
+            setMargins(opD, answerMargin / 3, 0, 0, 0);
+        }
+        Log.i("test","2");
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override

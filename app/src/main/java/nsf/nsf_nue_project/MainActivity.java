@@ -48,31 +48,31 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setButtons(int screenHeight) {
-        int btnMargin = (int) (screenHeight * 0.04);
-        int btnHeight = (int) (screenHeight * 0.15);
-        int btnWidth = (int) (screenHeight * 0.53);
+        int btnMargin = (int) (screenHeight * 0.01);
+        int btnHeight = (int) (screenHeight * 0.19);
+        int btnWidth = (int) (screenHeight * 0.43);
 
         appBtn = (Button) findViewById(R.id.application_btn);
-        setMargins(appBtn, 0, btnMargin, btnMargin, btnMargin);
+        setMargins(appBtn, 0, 0, btnMargin*2, btnMargin);
         setWidthAndHeight(appBtn, btnWidth, btnHeight);
 
         deviceBtn = (Button) findViewById(R.id.device_btn);
-        setMargins(deviceBtn, 0, btnMargin, 0, 0);
+        setMargins(deviceBtn, 0, 0, btnMargin*3, 0);
         setWidthAndHeight(deviceBtn, btnWidth, btnHeight);
 
         scallingBtn = (Button) findViewById(R.id.scallin_law_btn);
-        setMargins(scallingBtn, 0, btnMargin, 0, 0);
+        setMargins(scallingBtn, 0, 0, btnMargin*4, 0);
         setWidthAndHeight(scallingBtn, btnWidth, btnHeight);
 
         introBtn = (Button) findViewById(R.id.intro_btn);
         setWidthAndHeight(introBtn, btnWidth, btnHeight);
-        setMargins(introBtn, 0, btnMargin, 0, 0);
+        setMargins(introBtn, 0, 0, btnMargin*5, 0);
     }
 
     private void setFrontImage(int screenWidth, int screenHeight) {
-        int fronImageWidth = (int) (screenWidth * 0.7);
+        int fronImageWidth = (int) (screenWidth * 0.8);
         int fronImageHeight = (int) (screenHeight * 0.7);
-        int frontImageMarginL = (int) (screenHeight * 0.05);
+        int frontImageMarginL = (int) (screenHeight * 0.12);
         int frontImageMarginB = (int) (screenHeight * 0.05);
 
         ImageView frontImage = (ImageView) findViewById(R.id.frontImage);
