@@ -4,12 +4,12 @@
     android:background="@color/black">
 
 
-    <ImageSwitcher
+    <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageSwitcher" >
+        android:id="@+id/galleryImage" >
 
-    </ImageSwitcher>
+    </ImageView>
 
     <VideoView
         android:layout_width="match_parent"

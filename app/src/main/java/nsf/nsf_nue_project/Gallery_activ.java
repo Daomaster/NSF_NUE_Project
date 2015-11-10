@@ -3,6 +3,11 @@ package nsf.nsf_nue_project;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
@@ -42,7 +47,7 @@ public class Gallery_activ extends ActionBarActivity {
             "4.4 Drug Delivery"};
     private static final int SWIPE_MIN_DISTANCE = 120;
     private float initialX;
-    private ImageSwitcher imageSwitcher;
+    private ImageView galleryImage;
     private ImageView link_egypt;
     private ImageView firstTem;
     private ImageView linkRichard;
@@ -69,7 +74,9 @@ public class Gallery_activ extends ActionBarActivity {
         start = bundle.getInt("page");
         index = start - 1;
 
-        setImageSwitcher();
+        galleryImage = (ImageView) findViewById(R.id.galleryImage);
+        galleryImage.setImageBitmap(
+                decodeSampledBitmapFromResource(getResources(), imageId[index], 480, 360));
 
         setTitle(titles[index]);
         setVideo(titles[index]);
@@ -117,13 +124,15 @@ public class Gallery_activ extends ActionBarActivity {
                         dialog.show();
                     } else {
                         index++;
-                        imageSwitcher.setImageResource(imageId[index]);
+                        galleryImage.setImageBitmap(
+                                decodeSampledBitmapFromResource(getResources(), imageId[index], 480, 360));
                         setTitle(titles[index]);
                         setLinks(titles[index]);
                     }
                 } else if (initialX < finalX && (finalX-initialX) > SWIPE_MIN_DISTANCE && index > 0) { //swiping left to right
                     index--;
-                    imageSwitcher.setImageResource(imageId[index]);
+                    galleryImage.setImageBitmap(
+                            decodeSampledBitmapFromResource(getResources(), imageId[index], 480, 360));
                     setTitle(titles[index]);
                     setLinks(titles[index]);
                 }
@@ -192,6 +201,44 @@ public class Gallery_activ extends ActionBarActivity {
             linkCnt.setVisibility(ImageView.GONE);
         }
     }
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                         int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res, resId, options);
+    }
+
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
+    }
 
     private void setLinkOnImageView(ImageView img, final String link) {
 
@@ -205,22 +252,6 @@ public class Gallery_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void setImageSwitcher() {
-        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
-        imageSwitcher.setInAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
-        imageSwitcher.setOutAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_out));
-        imageSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
-            @Override
-            public View makeView() {
-                ImageView imageView = new ImageView(Gallery_activ.this);
-                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-                return imageView;
-            }
-        });
-        imageSwitcher.setImageResource(imageId[index]);
-
     }
 
     private void setVideo(String chapter) {
