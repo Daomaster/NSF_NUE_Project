@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.VideoView;
 import android.widget.ViewSwitcher;
 import android.view.MotionEvent;
+
+import java.lang.ref.WeakReference;
 
 import nsf.nsf_nue_project.quiz1.Quiz1_q1_activ;
 import nsf.nsf_nue_project.quiz2.Quiz2_q1_activ;
@@ -261,7 +264,7 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page02_video_1280_720);
+                    + R.raw.page02_video_640x360);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -269,7 +272,7 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page08_1280_720);
+                    + R.raw.page08_640x360);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -277,7 +280,7 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page09_video_1280_720);
+                    + R.raw.page09_video_640x360);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -285,7 +288,7 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page11_video_1280_720);
+                    + R.raw.page11_video_640x360);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -293,7 +296,7 @@ public class Gallery_activ extends ActionBarActivity {
 
             videoView.setVisibility(VideoView.VISIBLE);
             Uri video = Uri.parse("android.resource://" + getPackageName() + "/"
-                    + R.raw.page12_video_1280_720);
+                    + R.raw.page12_video_640x360);
             videoView.setVideoURI(video);
             videoView.start();
 
@@ -354,5 +357,33 @@ public class Gallery_activ extends ActionBarActivity {
         inflater.inflate(R.menu.menu_act_bar, menu);
 
         return super.onCreateOptionsMenu(menu);
+    }
+
+    class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {
+        private final WeakReference<ImageView> imageViewReference;
+        private int data = 0;
+
+        public BitmapWorkerTask(ImageView imageView) {
+            // Use a WeakReference to ensure the ImageView can be garbage collected
+            imageViewReference = new WeakReference<ImageView>(imageView);
+        }
+
+        // Decode image in background.
+        @Override
+        protected Bitmap doInBackground(Integer... params) {
+            data = params[0];
+            return decodeSampledBitmapFromResource(getResources(), data, 100, 100);
+        }
+
+        // Once complete, see if ImageView is still around and set bitmap.
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            if (imageViewReference != null && bitmap != null) {
+                final ImageView imageView = imageViewReference.get();
+                if (imageView != null) {
+                    imageView.setImageBitmap(bitmap);
+                }
+            }
+        }
     }
 }
