@@ -16,7 +16,7 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,118 +27,118 @@
             android:name=".Intro_activ"
             android:label=""
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".Scale_activ"
             android:label=""
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".Device_activ"
             android:label=""
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".App_activ"
             android:label=""
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".Gallery_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" >
         </activity>
         <activity
             android:name=".quiz1.Quiz1_q1_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz1.Quiz1_q2_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz1.Quiz1_q3_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz1.Quiz1_q4_activ"
             android:label="Quiz"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz3.Quiz3_q1_activ"
             android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz3.Quiz3_q2_activ"
             android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz2.Quiz2_q1_activ"
             android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz2.Quiz2_q2_activ"
             android:label="@string/title_activity_quiz2_q2_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz2.Quiz2_q3_activ"
             android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz2.Quiz2_q4_activ"
             android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".quiz2.Quiz2_q5_activ"
             android:label="@string/title_activity_quiz_activ"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/MainTheme" >
         </activity>
         <activity
             android:name=".Score"
             android:label="Score"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensorLandscape"
             android:theme="@style/AppTheme" >
         </activity>
     </application>
