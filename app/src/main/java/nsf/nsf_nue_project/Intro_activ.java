@@ -95,8 +95,8 @@ public class Intro_activ extends ActionBarActivity {
     }
 
     private void setButtons(int screenHeight, int screenWidth) {
-        int btnMargin = (int) (screenHeight * 0.075);
-        int btnHeight = (int) (screenHeight * 0.16);
+        int btnMargin = (int) (screenHeight * 0.04);
+        int btnHeight = (int) (screenHeight * 0.2);
         int btnWidth = (int) (screenWidth * 0.42);
         int btnTxtSize = (int) (screenHeight * 0.019);
 
