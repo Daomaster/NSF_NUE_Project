@@ -2,6 +2,7 @@ package nsf.nsf_nue_project;
 
 import android.content.Intent;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -38,6 +39,9 @@ public class Intro_activ extends ActionBarActivity {
         setButtons(screenHeight, screenWidth);
 
         setButtonActions();
+
+        Drawable d = getResources().getDrawable(R.drawable.layout_top_ch1);
+        getSupportActionBar().setBackgroundDrawable(d);
     }
 
     private void setButtonActions() {
