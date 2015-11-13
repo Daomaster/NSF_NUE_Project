@@ -1,7 +1,6 @@
 package nsf.nsf_nue_project;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
