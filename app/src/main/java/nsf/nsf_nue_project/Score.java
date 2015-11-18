@@ -3,6 +3,7 @@ package nsf.nsf_nue_project;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Point;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -22,6 +23,9 @@ public class Score extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
+
+        Drawable d = getResources().getDrawable(R.drawable.layout_top);
+        getSupportActionBar().setBackgroundDrawable(d);
 
         Intent intent = getIntent();
         String score = intent.getStringExtra("score");
