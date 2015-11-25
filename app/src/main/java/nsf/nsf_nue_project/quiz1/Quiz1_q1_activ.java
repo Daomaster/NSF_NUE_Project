@@ -1,8 +1,11 @@
 package nsf.nsf_nue_project.quiz1;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +53,8 @@ public class Quiz1_q1_activ extends ActionBarActivity {
         opD.setText(questionArray1[4]);
         opE.setVisibility(RadioButton.GONE);
 
+        setFonts();
+        
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -57,6 +62,7 @@ public class Quiz1_q1_activ extends ActionBarActivity {
         int btnTxtSize = (int) (screenHeight * 0.03);
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin/3);
+
 
         questionTxt.setTextSize(btnTxtSize);
         setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin);
@@ -96,6 +102,22 @@ public class Quiz1_q1_activ extends ActionBarActivity {
                 finish();
             }
         });
+    }
+
+    private void setFonts() {
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        questionTxt.setTypeface(custom_font);
+
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        opA.setTypeface(custom_font1);
+        Typeface custom_font2 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        opB.setTypeface(custom_font2);
+        Typeface custom_font3 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        opC.setTypeface(custom_font3);
+        Typeface custom_font4 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        opD.setTypeface(custom_font4);
+        Typeface custom_font5 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        opE.setTypeface(custom_font5);
     }
 
     public void setMargins (View view, int left, int top, int right, int bottom) {
