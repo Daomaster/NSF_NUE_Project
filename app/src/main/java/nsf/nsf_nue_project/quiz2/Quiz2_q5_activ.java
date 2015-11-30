@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -55,46 +56,27 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         colBOptions = (TextView) findViewById(R.id.colBOptions);
         builder = new AlertDialog.Builder(this);
 
-
         //getting the the accumulated score
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
+
+        setFonts();
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int screenHeight = size.y;
-        int btnTxtSize = (int) (screenHeight * 0.028);
         int txtMargin = (int) (screenHeight * 0.15);
         int editTxtMargin = (int) (screenHeight * 0.04);
 
-        questionText.setTextSize(btnTxtSize);
         setMargins(questionText, 0, 0, 0, 0);
-
-        colATitle.setTextSize(btnTxtSize);
         setMargins(colATitle, txtMargin*2, 0, 0, 0);
-
-        colBTitle.setTextSize(btnTxtSize);
         setMargins(colBTitle, 0, 0, txtMargin*2, 0);
-
-        colAOptions.setTextSize(btnTxtSize);
-        setMargins(colAOptions, txtMargin, txtMargin/2, 0, 0);
-
-        colBOptions.setTextSize(btnTxtSize);
-        setMargins(colBOptions, 0, txtMargin/2, 0, 0);
-
-        colBOptions.setTextSize(btnTxtSize);
+        setMargins(colAOptions, txtMargin, 0, 0, 0);
         setMargins(colBOptions, 0, 0, 0, 0);
-
-        opA.setTextSize(btnTxtSize);
         setMargins(opA, 0, 0, 0, editTxtMargin);
-
-        opB.setTextSize(btnTxtSize);
         setMargins(opB, 0, 0, 0, editTxtMargin);
-
-        opC.setTextSize(btnTxtSize);
         setMargins(opC, 0, 0, 0, 0);
-
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,6 +143,16 @@ public class Quiz2_q5_activ extends ActionBarActivity {
             p.setMargins(left, top, right, bottom);
             view.requestLayout();
         }
+    }
+
+    private void setFonts() {
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        questionText.setTypeface(custom_font);
+        colATitle.setTypeface(custom_font);
+        colBTitle.setTypeface(custom_font);
+        colAOptions.setTypeface(custom_font);
+        colBOptions.setTypeface(custom_font);
     }
 
 }

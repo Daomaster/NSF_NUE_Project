@@ -3,6 +3,7 @@ package nsf.nsf_nue_project.quiz2;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -49,6 +50,8 @@ public class Quiz2_q4_activ extends ActionBarActivity {
         opD.setText(questionArray[4]);
         opE.setVisibility(RadioButton.GONE);
 
+        setFonts();
+
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
 
@@ -56,23 +59,13 @@ public class Quiz2_q4_activ extends ActionBarActivity {
         Point size = new Point();
         display.getSize(size);
         int screenHeight = size.y;
-        int btnTxtSize = (int) (screenHeight * 0.03);
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin/3);
 
-        questionTxt.setTextSize(btnTxtSize);
         setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin / 2);
-
-        opA.setTextSize(btnTxtSize);
         setMargins(opA, answerMargin, 0, 0, 0);
-
-        opB.setTextSize(btnTxtSize);
         setMargins(opB, answerMargin, 0, 0, 0);
-
-        opC.setTextSize(btnTxtSize);
         setMargins(opC, answerMargin, 0, 0, 0);
-
-        opD.setTextSize(btnTxtSize);
         setMargins(opD, answerMargin, 0, 0, 0);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +99,16 @@ public class Quiz2_q4_activ extends ActionBarActivity {
             p.setMargins(left, top, right, bottom);
             view.requestLayout();
         }
+    }
+
+    private void setFonts() {
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        questionTxt.setTypeface(custom_font);
+        opA.setTypeface(custom_font);
+        opB.setTypeface(custom_font);
+        opC.setTypeface(custom_font);
+        opD.setTypeface(custom_font);
+        opE.setTypeface(custom_font);
     }
 
 }

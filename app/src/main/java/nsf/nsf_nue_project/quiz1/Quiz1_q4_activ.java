@@ -103,10 +103,7 @@ public class Quiz1_q4_activ extends ActionBarActivity {
     private void setFonts() {
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
         questionTxt.setTypeface(custom_font);
-
-        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
-        opA.setTypeface(custom_font1);
-        Typeface custom_font2 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
-        opB.setTypeface(custom_font2);
+        opA.setTypeface(custom_font);
+        opB.setTypeface(custom_font);
     }
 }

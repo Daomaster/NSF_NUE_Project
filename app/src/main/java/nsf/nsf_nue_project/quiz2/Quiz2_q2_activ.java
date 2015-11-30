@@ -3,6 +3,7 @@ package nsf.nsf_nue_project.quiz2;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class Quiz2_q2_activ extends ActionBarActivity {
     ImageView nextBtn;
     ImageView backBtn;
     int score;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,8 @@ public class Quiz2_q2_activ extends ActionBarActivity {
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
 
+        setFonts();
+
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -51,8 +55,6 @@ public class Quiz2_q2_activ extends ActionBarActivity {
 
         Configuration config = getResources().getConfiguration();
         if (config.smallestScreenWidthDp <= 600) {
-            Log.i("test", "asdasd");
-            question2Q2Text.setTextSize(btnTxtSize);
             setMargins(question2Q2Text, questionMargin, questionMargin, 0, questionMargin / 3);
 
             opA.setButtonDrawable(R.drawable.quiz2question2opaphone);
@@ -71,7 +73,6 @@ public class Quiz2_q2_activ extends ActionBarActivity {
             opD.setTextSize(btnTxtSize);
             setMargins(opD, answerMargin / 3, 0, 0, 0);
         }
-        Log.i("test","2");
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +97,10 @@ public class Quiz2_q2_activ extends ActionBarActivity {
                 startActivity(intent);
             }
         });
+    }
+    private void setFonts() {
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        question2Q2Text.setTypeface(custom_font);
     }
 
     public void setMargins (View view, int left, int top, int right, int bottom) {
