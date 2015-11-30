@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/questionText"
-        android:textSize="35sp"
+        android:textSize="20sp"
         android:text="asdasdasdasdasd"
-        android:textColor="#182331"
+        android:textColor="#ff000000"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="false"
         android:layout_alignParentStart="true" />
@@ -35,58 +35,58 @@
             android:layout_alignStart="@+id/questionText"
             android:layout_marginLeft="0dp"
             android:layout_marginStart="64dp"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_marginTop="50dp"
             android:checked="false"
-            android:textColor="#182331" />
+            android:textColor="#ff000000" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/option_b"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_below="@+id/option_a"
             android:layout_alignLeft="@+id/option_a"
             android:layout_alignStart="@+id/option_a"
             android:layout_marginTop="20dp"
             android:checked="false"
-            android:textColor="#182331" />
+            android:textColor="#ff000000" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/option_c"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_below="@+id/option_b"
             android:layout_alignLeft="@+id/option_b"
             android:layout_alignStart="@+id/option_b"
             android:layout_marginTop="20dp"
             android:checked="false"
-            android:textColor="#182331" />
+            android:textColor="#ff000000" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/option_d"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_below="@+id/option_c"
             android:layout_alignLeft="@+id/option_c"
             android:layout_alignStart="@+id/option_c"
             android:layout_marginTop="20dp"
             android:checked="false"
-            android:textColor="#182331" />
+            android:textColor="#ff000000" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/option_e"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:layout_below="@+id/option_d"
             android:layout_alignLeft="@+id/option_d"
             android:layout_alignStart="@+id/option_d"
             android:layout_marginTop="20dp"
             android:checked="false"
-            android:textColor="#182331" />
+            android:textColor="#ff000000" />
     </RadioGroup>
 
     <ImageView

@@ -54,31 +54,20 @@ public class Quiz1_q1_activ extends ActionBarActivity {
         opE.setVisibility(RadioButton.GONE);
 
         setFonts();
-        
+
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int screenHeight = size.y;
-        int btnTxtSize = (int) (screenHeight * 0.03);
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin/3);
 
 
-        questionTxt.setTextSize(btnTxtSize);
         setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin);
-
-        opA.setTextSize(btnTxtSize);
         setMargins(opA, answerMargin, 0, 0, 0);
-
-        opB.setTextSize(btnTxtSize);
         setMargins(opB, answerMargin, 0, 0, 0);
-
-        opC.setTextSize(btnTxtSize);
         setMargins(opC, answerMargin, 0, 0, 0);
-
-        opD.setTextSize(btnTxtSize);
         setMargins(opD, answerMargin, 0, 0, 0);
-
         opE.setVisibility(RadioButton.GONE);
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +105,6 @@ public class Quiz1_q1_activ extends ActionBarActivity {
         opC.setTypeface(custom_font3);
         Typeface custom_font4 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
         opD.setTypeface(custom_font4);
-        Typeface custom_font5 = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
-        opE.setTypeface(custom_font5);
     }
 
     public void setMargins (View view, int left, int top, int right, int bottom) {
