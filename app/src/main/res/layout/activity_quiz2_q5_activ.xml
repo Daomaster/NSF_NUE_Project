@@ -14,7 +14,7 @@
         android:id="@+id/questionText"
         android:textSize="16sp"
         android:text="Relate A and B"
-        android:textColor="#ff000000"
+        android:textColor="#261c4a"
         android:layout_below="@+id/back_btn"
         android:layout_centerHorizontal="true"
         android:textStyle="bold" />
@@ -47,7 +47,7 @@
         android:id="@+id/colAOptions"
         android:textSize="14sp"
         android:text="1. Geckos walk on the wall\n\n2. Water striders walk on the water\n\n3. Plastic combs attract paper pieces "
-        android:textColor="#ff000000"
+        android:textColor="#261c4a"
         android:layout_below="@+id/colATitle"
         android:layout_toStartOf="@+id/questionText"
         android:layout_alignParentBottom="false" />
@@ -59,7 +59,7 @@
         android:id="@+id/colATitle"
         android:textSize="16sp"
         android:text="A"
-        android:textColor="#ff000000"
+        android:textColor="#261c4a"
         android:layout_below="@+id/questionText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -72,7 +72,7 @@
         android:id="@+id/colBOptions"
         android:textSize="14sp"
         android:text="Surface tension \n\n\nvan der Waals force\n\n\nElectrostatic force "
-        android:textColor="#ff000000"
+        android:textColor="#261c4a"
         android:layout_alignTop="@+id/colAOptions"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -84,7 +84,7 @@
         android:id="@+id/colBTitle"
         android:textSize="16sp"
         android:text="B"
-        android:textColor="#ff000000"
+        android:textColor="#261c4a"
         android:textStyle="bold"
         android:layout_below="@+id/questionText"
         android:layout_alignParentRight="true" />

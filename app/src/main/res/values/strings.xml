@@ -20,32 +20,32 @@
     <string-array name="question1_q3">
         <item >1 - Which microscopy technique is suitable for imaging ultra-small size (&#60; 10
                    nm) nanoparticles?</item>
-        <item >A) Electron microscopy</item>
-        <item >B) Light Microscopy</item>
-        <item >C) X-Ray Microscopy</item>
-        <item >D) Fluorescence microscopy</item>
-        <item >E) All of the above Devices</item>
+        <item >Electron microscopy</item>
+        <item >Light Microscopy</item>
+        <item >X-Ray Microscopy</item>
+        <item >Fluorescence microscopy</item>
+        <item >All of the above Devices</item>
     </string-array>
 
     <!--QUESTION 2 - QUIZ 3-->
     <string-array name="question2_q3">
         <item >2 - Electron microscopy technique is generally used for characterizing</item>
-        <item >A) Nanomaterial surface topography (surface features)</item>
-        <item >B) Nanomaterial morphology (size and shape)</item>
-        <item >C) Structure (crystallography)</item>
-        <item >D) None of the above</item>
-        <item >E) All of A, B and C</item>
+        <item >Nanomaterial surface topography (surface features)</item>
+        <item >Nanomaterial morphology (size and shape)</item>
+        <item >Structure (crystallography)</item>
+        <item >None of the above</item>
+        <item >All of A, B and C</item>
     </string-array>
 
     <!--QUESTION 1 - QUIZ 2-->
     <string-array name="question1_q2">
         <item >1 - Which one of these forces dominate at the deep nanoscale level? (10
                nanometers or less)</item>
-        <item >A) Inertia</item>
-        <item >B) Van der Waals</item>
-        <item >C) Structure (crystallography)</item>
-        <item >D) Gravity</item>
-        <item >E) Electromagnetism</item>
+        <item >Inertia</item>
+        <item >Van der Waals</item>
+        <item >Structure (crystallography)</item>
+        <item >Gravity</item>
+        <item >Electromagnetism</item>
     </string-array>
 
     <!--QUESTION 3 - QUIZ 2-->
@@ -61,10 +61,10 @@
     <string-array name="question4_q2">
         <item >4 - Among the following, which can be better utilized for movement when we reduce the
                 size below millimeter scale?</item>
-        <item >A) Buoyant force</item>
-        <item >B) Gravitational force</item>
-        <item >C) Inertial force</item>
-        <item >D) Capillary force</item>
+        <item >Buoyant force</item>
+        <item >Gravitational force</item>
+        <item >Inertial force</item>
+        <item >Capillary force</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -76,29 +76,29 @@
     <!--QUESTION 1 - QUIZ 1-->
     <string-array name="question1_q1">
         <item >1 -The diameter of a DNA molecule is 2 __?</item>
-        <item >A)  Angstroms</item>
-        <item >B)  Micron</item>
-        <item >C)  Nanometers</item>
-        <item >D) Millimeters</item>
+        <item > Angstroms</item>
+        <item > Micron</item>
+        <item > Nanometers</item>
+        <item > Millimeters</item>
     </string-array>
 
     <!--QUESTION 2 - QUIZ 1-->
     <string-array name="question2_q1">
         <item >2 - The prefix “nano” comes from a __</item>
-        <item >A)  French word meaning billion.</item>
-        <item >B)  Greek word meaning dwarf. </item>
-        <item >C)  Spanish word meaning particle.</item>
-        <item >D)  Latin word meaning invisible.</item>
+        <item > French word meaning billion.</item>
+        <item > Greek word meaning dwarf. </item>
+        <item > Spanish word meaning particle.</item>
+        <item > Latin word meaning invisible.</item>
     </string-array>
 
     <!--QUESTION 3 - QUIZ 1-->
     <string-array name="question3_q1">
         <item >3 - Which element has been most actively studied for building blocks for
                    nanotechnology  products in the form of tubes, sheets and balls.</item>
-        <item >A)  Hydrogen</item>
-        <item >B)  Carbon</item>
-        <item >C)  Tungsten</item>
-        <item >D)  Aluminum</item>
+        <item > Hydrogen</item>
+        <item > Carbon</item>
+        <item > Tungsten</item>
+        <item > Aluminum</item>
     </string-array>
 
     <!--QUESTION 4 - QUIZ 1-->

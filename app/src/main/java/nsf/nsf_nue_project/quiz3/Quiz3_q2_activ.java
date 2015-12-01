@@ -84,7 +84,7 @@ public class Quiz3_q2_activ extends ActionBarActivity {
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin/3);
 
-        setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin / 2);
+        setMargins(questionTxt, questionMargin, answerMargin, 0, answerMargin);
         setMargins(opA, answerMargin, 0, 0, 0);
         setMargins(opB, answerMargin, 0, 0, 0);
         setMargins(opC, answerMargin, 0, 0, 0);
