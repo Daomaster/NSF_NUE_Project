@@ -2,6 +2,7 @@ package nsf.nsf_nue_project.quiz3;
 
 import android.content.Intent;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Display;
@@ -80,27 +81,17 @@ public class Quiz3_q2_activ extends ActionBarActivity {
         Point size = new Point();
         display.getSize(size);
         int screenHeight = size.y;
-        int btnTxtSize = (int) (screenHeight * 0.03);
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin/3);
 
-        questionTxt.setTextSize(btnTxtSize);
         setMargins(questionTxt, questionMargin, questionMargin, 0, questionMargin / 2);
-
-        opA.setTextSize(btnTxtSize);
         setMargins(opA, answerMargin, 0, 0, 0);
-
-        opB.setTextSize(btnTxtSize);
         setMargins(opB, answerMargin, 0, 0, 0);
-
-        opC.setTextSize(btnTxtSize);
         setMargins(opC, answerMargin, 0, 0, 0);
-
-        opD.setTextSize(btnTxtSize);
         setMargins(opD, answerMargin, 0, 0, 0);
-
-        opE.setTextSize(btnTxtSize);
         setMargins(opE, answerMargin, 0, 0, 0);
+
+        setFonts();
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
@@ -114,4 +105,13 @@ public class Quiz3_q2_activ extends ActionBarActivity {
         }
     }
 
+    private void setFonts() {
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "ArchitectsDaughter.ttf");
+        questionTxt.setTypeface(custom_font);
+        opA.setTypeface(custom_font);
+        opB.setTypeface(custom_font);
+        opC.setTypeface(custom_font);
+        opD.setTypeface(custom_font);
+        opE.setTypeface(custom_font);
+    }
 }
