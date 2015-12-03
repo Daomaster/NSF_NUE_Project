@@ -44,13 +44,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/colAOptions"
+        android:id="@+id/colAOption1"
         android:textSize="14sp"
-        android:text="1. Geckos walk on the wall\n\n2. Water striders walk on the water\n\n3. Plastic combs attract paper pieces "
+        android:text="1. Geckos walk on the wall"
         android:textColor="#261c4a"
         android:layout_below="@+id/colATitle"
         android:layout_toStartOf="@+id/questionText"
-        android:layout_alignParentBottom="false" />
+        android:layout_alignParentBottom="false"
+        android:layout_marginBottom="16sp"
+        android:layout_marginLeft="70dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -60,22 +62,25 @@
         android:textSize="16sp"
         android:text="A"
         android:textColor="#261c4a"
+        android:textStyle="bold"
         android:layout_below="@+id/questionText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
+        android:layout_alignLeft="@+id/colAOption1"
+        android:layout_alignStart="@+id/colAOption1"
+        android:layout_marginLeft="74dp"
+        android:layout_marginStart="74dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/colBOptions"
+        android:id="@+id/colBOption1"
         android:textSize="14sp"
-        android:text="Surface tension \n\n\nvan der Waals force\n\n\nElectrostatic force "
+        android:text="Surface tension"
         android:textColor="#261c4a"
-        android:layout_alignTop="@+id/colAOptions"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/colBTitle"
+        android:layout_toLeftOf="@+id/next_btn"
+        android:layout_toStartOf="@+id/next_btn"
+        android:layout_marginBottom="16sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,36 +91,88 @@
         android:text="B"
         android:textColor="#261c4a"
         android:textStyle="bold"
-        android:layout_below="@+id/questionText"
-        android:layout_alignParentRight="true" />
+        android:layout_above="@+id/colAOption1"
+        android:layout_alignLeft="@+id/back_btn"
+        android:layout_alignStart="@+id/back_btn" />
 
-    <EditText
+    <Spinner
+        android:id="@+id/drop1"
+        android:inputType="number"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:spinnerMode="dropdown"
+        android:layout_alignBottom="@+id/colBOption1"
+        android:layout_toLeftOf="@+id/colBOption1"
+        android:layout_toStartOf="@+id/colBOption1" />
+
+    <Spinner
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:inputType="number"
+        android:id="@+id/drop2"
+        android:spinnerMode="dropdown"
+        android:layout_alignBottom="@+id/colBOption2"
+        android:layout_toLeftOf="@+id/colBOption2"
+        android:layout_toStartOf="@+id/colBOption2" />
+
+    <Spinner
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:inputType="number"
+        android:id="@+id/drop3"
+        android:spinnerMode="dropdown"
+        android:layout_alignBottom="@+id/colBOption3"
+        android:layout_toLeftOf="@+id/colBOption3"
+        android:layout_toStartOf="@+id/colBOption3" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="2"
-        android:id="@+id/editText"
-        android:layout_alignTop="@+id/colBOptions"
-        android:layout_toLeftOf="@+id/colBOptions"
-        android:layout_toStartOf="@+id/colBOptions" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/colAOption2"
+        android:textSize="14sp"
+        android:text="2. Water striders walk\n on the water"
+        android:textColor="#261c4a"
+        android:layout_below="@+id/colAOption1"
+        android:layout_alignLeft="@+id/colAOption1"
+        android:layout_alignStart="@+id/colAOption1"
+        android:layout_marginBottom="16sp" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="2"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_toLeftOf="@+id/colBOptions"
-        android:layout_toStartOf="@+id/colBOptions" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/colAOption3"
+        android:textSize="14sp"
+        android:text="3. Plastic combs attract \npaper pieces "
+        android:textColor="#261c4a"
+        android:layout_below="@+id/colAOption2"
+        android:layout_alignLeft="@+id/colAOption2"
+        android:layout_alignStart="@+id/colAOption2" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="2"
-        android:id="@+id/editText3"
-        android:layout_toStartOf="@+id/colBOptions"
-        android:layout_alignBottom="@+id/colBOptions" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/colBOption2"
+        android:textSize="14sp"
+        android:text="Van der Waals force"
+        android:textColor="#261c4a"
+        android:layout_below="@+id/colBOption1"
+        android:layout_alignLeft="@+id/colBOption1"
+        android:layout_alignStart="@+id/colBOption1"
+        android:layout_marginBottom="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/colBOption3"
+        android:textSize="14sp"
+        android:text="Electrostatic force "
+        android:textColor="#261c4a"
+        android:layout_alignStart="@+id/colBOption2"
+        android:layout_alignLeft="@+id/colBOption2"
+        android:layout_below="@+id/colBOption2" />
 
 </RelativeLayout>

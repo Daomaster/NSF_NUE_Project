@@ -1,23 +1,19 @@
 package nsf.nsf_nue_project.quiz2;
 
 import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import nsf.nsf_nue_project.R;
@@ -31,11 +27,15 @@ public class Quiz2_q5_activ extends ActionBarActivity {
     TextView questionText;
     TextView colATitle;
     TextView colBTitle;
-    TextView colAOptions;
-    TextView colBOptions;
-    EditText opA;
-    EditText opB;
-    EditText opC;
+    TextView colAOption1;
+    TextView colAOption2;
+    TextView colAOption3;
+    TextView colBOption1;
+    TextView colBOption2;
+    TextView colBOption3;
+    Spinner opA;
+    Spinner opB;
+    Spinner opC;
     double valueOpA = 0;
     double valueOpB = 0;
     double valueOpC = 0;
@@ -45,16 +45,20 @@ public class Quiz2_q5_activ extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz2_q5_activ);
-        opA = (EditText) findViewById(R.id.editText);
-        opB = (EditText) findViewById(R.id.editText2);
-        opC = (EditText) findViewById(R.id.editText3);
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
         questionText = (TextView) findViewById(R.id.questionText);
         colATitle = (TextView) findViewById(R.id.colATitle);
         colBTitle = (TextView) findViewById(R.id.colBTitle);
-        colAOptions = (TextView) findViewById(R.id.colAOptions);
-        colBOptions = (TextView) findViewById(R.id.colBOptions);
+        colAOption1 = (TextView) findViewById(R.id.colAOption1);
+        colAOption2 = (TextView) findViewById(R.id.colAOption2);
+        colAOption3 = (TextView) findViewById(R.id.colAOption3);
+        colBOption1 = (TextView) findViewById(R.id.colBOption1);
+        colBOption2 = (TextView) findViewById(R.id.colBOption2);
+        colBOption3 = (TextView) findViewById(R.id.colBOption3);
+        opA = (Spinner)findViewById(R.id.drop1);
+        opB = (Spinner)findViewById(R.id.drop2);
+        opC = (Spinner)findViewById(R.id.drop3);
         builder = new AlertDialog.Builder(this);
 
         toggleHideyBar();
@@ -65,21 +69,21 @@ public class Quiz2_q5_activ extends ActionBarActivity {
 
         setFonts();
 
+        String[] items = new String[]{"1", "2", "3"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        opA.setAdapter(adapter);
+        opB.setAdapter(adapter);
+        opC.setAdapter(adapter);
+
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int screenHeight = size.y;
         int txtMargin = (int) (screenHeight * 0.15);
-        int editTxtMargin = (int) (screenHeight * 0.04);
 
-        setMargins(questionText, 0, 0, 0, 0);
         setMargins(colATitle, txtMargin*2, 0, 0, 0);
         setMargins(colBTitle, 0, 0, txtMargin*2, 0);
-        setMargins(colAOptions, txtMargin, 0, 0, 0);
-        setMargins(colBOptions, 0, 0, 0, 0);
-        setMargins(opA, 0, 0, 0, editTxtMargin);
-        setMargins(opB, 0, 0, 0, editTxtMargin);
-        setMargins(opC, 0, 0, 0, 0);
+
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,29 +92,17 @@ public class Quiz2_q5_activ extends ActionBarActivity {
 
                 try {
                     //getting the values on the editTexts
-                    valueOpA = Double.parseDouble(opA.getText().toString());
-                    valueOpB = Double.parseDouble(opB.getText().toString());
-                    valueOpC = Double.parseDouble(opC.getText().toString());
+                    valueOpA = Double.parseDouble(opA.getSelectedItem().toString());
+                    valueOpB = Double.parseDouble(opB.getSelectedItem().toString());
+                    valueOpC = Double.parseDouble(opC.getSelectedItem().toString());
 
-                }catch (NumberFormatException e){
-                        // this is not a number. tell the user something here or do something
-                        Log.e("yourAppTag", Log.getStackTraceString(e));
+                } catch (NumberFormatException e) {
+                    // this is not a number. tell the user something here or do something
+                    Log.e("yourAppTag", Log.getStackTraceString(e));
                 }
 
-                //verificating the question and sending the string that will be printed on the Score Activity
-                if(verficateValue(valueOpA, opA) == false || verficateValue(valueOpB, opB) == false ||
-                        verficateValue(valueOpC, opC) == false){
 
-                    builder.setMessage("Please, insert numbers between 1 and 3.")
-                            .setTitle("Invalid Number")
-                            .setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                }
-                            });
-
-                    builder.show();
-                } else if(valueOpA == 2 && valueOpB == 1 && valueOpC == 3){
+                if (valueOpA == 2 && valueOpB == 1 && valueOpC == 3) {
                     score++;
                     temp.putExtra("score", score + "/5");
                     Log.i("SCORE5", score + "");
@@ -132,13 +124,6 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         });
     }
 
-    boolean verficateValue(double value, EditText op){
-        if(value < 1 || value >3){
-            op.setText("");
-            return false;
-        }
-        return true;
-    }
 
     public void toggleHideyBar() {
 
@@ -184,8 +169,12 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         questionText.setTypeface(custom_font);
         colATitle.setTypeface(custom_font);
         colBTitle.setTypeface(custom_font);
-        colAOptions.setTypeface(custom_font);
-        colBOptions.setTypeface(custom_font);
+        colAOption1.setTypeface(custom_font);
+        colAOption2.setTypeface(custom_font);
+        colAOption3.setTypeface(custom_font);
+        colBOption1.setTypeface(custom_font);
+        colBOption2.setTypeface(custom_font);
+        colBOption3.setTypeface(custom_font);
     }
 
 }
