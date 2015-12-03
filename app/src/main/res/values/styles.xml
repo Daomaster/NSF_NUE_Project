@@ -7,7 +7,9 @@
     </style>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <!--<item name="android:background">@drawable/layout_top</item>-->
+        <!--<item name="android:background">@drawable/layout_top_ch1</item>-->
+        <!--&lt;!&ndash;Support older APIs&ndash;&gt;-->
+        <!--<item name="background">@drawable/layout_top_ch1</item>-->
     </style>
 
     <style name="FullscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
