@@ -2,6 +2,7 @@ package nsf.nsf_nue_project.quiz2;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -12,7 +13,6 @@ import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import nsf.nsf_nue_project.R;
@@ -20,23 +20,24 @@ import nsf.nsf_nue_project.R;
 
 public class Quiz2_q2_activ extends ActionBarActivity {
 
-    RadioButton opA;
-    RadioButton opB;
-    RadioButton opC;
-    RadioButton opD;
+    ImageView opA;
+    ImageView opB;
+    ImageView opC;
+    ImageView opD;
     TextView question2Q2Text;
     ImageView nextBtn;
     ImageView backBtn;
+    boolean rightAnswer = false;
     int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz2_q2_activ);
-        opA = (RadioButton)findViewById(R.id.quiz2Q2OpA);
-        opB = (RadioButton)findViewById(R.id.quiz2Q2OpB);
-        opC = (RadioButton)findViewById(R.id.quiz2Q2OpC);
-        opD = (RadioButton)findViewById(R.id.quiz2Q2OpD);
+        opA = (ImageView)findViewById(R.id.quiz2Q2OpA);
+        opB = (ImageView)findViewById(R.id.quiz2Q2OpB);
+        opC = (ImageView)findViewById(R.id.quiz2Q2OpC);
+        opD = (ImageView)findViewById(R.id.quiz2Q2OpD);
         nextBtn = (ImageView)findViewById(R.id.next_btn);
         backBtn = (ImageView)findViewById(R.id.back_btn);
         question2Q2Text = (TextView) findViewById(R.id.question2Q2Text);
@@ -52,7 +53,6 @@ public class Quiz2_q2_activ extends ActionBarActivity {
         Point size = new Point();
         display.getSize(size);
         int screenHeight = size.y;
-        int btnTxtSize = (int) (screenHeight * 0.03);
         int questionMargin = (int) (screenHeight * 0.15);
         int answerMargin = (int) (questionMargin*1.3);
 
@@ -60,21 +60,74 @@ public class Quiz2_q2_activ extends ActionBarActivity {
         if (config.smallestScreenWidthDp <= 600) {
             setMargins(question2Q2Text, questionMargin, questionMargin, 0, questionMargin / 3);
 
-            opA.setButtonDrawable(R.drawable.quiz2question2opaphone);
-            opA.setTextSize(btnTxtSize);
+            opA.setImageDrawable((getResources().getDrawable(R.drawable.quiz2question2opaphone)));
             setMargins(opA, answerMargin, 0, 0, 0);
+            opA.setOnClickListener(new View.OnClickListener() {
 
-            opB.setButtonDrawable(R.drawable.quiz2question2opbphone);
-            opB.setTextSize(btnTxtSize);
+                @Override
+                public void onClick(View arg0) {
+                    opA.setBackgroundColor(Color.parseColor("#000099"));
+
+                    opB.setBackgroundColor(Color.TRANSPARENT);
+                    opC.setBackgroundColor(Color.TRANSPARENT);
+                    opD.setBackgroundColor(Color.TRANSPARENT);
+
+                    rightAnswer = false;
+                }
+
+            });
+
+            opB.setImageDrawable((getResources().getDrawable(R.drawable.quiz2question2opbphone)));
             setMargins(opB, answerMargin / 3, 0, 0, 0);
+            opB.setOnClickListener(new View.OnClickListener() {
 
-            opC.setButtonDrawable(R.drawable.quiz2question2opcphone);
-            opC.setTextSize(btnTxtSize);
+                @Override
+                public void onClick(View arg0) {
+                    opB.setBackgroundColor(Color.parseColor("#000099"));
+
+                    opA.setBackgroundColor(Color.TRANSPARENT);
+                    opC.setBackgroundColor(Color.TRANSPARENT);
+                    opD.setBackgroundColor(Color.TRANSPARENT);
+
+                    rightAnswer = false;
+                }
+
+            });
+
+            opC.setImageDrawable((getResources().getDrawable(R.drawable.quiz2question2opcphone)));
             setMargins(opC, answerMargin / 3, 0, 0, 0);
+            opC.setOnClickListener(new View.OnClickListener() {
 
-            opD.setButtonDrawable(R.drawable.quiz2question2opdphone);
-            opD.setTextSize(btnTxtSize);
+                @Override
+                public void onClick(View arg0) {
+                    opC.setBackgroundColor(Color.parseColor("#000099"));
+
+                    opA.setBackgroundColor(Color.TRANSPARENT);
+                    opB.setBackgroundColor(Color.TRANSPARENT);
+                    opD.setBackgroundColor(Color.TRANSPARENT);
+
+                    rightAnswer = false;
+                }
+
+            });
+
+            opD.setImageDrawable((getResources().getDrawable(R.drawable.quiz2question2opdphone)));
             setMargins(opD, answerMargin / 3, 0, 0, 0);
+            opD.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View arg0) {
+                    opD.setBackgroundColor(Color.parseColor("#000099"));
+
+                    opA.setBackgroundColor(Color.TRANSPARENT);
+                    opB.setBackgroundColor(Color.TRANSPARENT);
+                    opC.setBackgroundColor(Color.TRANSPARENT);
+
+                    rightAnswer = true;
+                }
+
+            });
+
         }
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
@@ -82,12 +135,14 @@ public class Quiz2_q2_activ extends ActionBarActivity {
             public void onClick(View v) {
                 Intent temp = new Intent(Quiz2_q2_activ.this, Quiz2_q3_activ.class);
 
-                if(opD.isChecked()) {
+                if(rightAnswer) {
+                    Log.i("answer", "true");
                     score++;
                     temp.putExtra("score", score);
                     Log.i("SCORE2", score + "");
                 }
                 else {
+                    Log.i("answer", "false");
                     temp.putExtra("score", 0 + score);
                 }
                 startActivity(temp);

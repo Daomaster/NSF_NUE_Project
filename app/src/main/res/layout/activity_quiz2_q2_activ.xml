@@ -16,44 +16,53 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:padding="1dp"
+        android:layout_width="100sp"
+        android:layout_height="160sp"
         android:id="@+id/quiz2Q2OpA"
-        android:button="@drawable/quiz2question2opa"
+        android:src="@drawable/quiz2question2opa"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:clickable="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:padding="1dp"
+        android:layout_width="100sp"
+        android:layout_height="160sp"
         android:id="@+id/quiz2Q2OpB"
-        android:button="@drawable/quiz2question2opb"
+        android:src="@drawable/quiz2question2opb"
         android:layout_alignTop="@+id/quiz2Q2OpA"
         android:layout_toRightOf="@+id/quiz2Q2OpA"
         android:layout_toEndOf="@+id/quiz2Q2OpA"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:clickable="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:padding="1dp"
+        android:layout_width="100sp"
+        android:layout_height="160sp"
         android:id="@+id/quiz2Q2OpC"
-        android:button="@drawable/quiz2question2opc"
+        android:src="@drawable/quiz2question2opc"
         android:layout_alignTop="@+id/quiz2Q2OpB"
         android:layout_toRightOf="@+id/quiz2Q2OpB"
         android:layout_toEndOf="@+id/quiz2Q2OpB"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:clickable="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:button="@drawable/quiz2question2opd"
+    <ImageView
+        android:padding="1dp"
+        android:layout_width="100sp"
+        android:layout_height="160sp"
+        android:src="@drawable/quiz2question2opd"
         android:id="@+id/quiz2Q2OpD"
         android:layout_alignTop="@+id/quiz2Q2OpC"
         android:layout_toRightOf="@+id/quiz2Q2OpC"
         android:layout_toEndOf="@+id/quiz2Q2OpC"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:clickable="true" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
