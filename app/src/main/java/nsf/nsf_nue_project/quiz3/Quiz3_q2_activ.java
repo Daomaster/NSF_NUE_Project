@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 import nsf.nsf_nue_project.R;
 import nsf.nsf_nue_project.Score;
 
@@ -44,6 +46,9 @@ public class Quiz3_q2_activ extends ActionBarActivity {
 
         toggleHideyBar();
 
+        Intent intent = getIntent();
+        score = intent.getIntExtra("score", 0);
+
         String questionArray[] = getResources().getStringArray(R.array.question2_q3);
 
         questionTxt.setText(questionArray[0]);
@@ -54,6 +59,7 @@ public class Quiz3_q2_activ extends ActionBarActivity {
         opE.setText(questionArray[5]);
 
         setTextDimensions();
+        final HashMap<Integer, Boolean> questions = (HashMap<Integer, Boolean>) intent.getSerializableExtra("questions");
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,10 +67,17 @@ public class Quiz3_q2_activ extends ActionBarActivity {
                 Intent temp = new Intent(Quiz3_q2_activ.this, Score.class);
                 if(opE.isChecked()) {
                     score++;
+                    questions.put(2, true);
+
+                    temp.putExtra("questions", questions);
                     temp.putExtra("score", score + "/2");
                 }
                 else {
                     temp.putExtra("score", score + "/2");
+
+                    questions.put(2, false);
+                    temp.putExtra("questions", questions);
+                    temp.putExtra("score", 0 + score);
                 }
                 startActivity(temp);
             }

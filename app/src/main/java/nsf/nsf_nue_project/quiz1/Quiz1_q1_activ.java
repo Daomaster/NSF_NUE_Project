@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 import nsf.nsf_nue_project.R;
 
 
@@ -30,6 +32,7 @@ public class Quiz1_q1_activ extends ActionBarActivity {
     RadioButton opE;
     ImageView nextBtn;
     ImageView backBtn;
+    HashMap<Integer, Boolean> questions = new HashMap<Integer, Boolean>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,11 +82,16 @@ public class Quiz1_q1_activ extends ActionBarActivity {
                 Intent intent = new Intent(Quiz1_q1_activ.this, Quiz1_q2_activ.class);
 
                 if(opC.isChecked()) {
+                    questions.put(1, true);
+
                     intent.putExtra("score", 1);
-                    Log.i("SCORE1",1+"");
+                    intent.putExtra("questions", questions);
+                    Log.i("SCORE1", 1 + "");
                 }
                 else {
                     intent.putExtra("score", 0);
+                    intent.putExtra("questions", questions);
+                    questions.put(1, false);
                 }
                 startActivity(intent);
             }

@@ -4,30 +4,57 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="nsf.nsf_nue_project.Score"
-    android:background="@drawable/scorebackground">
+    android:id="@+id/score_layout"
+    tools:context="nsf.nsf_nue_project.Score">
 
-    <TextView
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Score"
-        android:id="@+id/scoreTittle"
-        android:textSize="30sp"
-        android:textColor="#fffffbf7"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="1/2"
-        android:id="@+id/score_textview"
-        android:textSize="30sp"
-        android:textColor="#fff2f3ff"
+        android:layout_weight="0"
+        android:padding="5dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="0dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-6dp">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/title_row"
+            android:background="#77edf5ff">
+
+            <TextView
+                android:id="@+id/score_title"
+                android:text="Score"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:padding="3dp"
+                android:layout_gravity="center"
+                android:textColor="#304261"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/value_row"
+            android:background="#77171b44">
+
+            <TextView
+                android:id="@+id/score_value"
+                android:text="0"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:textColor="#c82d2d"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+    </TableLayout>
 </RelativeLayout>

@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 import nsf.nsf_nue_project.R;
 import nsf.nsf_nue_project.Score;
 
@@ -40,6 +42,8 @@ public class Quiz2_q5_activ extends ActionBarActivity {
     double valueOpB = 0;
     double valueOpC = 0;
     AlertDialog.Builder builder;
+    HashMap<Integer, Boolean> questions = new HashMap<Integer, Boolean>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +88,7 @@ public class Quiz2_q5_activ extends ActionBarActivity {
         setMargins(colATitle, txtMargin*2, 0, 0, 0);
         setMargins(colBTitle, 0, 0, txtMargin*2, 0);
 
-
+        final HashMap<Integer, Boolean> questions = (HashMap<Integer, Boolean>) intent.getSerializableExtra("questions");
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,12 +108,18 @@ public class Quiz2_q5_activ extends ActionBarActivity {
 
                 if (valueOpA == 2 && valueOpB == 1 && valueOpC == 3) {
                     score++;
+                    questions.put(5, true);
+
+                    temp.putExtra("questions", questions);
                     temp.putExtra("score", score + "/5");
                     Log.i("SCORE5", score + "");
                     startActivity(temp);
 
                 } else {
                     temp.putExtra("score", score + "/5");
+                    questions.put(5, false);
+
+                    temp.putExtra("questions", questions);
                     startActivity(temp);
                 }
 

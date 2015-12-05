@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 import nsf.nsf_nue_project.R;
 
 
@@ -129,20 +131,23 @@ public class Quiz2_q2_activ extends ActionBarActivity {
             });
 
         }
-
+        final HashMap<Integer, Boolean> questions = (HashMap<Integer, Boolean>) intent.getSerializableExtra("questions");
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent temp = new Intent(Quiz2_q2_activ.this, Quiz2_q3_activ.class);
 
                 if(rightAnswer) {
-                    Log.i("answer", "true");
                     score++;
+                    questions.put(2, true);
+                    temp.putExtra("questions", questions);
+
                     temp.putExtra("score", score);
                     Log.i("SCORE2", score + "");
                 }
                 else {
-                    Log.i("answer", "false");
+                    questions.put(2, false);
+                    temp.putExtra("questions", questions);
                     temp.putExtra("score", 0 + score);
                 }
                 startActivity(temp);

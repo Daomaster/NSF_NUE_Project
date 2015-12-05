@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 import nsf.nsf_nue_project.R;
 import nsf.nsf_nue_project.Score;
 
@@ -70,6 +72,8 @@ public class Quiz1_q4_activ extends ActionBarActivity {
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
+        final HashMap<Integer, Boolean> questions = (HashMap<Integer, Boolean>) intent.getSerializableExtra("questions");
+
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,11 +81,17 @@ public class Quiz1_q4_activ extends ActionBarActivity {
                 Intent temp = new Intent(Quiz1_q4_activ.this, Score.class);
                 if(opB.isChecked()) {
                     score++;
+                    questions.put(4, true);
+
                     temp.putExtra("score", score + "/4");
+                    temp.putExtra("questions", questions);
                     Log.i("SCORE4", score + "");
                 }
                 else {
+                    questions.put(4, false);
+
                     temp.putExtra("score", score + "/4");
+                    temp.putExtra("questions", questions);
                 }
                 startActivity(temp);
             }
