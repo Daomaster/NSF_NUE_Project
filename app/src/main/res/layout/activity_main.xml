@@ -66,4 +66,13 @@
         android:layout_alignRight="@+id/scallin_law_btn"
         android:layout_alignEnd="@+id/scallin_law_btn"/>
 
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/nsfLink"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/invisible" />
+
 </RelativeLayout>

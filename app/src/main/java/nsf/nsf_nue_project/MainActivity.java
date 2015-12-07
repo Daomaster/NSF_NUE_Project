@@ -2,6 +2,7 @@ package nsf.nsf_nue_project;
 
 import android.content.Intent;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,12 +18,16 @@ public class MainActivity extends ActionBarActivity {
     private Button deviceBtn;
     private Button scallingBtn;
     private Button introBtn;
+    private ImageView nsfLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         toggleHideyBar();
+
+        nsfLink = (ImageView) findViewById(R.id.nsfLink);
+        setLinkOnImageView(nsfLink, "http://www.nsf.gov/");
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -128,5 +133,19 @@ public class MainActivity extends ActionBarActivity {
         this.getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         //END_INCLUDE (set_ui_flags)
     }
+    private void setLinkOnImageView(ImageView img, final String link) {
+
+        img.setVisibility(ImageView.VISIBLE);
+        img.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse(link));
+                startActivity(intent);
+            }
+        });
+    }
+
 
 }
